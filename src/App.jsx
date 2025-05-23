@@ -22,6 +22,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
 function App() {
 
+  // Test
   const main = useRef();
   const smoother = useRef();
   const [isDarkMode, setIsDarkMode] = useState(true)
