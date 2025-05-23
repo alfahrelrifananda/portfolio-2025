@@ -1,0 +1,67 @@
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+.header .headerContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    backdrop-filter: blur(30px);
+    align-items: center;
+    color: var(--primary-dark);
+    border-bottom: 1px solid var(--primary-dark);
+}
+.header .headerContainer .date {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+.header .headerContainer .logo .logoContainer {
+    width: 100px;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    font-family: Poppins-Bold;
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    overflow: hidden;
+}
+
+.header .headerContainer .logo .logoContainer ul {
+    display: flex;
+    justify-content: center;
+}
+
+.header .headerContainer .logo .logoContainer ul li {
+    list-style: none;
+}
+
+.header .headerContainer .menuButton {
+    cursor: pointer;
+    display: flex;
+    overflow: hidden;
+}
+.header .headerContainer .menuButton ul {
+    display: flex;
+}
+.header .headerContainer .menuButton ul li {
+    list-style: none;
+}
+
+.BottomHeaderContainer{
+    bottom: 0;
+    position: fixed;
+    z-index: 87;
+    width: 100%;
+    padding: 20px;
+}
+.BottomHeaderContainer button {
+    background-color: var(--primary-dark);
+    width: 30px;
+    height: 30px;
+    border: none;
+    color: var(--primary-light);
+}

@@ -1,0 +1,100 @@
+@font-face {
+  font-family: Poppins-Light;
+  src: url(/src/fonts/Poppins/Poppins-Light.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url(/src/fonts/Poppins/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Medium-Bold;
+  src: url(/src/fonts/Poppins/Poppins-Bold.ttf);
+}
+
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url(/src/fonts/Poppins/Poppins-Black.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Bold-Italic;
+  src: url(/src/fonts/Poppins/Poppins-BlackItalic.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Light-Italic;
+  src: url(/src/fonts/Poppins/Poppins-LightItalic.ttf);
+}
+
+
+@font-face {
+  font-family: Poppins-Italic;
+  src: url(/src/fonts/Poppins/Poppins-Italic.ttf);
+}
+
+:root {
+  font-family: Poppins-Medium;
+  /* line-height: 1.5;
+  font-weight: 400; */
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #F6F4F2;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --primary-dark: #1C0F13;
+  --primary-light: #F6F4F2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--primary-light);
+}
+
+.custom-scroll-text {
+  color: var(--primary-dark);
+}
+
+html {
+  overflow-y: scroll;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  overflow-y: visible;
+  position: relative;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+
+
+body::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+  background-color: var(--primary-light);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-dark);
+  border-radius: 15px;
+}

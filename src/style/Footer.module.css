@@ -1,0 +1,42 @@
+.footer {
+    padding: 20px;
+    color: var(--primary-light);
+    background-color: var(--primary-dark);
+}
+
+.footer .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+
+}
+
+.footer .contact a {
+    text-decoration: none;
+    text-align: end;
+    color: var(--primary-light);
+}
+
+.footer .contact p:nth-child(3) {
+    text-align: end;
+}
+
+.footer .copyright {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.footer .copyright p:nth-child(2) {
+    text-align: center;
+}
+
+.footer .copyright p:nth-child(3) {
+    text-align: end;
+}
+
+.footer .waves {
+    height: fit-content;
+}
