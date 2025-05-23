@@ -128,7 +128,28 @@
     height: 15vh;
     background-image: linear-gradient(180deg, var(--primary-light), var(--primary-dark));
 }
+
 .contactContainer {
     background-color: var(--primary-dark);
-    height: 100vh;
+    height: 85vh;
+    padding: 20px;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contactImage {
+    border: 2px solid var(--primary-light);
+}
+
+.contactContent {
+    display: flex;
+    color: var(--primary-light);
+    flex-direction: column;
+    padding: 15%;
+    justify-content: center;
+}
+
+.contactContent h1 {
+    font-family: Poppins-Medium-Bold;
 }
