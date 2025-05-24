@@ -7,7 +7,6 @@ function Contact() {
     }
     return (
         <>
-            <div className={Style.contactGradient}></div>
             <div className={Style.contactContainer}>
                 <div className={Style.contactImage}>
 

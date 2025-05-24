@@ -31,14 +31,19 @@
     cursor: pointer;
     transition: all .3s;
 }
+
 .panel .blog-card:hover {
     opacity: .5;
 }
+
 .panel .blog-card .blog-featured {
     width: calc(100% - 4px);
     height: 50%;
     border-radius: 5px;
-    border: 2px solid var(--primary-dark);
+    background-image: url("https://miro.medium.com/v2/resize:fit:4800/format:webp/1*uGV8EmiF5OQ3ykWeChGsiQ.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .panel .blog-card .blog-date {
