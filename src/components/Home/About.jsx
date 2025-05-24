@@ -11,19 +11,19 @@ function About() {
                 <div className={Style.aboutImage}></div>
                 <div className={Style.aboutContent}>
                     <p>
-                        In a previous life, I worked in the music industry, navigating the worlds of marketing and sales. From that time, I’ve carried over a deep sense of curiosity, a constant drive to improve, and a genuine love for collaboration.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita iure molestias beatae magnam maiores eligendi quaerat quod laboriosam quasi ut voluptatum modi culpa vero dolores, at architecto laborum velit eum.
                     </p>
                     <p>
-                        Today, I’m a developer based in Paris, passionate about creating interfaces that spark — with subtle details, bold animations, and a strong focus on performance.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque architecto, fugit magni id adipisci placeat deserunt exercitationem ea reiciendis, possimus asperiores aliquam natus autem numquam.
                     </p>
                     <p>
-                        I believe animations are only as good as the design they enhance, and I’m always looking to push the experience further. My favorite playgrounds are GSAP and shaders. I’ve explored them through various interactive experiments, and I’ve even started sharing what I’ve learned through articles and tutorials (soon to be published here).
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius exercitationem obcaecati sed nesciunt accusamus beatae earum, temporibus voluptates blanditiis tempore magni atque, repellendus facere quas vitae. Officiis quae aliquam, pariatur reiciendis perferendis autem et sit quidem, a, dicta libero tempora!
                     </p>
                     <p>
-                        I work with all kinds of clients — from startups to digital agencies — and whether I’m in their office or working remotely, I always bring the same energy and attention to detail.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus est, nihil ut expedita, voluptate, qui vel repellendus inventore perspiciatis doloribus iusto repudiandae veritatis atque!
                     </p>
                     <p>
-                        Outside of development, you’ll probably find me reading literature, swimming laps, or watching contemporary theatre. I also play chess — badly (730 ELO and proudly stuck there) — but I keep coming back for more.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi odio illum quod, doloribus minus nobis sequi, voluptatum nostrum earum modi, similique reprehenderit perspiciatis? Ipsam at consectetur natus.
                     </p>
                     <p className={Style.title}>Tech i love to use</p>
                     <div>
@@ -39,6 +39,9 @@ function About() {
                         <span>PHP</span>
                         <span>Laravel</span>
                         <span>Github</span>
+                        <span>MySQL</span>
+                        <span>Firebase</span>
+                        <span>Supabase</span>
                     </div>
                 </div>
             </div>

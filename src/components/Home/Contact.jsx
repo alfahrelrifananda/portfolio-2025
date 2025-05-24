@@ -1,7 +1,10 @@
-
 import Style from "../../style/Home.module.css"
 
 function Contact() {
+
+    function sendEmail() {
+        alert("Under Construction")
+    }
     return (
         <>
             <div className={Style.contactGradient}></div>
@@ -13,7 +16,16 @@ function Contact() {
                     <h1>Let's work together !</h1>
                     <p>Drop me a message, and let's turn your ideas into reality. Excited to collaborate on your next creative project!</p>
                     <form action="">
-
+                        <div>
+                            <input type="text" placeholder="First Name" />
+                            <input type="text" placeholder="Last Name" />
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Email" />
+                            <input type="text" placeholder="Address" />
+                        </div>
+                        <textarea name="message" placeholder="Message" ></textarea>
+                        <button type="submit" onClick={() => sendEmail()}>Submit</button>
                     </form>
                 </div>
             </div>

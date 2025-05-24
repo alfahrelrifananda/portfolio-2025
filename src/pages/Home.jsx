@@ -5,8 +5,6 @@ import ScrollVelocity from "../components/ReactBits/ScrollVelocity"
 import About from "../components/Home/About"
 import Project from "../components/Home/Project"
 import MyBlog from "../components/Home/MyBlog"
-import ZoomScrolling from "../components/Home/ZoomScrolling"
-import Silk from "../components/ReactBits/Silk"
 import Contact from "../components/Home/Contact"
 
 function Home() {

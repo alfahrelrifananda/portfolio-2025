@@ -139,7 +139,7 @@
 }
 
 .contactImage {
-    border: 2px solid var(--primary-light);
+    background-color: var(--primary-light);
 }
 
 .contactContent {
@@ -152,4 +152,50 @@
 
 .contactContent h1 {
     font-family: Poppins-Medium-Bold;
+}
+
+.contactContent form {
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+    flex-direction: column;
+}
+.contactContent form div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.contactContent form div input {
+    border: none;
+    padding: 10px;
+    width: calc(100% - 10px);
+    outline: none;
+    border-bottom: 1px solid var(--primary-light);
+    font-family: Poppins-Medium;
+    padding-left: 0;
+    background-color: transparent;
+    color: var(--primary-light);
+}
+.contactContent form textarea {
+    border: none;
+    padding: 30px;
+    outline: none;
+    border-bottom: 1px solid var(--primary-light);
+    font-family: Poppins-Medium;
+    padding-left: 0;
+    background-color: transparent;
+    color: var(--primary-light);
+}
+.contactContent form button {
+    width: fit-content;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid var(--primary-light);
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: var(--primary-light);
+    font-family: Poppins-Medium;
 }
