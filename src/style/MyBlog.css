@@ -23,7 +23,7 @@
 .panel .blog-card {
     width: 25vw;
     height: 30vw;
-    gap: 10px;
+    gap: 5px;
     overflow: hidden;
     display: flex;
     color: var(--primary-dark);
@@ -47,9 +47,9 @@
 }
 
 .panel .blog-card .blog-date {
-    border: 1px solid var(--primary-dark);
     border-radius: 5px;
     padding: 5px;
+    opacity: .7;
     width: fit-content;
 }
 

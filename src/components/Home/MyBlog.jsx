@@ -43,6 +43,7 @@ function MyBlog() {
                 <div className="panel">
                     <div className="blog-card">
                         <div className="blog-featured">
+
                         </div>
                         <p className="blog-date">12 march, 2025</p>
                         <p className="blog-title">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>

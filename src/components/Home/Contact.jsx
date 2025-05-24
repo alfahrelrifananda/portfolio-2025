@@ -9,7 +9,6 @@ function Contact() {
         <>
             <div className={Style.contactContainer}>
                 <div className={Style.contactImage}>
-
                 </div>
                 <div className={Style.contactContent}>
                     <h1>Let's work together !</h1>
