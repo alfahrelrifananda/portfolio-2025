@@ -22,10 +22,10 @@ function Contact() {
                         </div>
                         <div>
                             <input type="email" placeholder="Email" />
-                            <input type="text" placeholder="Address" />
+                            <input type="number" placeholder="Phone" />
                         </div>
                         <textarea name="message" placeholder="Message" ></textarea>
-                        <button type="submit" onClick={() => sendEmail()}>Submit</button>
+                        <button type="submit" onClick={() => sendEmail()}>Get in touch</button>
                     </form>
                 </div>
             </div>
