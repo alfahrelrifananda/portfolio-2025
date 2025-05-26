@@ -18,6 +18,7 @@ function Header() {
 
     let days = null
     let months = null
+    let menu = "(menu)"
 
 
     switch (day) {
@@ -135,14 +136,9 @@ function Header() {
                     </div>
                     <div className={Style.menuButton}
                         id="menu-btn" onClick={toggleMenu}>
-                        <p>(</p>
                         <ul className="menu-btn">
-                            <li>m</li>
-                            <li>e</li>
-                            <li>n</li>
-                            <li>u</li>
+                            <p>{menu}</p>
                         </ul>
-                        <p>)</p>
                     </div>
                 </div>
             </header>

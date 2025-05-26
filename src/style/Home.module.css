@@ -300,8 +300,14 @@
         line-height: 56px;
         text-align: justify;
         width: 100%;
-        padding-bottom: 20px;
         width: calc(100vw - 40px);
+    }
+
+    .greeting .greetingContainer .greetingShape {
+        height: 50vh;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     .greeting .greetingContainer p {
@@ -317,7 +323,7 @@
     }
 
     .aboutContainer .aboutImage {
-        height: 30dvh;
+        height: 30vh;
     }
 
     .aboutContainer .aboutContent .title {
@@ -344,7 +350,7 @@
     }
 
     .projectImage {
-        height: 30dvh;
+        height: 30vh;
     }
 
     .blogContainer {
@@ -371,7 +377,7 @@
     }
 
     .contactImage {
-        height: 30dvh;
+        height: 30vh;
     }
 
     .contactContent form div {

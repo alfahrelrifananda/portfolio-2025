@@ -25,10 +25,6 @@ function Home() {
                 className="custom-scroll-text"
             />
             <Project />
-            <ScrollVelocity
-                texts={['MY BLOG -']}
-                className="custom-scroll-text"
-            />
             <MyBlog />
             <Contact />
 

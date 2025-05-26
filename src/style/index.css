@@ -75,6 +75,7 @@ body {
 html,
 body {
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar-track {

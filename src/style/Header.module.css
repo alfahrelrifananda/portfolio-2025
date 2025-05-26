@@ -79,7 +79,15 @@
     }
 
     .header .headerContainer {
-        padding: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
         width: calc(100vw - 40px);
     }
+
+    .header .headerContainer .menuButton {
+        overflow: auto;
+        width:75px;
+        display: flex;
+        justify-content: end;
+        }
 }
