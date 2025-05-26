@@ -58,8 +58,6 @@
 }
 
 
-
-
 html {
   overflow-y: scroll;
   height: 100%;
@@ -79,8 +77,6 @@ body {
   margin: 0;
 }
 
-
-
 body::-webkit-scrollbar-track {
   background-color: transparent !important;
 }
@@ -94,8 +90,6 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--primary-dark);
   border-radius: 15px;
 }
-
-
 
 .bg-strip {
   display: flex;

@@ -5,28 +5,20 @@ import Header from "./components/Header"
 import Style from "./style/Header.module.css"
 import Home from "./pages/Home"
 import "./style/index.css"
-
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import ScrollSmoother from "gsap/ScrollSmoother"
 import { useGSAP } from "@gsap/react"
 import Footer from "./components/Footer"
 
-
 // eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext()
-
-
-
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
-
 function App() {
 
-  // Test
   const main = useRef();
   const smoother = useRef();
   const [isDarkMode, setIsDarkMode] = useState(true)
-
 
   useGSAP(
     () => {
@@ -57,8 +49,6 @@ function App() {
       document.documentElement.style.setProperty('--primary-light', '#1C0F13')
     }
   }
-
-
   return (
     <ThemeContext.Provider value={isDarkMode}>
       <Header />
