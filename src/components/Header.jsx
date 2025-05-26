@@ -90,14 +90,15 @@ function Header() {
 
     useEffect(() => {
         animate(".logoname li", {
-            opacity: 1, y: [50, 0]
+            opacity: 1, y: [30, 0]
         }, {
-            delay: stagger(0.05)
+            delay: stagger(0.1)
         })
     },)
 
     function toggleMenu() {
         const menu = document.getElementById("theMenu")
+
         if (!isMenuOpen) {
             menu.style.transform = "translateY(0)"
             setIsMenuOpen(true)

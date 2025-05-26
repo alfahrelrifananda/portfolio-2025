@@ -25,7 +25,7 @@ function App() {
   // Test
   const main = useRef();
   const smoother = useRef();
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(true)
 
 
   useGSAP(
@@ -62,14 +62,21 @@ function App() {
   return (
     <ThemeContext.Provider value={isDarkMode}>
       <Header />
+      <div className="bg-strip">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <div id="smooth-wrapper" ref={main} >
         <div id="smooth-content">
-
-
           <Home />
           <Footer />
-
-
         </div>
 
       </div >

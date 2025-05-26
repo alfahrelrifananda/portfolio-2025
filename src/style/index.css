@@ -98,3 +98,27 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--primary-dark);
   border-radius: 15px;
 }
+
+.bg-strip {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 30px);
+  height: 100vh;
+  top: 0;
+  position: fixed;
+  z-index: 66;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.bg-strip span {
+  height: 100%;
+  width: .1px;
+  opacity: .5;
+  background-color: var(--primary-dark);
+}
+
+#smooth-wrapper {
+  position: absolute;
+  z-index: 77;
+}

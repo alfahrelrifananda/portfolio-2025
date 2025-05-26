@@ -1,7 +1,10 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
-import "../../style/MyBlog.css";
+import Style from "../../style/MyBlog.module.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import CardBlog from "./CardBlog";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +14,7 @@ function MyBlog() {
 
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
-            let panels = gsap.utils.toArray(".panel");
+            let panels = gsap.utils.toArray("#myblog-container span");
             gsap.to(panels, {
                 xPercent: -100 * (panels.length - 1),
                 ease: "none",
@@ -19,7 +22,7 @@ function MyBlog() {
                     trigger: slider.current,
                     pin: true,
                     scrub: 1,
-                    snap: 0 / (panels.length - 1),
+                    // snap: 0 / (panels.length - 1),
                     end: () => "+=" + slider.current.offsetWidth,
                 }
             });
@@ -28,62 +31,31 @@ function MyBlog() {
     });
 
     return (
-        <div className="App" ref={component}>
-            <div className="firstContainer"></div>
-            <div ref={slider} className="container">
-                <div className="panel">
-                    <div className="blog-card">
-                        <div className="blog-featured">
-                        </div>
-                        <p className="blog-date">12 march, 2025</p>
-                        <p className="blog-title">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <p className="blog-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, temporibus enim. Sint, possimus officia repellat ducimus dolorum consequuntur totam hic!</p>
-                    </div>
-                </div>
-                <div className="panel">
-                    <div className="blog-card">
-                        <div className="blog-featured">
-
-                        </div>
-                        <p className="blog-date">12 march, 2025</p>
-                        <p className="blog-title">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <p className="blog-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, temporibus enim. Sint, possimus officia repellat ducimus dolorum consequuntur totam hic!</p>
-                    </div>
-                </div>
-
-                <div className="panel">
-                    <div className="blog-card">
-                        <div className="blog-featured">
-                        </div>
-                        <p className="blog-date">12 march, 2025</p>
-                        <p className="blog-title">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <p className="blog-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, temporibus enim. Sint, possimus officia repellat ducimus dolorum consequuntur totam hic!</p>
-                    </div>
-                </div>
-
-                <div className="panel">
-                    <div className="blog-card">
-                        <div className="blog-featured">
-                        </div>
-                        <p className="blog-date">12 march, 2025</p>
-                        <p className="blog-title">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <p className="blog-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, temporibus enim. Sint, possimus officia repellat ducimus dolorum consequuntur totam hic!</p>
-                    </div>
-                </div>
-
-                <div className="panel">
-                    <div className="blog-card">
-                        <div className="blog-featured">
-                        </div>
-                        <p className="blog-date">12 march, 2025</p>
-                        <p className="blog-title">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <p className="blog-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, temporibus enim. Sint, possimus officia repellat ducimus dolorum consequuntur totam hic!</p>
-                    </div>
-                </div>
-
+        <div className={Style.App} ref={component}>
+            <div ref={slider} className={Style.container} id="myblog-container">
+                <span className={Style.panel}></span>
+                <span className={Style.panel}>
+                    <CardBlog />
+                </span>
+                <span className={Style.panel}>
+                    <CardBlog />
+                </span>
+                <span className={Style.panel}>
+                    <CardBlog />
+                </span>
+                <span className={Style.panel}>
+                    <CardBlog />
+                </span>
+                <span className={Style.panel}>
+                    <CardBlog />
+                </span>
+                <span className={Style.panel}>
+                    <a href="" className={Style.moreBlog}>
+                        <FontAwesomeIcon icon={faArrowUp} className={Style.moreBlogArrow} />
+                    </a>
+                </span>
 
             </div>
-            <div className="lastContainer"></div>
         </div>
     );
 }

@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import Style from "../../style/Home.module.css"
 
 function Contact() {
@@ -5,9 +6,16 @@ function Contact() {
     function sendEmail() {
         alert("Under Construction")
     }
+
+    const cContainer = document.getElementById("contactContainer")
+    useEffect(() => {
+        console.log(document.getElementById("contactContainer").offsetHeight)
+    },[cContainer])
+
+
     return (
         <>
-            <div className={Style.contactContainer}>
+            <div className={Style.contactContainer} id="contactContainer">
                 <div className={Style.contactImage}>
                 </div>
                 <div className={Style.contactContent}>
