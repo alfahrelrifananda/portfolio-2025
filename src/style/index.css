@@ -116,6 +116,13 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--primary-dark);
 }
 
+.bg-strip span:nth-child(6),
+.bg-strip span:nth-child(7),
+.bg-strip span:nth-child(8),
+.bg-strip span:nth-child(9) {
+  display: none;
+}
+
 .custom-scroll-text {
   color: var(--primary-dark);
 }
