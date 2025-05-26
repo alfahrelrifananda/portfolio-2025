@@ -58,4 +58,8 @@
     .blogCard .blogFeatured {
         height: 250px;
     }
+
+    .blogCard .blogTitle {
+        font-size: 20px;
+    }
 }
