@@ -341,7 +341,10 @@
 
     .blogPanel {
         width: 75dvw;
+        display: flex;
+        align-items: baseline;
         padding: 20px;
+        padding-top: 10dvh;
     }
 
     .contactContainer {

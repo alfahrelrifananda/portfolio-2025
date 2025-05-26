@@ -98,12 +98,17 @@ function Header() {
 
     function toggleMenu() {
         const menu = document.getElementById("theMenu")
+        const menuContainer = document.getElementById("theMenuContainer")
 
         if (!isMenuOpen) {
-            menu.style.transform = "translateY(0)"
+            menu.style.zIndex = "88"
+            menu.style.opacity = "1"
+            menuContainer.style.opacity = "1"
             setIsMenuOpen(true)
         } else {
-            menu.style.transform = "translateY(300vh)"
+            menu.style.zIndex = "-88"
+            menu.style.opacity = "0"
+            menuContainer.style.opacity = "0"
             setIsMenuOpen(false)
         }
     }
@@ -142,7 +147,7 @@ function Header() {
                 </div>
             </header>
             <div className={StyleMenu.menu} id="theMenu">
-                <div className={StyleMenu.menuContainer}>
+                <div className={StyleMenu.menuContainer} id="theMenuContainer">
                     <div className={StyleMenu.menuContent}>
                         <div className={StyleMenu.menuList}>
                             <a href="#">

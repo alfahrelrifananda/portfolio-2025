@@ -2,10 +2,10 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
-    z-index: 88;
-    transition: all .3s;
+    z-index: -88;
+    transition: all 1s;
     transition-behavior: ease-in;
-    transform: translateY(300vh);
+    opacity: 0;
     background-color: #1c0f13c2;
 }
 
@@ -13,6 +13,8 @@
 .menuContainer {
     padding-top: 100px;
     width: 100%;
+    transition: all 2s;
+    opacity: 0;
     height: 100%;
     backdrop-filter: blur(15px);
 }
