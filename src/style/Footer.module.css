@@ -40,3 +40,10 @@
 .footer .waves {
     height: fit-content;
 }
+
+@media screen and (max-width: 900px) {
+    .footer .contact {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

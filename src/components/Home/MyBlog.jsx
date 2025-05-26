@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
-import Style from "../../style/MyBlog.module.css"
+import Style from "../../style/Home.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import CardBlog from "./CardBlog";
@@ -32,26 +32,26 @@ function MyBlog() {
 
     return (
         <div className={Style.App} ref={component}>
-            <div ref={slider} className={Style.container} id="myblog-container">
-                <span className={Style.panel}></span>
-                <span className={Style.panel}>
+            <div ref={slider} className={Style.blogContainer} id="myblog-container">
+                <span className={Style.blogPanel}></span>
+                <span className={Style.blogPanel}>
                     <CardBlog />
                 </span>
-                <span className={Style.panel}>
+                <span className={Style.blogPanel}>
                     <CardBlog />
                 </span>
-                <span className={Style.panel}>
+                <span className={Style.blogPanel}>
                     <CardBlog />
                 </span>
-                <span className={Style.panel}>
+                <span className={Style.blogPanel}>
                     <CardBlog />
                 </span>
-                <span className={Style.panel}>
+                <span className={Style.blogPanel}>
                     <CardBlog />
                 </span>
-                <span className={Style.panel}>
-                    <a href="" className={Style.moreBlog}>
-                        <FontAwesomeIcon icon={faArrowUp} className={Style.moreBlogArrow} />
+                <span className={Style.blogPanel}>
+                    <a href="" className={Style.blogMoreBlog}>
+                        <FontAwesomeIcon icon={faArrowUp} className={Style.blogMoreBlogArrow} />
                     </a>
                 </span>
 

@@ -57,14 +57,8 @@
   padding: 0;
 }
 
-body {
-  overflow-x: hidden;
-  background-color: var(--primary-light);
-}
 
-.custom-scroll-text {
-  color: var(--primary-dark);
-}
+
 
 html {
   overflow-y: scroll;
@@ -76,6 +70,8 @@ body {
   overflow-y: visible;
   position: relative;
   overflow-x: hidden;
+  background-color: var(--primary-light);
+
 }
 
 html,
@@ -99,6 +95,8 @@ body::-webkit-scrollbar-thumb {
   border-radius: 15px;
 }
 
+
+
 .bg-strip {
   display: flex;
   justify-content: space-between;
@@ -116,6 +114,10 @@ body::-webkit-scrollbar-thumb {
   width: .1px;
   opacity: .5;
   background-color: var(--primary-dark);
+}
+
+.custom-scroll-text {
+  color: var(--primary-dark);
 }
 
 #smooth-wrapper {

@@ -63,9 +63,11 @@
     display: flex;
     flex-direction: column;
 }
+
 .menuList a .li div .arrow {
     transform: rotate(45deg);
 }
+
 .menuList .lines {
     height: 2px;
     width: 100%;
@@ -88,6 +90,7 @@
 .menuList a:hover {
     opacity: 1;
 }
+
 .menuList a:hover .lines .line {
     width: 100%;
 }
@@ -110,4 +113,20 @@
     padding: 20px;
     font-size: 4vw;
     font-family: Poppins-Bold;
+}
+
+@media screen and (max-width: 900px) {
+    .menuContent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menuContact {
+        place-items: start;
+        padding: 20px;
+    }
+
+    .menuLabel {
+        display: none;
+    }
 }
