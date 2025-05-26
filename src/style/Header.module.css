@@ -77,4 +77,9 @@
     .header .headerContainer .date {
         visibility: hidden;
     }
+
+    .header .headerContainer {
+        padding: 20px;
+        width: calc(100vw - 40px);
+    }
 }
