@@ -42,6 +42,10 @@
 }
 
 @media screen and (max-width: 900px) {
+    .footer {
+        width: calc(100vw - 40px);
+    }
+
     .footer .contact {
         display: grid;
         grid-template-columns: 1fr;

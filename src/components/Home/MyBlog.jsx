@@ -22,7 +22,7 @@ function MyBlog() {
                     trigger: slider.current,
                     pin: true,
                     scrub: 1,
-                    // snap: 0 / (panels.length - 1),
+                    snap: 0 / (panels.length - 1),
                     end: () => "+=" + slider.current.offsetWidth,
                 }
             });

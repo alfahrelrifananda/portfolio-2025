@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import Style from "../../style/Home.module.css"
 
 function Contact() {
@@ -6,12 +5,6 @@ function Contact() {
     function sendEmail() {
         alert("Under Construction")
     }
-
-    const cContainer = document.getElementById("contactContainer")
-    useEffect(() => {
-        console.log(document.getElementById("contactContainer").offsetHeight)
-    },[cContainer])
-
 
     return (
         <>
