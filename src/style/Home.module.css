@@ -14,6 +14,10 @@
     justify-content: center;
 }
 
+.greeting .greetingContainer .greetingShape {
+    display: none;
+}
+
 .greeting .greetingContainer p {
     width: 30vw;
     font-family: Poppins-Light;
@@ -291,7 +295,7 @@
     }
 
     .greetingContainer {
-        height: 100%;
+        height: 100vh;
         width: calc(100vw - 40px);
     }
 
@@ -307,6 +311,7 @@
         height: 50vh;
         width: 100%;
         padding-top: 10px;
+        display: block;
         padding-bottom: 10px;
     }
 
