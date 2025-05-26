@@ -306,6 +306,7 @@
 
     .greeting .greetingContainer p {
         width: 100%;
+        text-align: justify;
     }
 
     .aboutContainer {
@@ -337,9 +338,13 @@
     }
 
     .projectList a .li .liT h2,
-    .projectList a .li .liT p {
+    .projectList a .li .liT i {
         font-size: 14px;
         line-height: 15px;
+    }
+
+    .projectImage {
+        height: 30dvh;
     }
 
     .blogContainer {
@@ -351,11 +356,13 @@
         width: 3000px;
         height: 80vh;
     }
+
     .blogPanel {
         margin-left: 20px;
         height: 75vh;
         width: 300px;
     }
+
     .contactContainer {
         padding: 20px;
         width: calc(100vw - 40px);

@@ -52,6 +52,10 @@
 @media screen and (max-width: 900px) {
     .blogCard {
         width: 100%;
-        height: 50%;
+        height: 75%;
+    }
+
+    .blogCard .blogFeatured {
+        height: 250px;
     }
 }

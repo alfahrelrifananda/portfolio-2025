@@ -1,8 +1,8 @@
 import Style from "../../style/Home.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
-// import img1 from "../../assets/img_placeholder_1.jpg"
-// import img3 from "../../assets/img_placeholder_3.png"
+import img1 from "../../assets/img_placeholder_1.jpg"
+import img3 from "../../assets/img_placeholder_3.png"
 
 function Project() {
 
@@ -10,13 +10,13 @@ function Project() {
         let pFeatured = document.getElementById("dds")
         console.log(pFeatured)
         console.log(pNumber)
-        // if (pNumber === 1) {
-        //     pFeatured.style.backgroundImage = `url(${img1})`
-        // } else if (pNumber === 2) {
-        //     pFeatured.style.backgroundImage = `url(${img1})`
-        // } else {
-        //     pFeatured.style.backgroundImage = `url(${img3})`
-        // }
+        if (pNumber === 1) {
+            pFeatured.style.backgroundImage = `url(${img1})`
+        } else if (pNumber === 2) {
+            pFeatured.style.backgroundImage = `url(${img1})`
+        } else {
+            pFeatured.style.backgroundImage = `url(${img3})`
+        }
     }
 
 
