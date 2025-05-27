@@ -14,7 +14,7 @@ function MyBlog() {
 
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
-            let panels = gsap.utils.toArray("#myblog-container span");
+            let panels = gsap.utils.toArray("#blogContainer span");
             gsap.to(panels, {
                 xPercent: -100 * (panels.length - 1),
                 ease: "none",
@@ -32,7 +32,7 @@ function MyBlog() {
 
     return (
         <div className={Style.App} ref={component}>
-            <div ref={slider} className={Style.blogContainer} id="myblog-container">
+            <div ref={slider} className={Style.blogContainer} id="blogContainer">
                 <span className={Style.blogPanel}></span>
                 <span className={Style.blogPanel}>
                     <CardBlog />

@@ -22,7 +22,7 @@ function Project() {
 
     return (
         <>
-            <div className={Style.projectContainer}>
+            <div className={Style.projectContainer} id="projectContainer">
                 <div className={Style.projectList} id="project-list-card">
                     <div className={Style.projectLi} onMouseEnter={() => pHandleMouseEnter(1)}>
                         <div className={Style.lines}>
@@ -179,12 +179,8 @@ function Project() {
                         </div>
 
                     </div>
-
-
-
                 </div>
                 <div className={Style.projectImage} id="dds">
-
                 </div>
             </div>
         </>

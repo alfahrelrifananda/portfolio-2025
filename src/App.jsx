@@ -50,6 +50,7 @@ function App() {
       document.documentElement.style.setProperty('--primary-light', '#1C0F13')
     }
   }
+
   return (
     <ThemeContext.Provider value={isDarkMode}>
       <Header />

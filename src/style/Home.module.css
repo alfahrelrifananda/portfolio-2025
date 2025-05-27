@@ -86,7 +86,6 @@
     padding: 20px;
     gap: 20px;
     padding-top: 10vh;
-    padding-bottom: 10vh;
 }
 
 .projectList {
@@ -291,12 +290,16 @@
 @media screen and (max-width: 900px) {
     .greeting {
         padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
         width: calc(100vw - 40px);
     }
 
     .greetingContainer {
-        height: 100vh;
-        padding-top: 0vh;
+        padding-top: 10vh;
+        justify-content: baseline;
+        height: fit-content;
         width: calc(100vw - 40px);
     }
 
@@ -376,7 +379,8 @@
 
     .blogPanel {
         margin-left: 20px;
-        height: 75vh;
+        height: 500px;
+        padding-top: 50px;
         width: 300px;
     }
 

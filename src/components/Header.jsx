@@ -98,17 +98,37 @@ function Header() {
         })
     },)
 
+    function closeMenu() {
+        const menu = document.getElementById("theMenu")
+        const menuToggle = document.getElementById("menu-btn")
+        const menuContainer = document.getElementById("theMenuContainer")
+        const menuHeaderContainer = document.getElementById("headerContainer")
+        const menuDateContainer = document.getElementById("dateContainer")
+        menu.style.zIndex = "-88"
+        menu.style.opacity = "0"
+        menuContainer.style.opacity = "0"
+        menuToggle.textContent = "(menu)"
+        menuToggle.style.color = "var(--primary-dark)"
+        menuDateContainer.style.color = "var(--primary-dark)"
+        menuHeaderContainer.style.borderBottomColor = "var(--primary-dark)"
+        document.documentElement.style.overflowY = "scroll"
+        document.body.style.overflowY = "scroll"
+        setIsMenuOpen(false)
+    }
     function toggleMenu() {
         const menu = document.getElementById("theMenu")
         const menuToggle = document.getElementById("menu-btn")
         const menuContainer = document.getElementById("theMenuContainer")
-
+        const menuHeaderContainer = document.getElementById("headerContainer")
+        const menuDateContainer = document.getElementById("dateContainer")
         if (!isMenuOpen) {
             menu.style.zIndex = "88"
             menu.style.opacity = "1"
             menuContainer.style.opacity = "1"
             menuToggle.textContent = "(close)"
             menuToggle.style.color = "#F6F4F2"
+            menuDateContainer.style.color = "#F6F4F2"
+            menuHeaderContainer.style.borderBottomColor = "#F6F4F2"
             document.documentElement.style.overflowY = "hidden"
             document.body.style.overflowY = "hidden"
             setIsMenuOpen(true)
@@ -118,6 +138,8 @@ function Header() {
             menuContainer.style.opacity = "0"
             menuToggle.textContent = "(menu)"
             menuToggle.style.color = "var(--primary-dark)"
+            menuDateContainer.style.color = "var(--primary-dark)"
+            menuHeaderContainer.style.borderBottomColor = "var(--primary-dark)"
             document.documentElement.style.overflowY = "scroll"
             document.body.style.overflowY = "scroll"
             setIsMenuOpen(false)
@@ -195,7 +217,15 @@ function Header() {
                 <div className={StyleMenu.menuContainer} id="theMenuContainer">
                     <div className={StyleMenu.menuContent}>
                         <div className={StyleMenu.menuList}>
-                            <a href="#">
+                            <a href="#home-section" onClick={() => {
+                                const element = document.getElementById('greetingContainer');
+                                if (!element) return;
+                                window.scroll({
+                                    top: element.offsetTop - 30,
+                                    behavior: 'smooth'
+                                })
+                                closeMenu()
+                            }}>
                                 <div className={StyleMenu.li}>
                                     <p>01</p>
                                     <h3>
@@ -215,7 +245,15 @@ function Header() {
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
                             </a>
-                            <a href="#">
+                            <a href="#about-section" onClick={() => {
+                                const element = document.getElementById('aboutContainer');
+                                if (!element) return;
+                                window.scroll({
+                                    top: element.offsetTop - 30,
+                                    behavior: 'smooth'
+                                })
+                                closeMenu()
+                            }}>
                                 <div className={StyleMenu.li}>
                                     <p>02</p>
                                     <h3>
@@ -236,7 +274,15 @@ function Header() {
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
                             </a>
-                            <a href="#">
+                            <a href="#project-section" onClick={() => {
+                                const element = document.getElementById('projectContainer');
+                                if (!element) return;
+                                window.scroll({
+                                    top: element.offsetTop - 30,
+                                    behavior: 'smooth'
+                                })
+                                closeMenu()
+                            }}>
                                 <div className={StyleMenu.li}>
                                     <p>03</p>
                                     <h3>
@@ -259,7 +305,15 @@ function Header() {
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
                             </a>
-                            <a href="#">
+                            <a href="#myblog-section" onClick={() => {
+                                const element = document.getElementById('blogTreshold');
+                                if (!element) return;
+                                window.scroll({
+                                    top: element.offsetTop - 30,
+                                    behavior: 'smooth'
+                                })
+                                closeMenu()
+                            }}>
                                 <div className={StyleMenu.li}>
                                     <p>04</p>
                                     <h3>
@@ -279,7 +333,15 @@ function Header() {
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
                             </a>
-                            <a href="#">
+                            <a href="#contact-section" onClick={() => {
+                                const element = document.getElementById('contactContainer');
+                                if (!element) return;
+                                window.scroll({
+                                    top: element.offsetTop - 30,
+                                    behavior: 'smooth'
+                                })
+                                closeMenu()
+                            }}>
                                 <div className={StyleMenu.li}>
                                     <p>05</p>
                                     <h3>

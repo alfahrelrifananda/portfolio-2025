@@ -25,6 +25,7 @@ function Home() {
                 className="custom-scroll-text"
             />
             <Project />
+            <div id="blogTreshold"></div>
             <MyBlog />
             <Contact />
 

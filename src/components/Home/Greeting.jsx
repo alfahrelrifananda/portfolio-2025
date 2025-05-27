@@ -11,7 +11,7 @@ function Greeting() {
 
     return (
         <>
-            <div className={Style.greeting} id="greeting">
+            <div className={Style.greeting} id="greetingContainer">
 
                 <Particles
                     particleColors={[theme ? "#F6F4F2" : "#1C0F13", theme ? "#1C0F13" : "#F6F4F2"]}
