@@ -93,7 +93,7 @@
     width: 100%;
 }
 
-.projectList a {
+.projectList .projectLi {
     display: flex;
     flex-direction: column;
     height: 85px;
@@ -105,14 +105,14 @@
     transition: all.3s;
 }
 
-.projectList a .li {
+.projectList .projectLi .li {
     height: 100px;
     display: grid;
     grid-template-columns: 75px 1fr;
     width: 100%;
 }
 
-.projectList a .li .liT {
+.projectList .projectLi .li .liT {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 30px;
@@ -120,18 +120,18 @@
     padding-bottom: 30px;
 }
 
-.projectList a .li p {
+.projectList .projectLi .li p {
     font-family: Poppins-light-italic;
 }
 
-.projectList a .li .liT h2 {
+.projectList .projectLi .li .liT h2 {
     font-size: 26px;
     font-family: Poppins-Medium-Bold;
     padding: 0;
     margin: 0;
 }
 
-.projectList a .li .liT i {
+.projectList .projectLi .li .liT i {
     font-family: Poppins-Light;
 }
 
@@ -154,11 +154,11 @@
     height: .1px;
 }
 
-.projectList a:hover {
+.projectList .projectLi:hover {
     opacity: 1;
 }
 
-.projectList a:hover .lines .line {
+.projectList .projectLi:hover .lines .line {
     width: 100%;
 }
 
@@ -296,6 +296,7 @@
 
     .greetingContainer {
         height: 100vh;
+        padding-top: 0vh;
         width: calc(100vw - 40px);
     }
 
@@ -343,14 +344,19 @@
         padding: 20px;
     }
 
-    .projectList a {
+    .projectList .projectLi {
         width: 100%;
         margin: 0;
+        cursor: pointer;
     }
 
-    .projectList a .li .liT h2,
-    .projectList a .li .liT i {
-        font-size: 16px;
+    .projectList .projectLi .li {
+        grid-template-columns: 35px 1fr;
+    }
+
+    .projectList .projectLi .li .liT h2,
+    .projectList .projectLi .li .liT i {
+        font-size: 14px;
         line-height: 15px;
     }
 

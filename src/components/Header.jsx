@@ -16,6 +16,7 @@ function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
 
+
     let days = null
     let months = null
     let menu = "(menu)"
@@ -99,27 +100,75 @@ function Header() {
 
     function toggleMenu() {
         const menu = document.getElementById("theMenu")
+        const menuToggle = document.getElementById("menu-btn")
         const menuContainer = document.getElementById("theMenuContainer")
 
         if (!isMenuOpen) {
             menu.style.zIndex = "88"
             menu.style.opacity = "1"
             menuContainer.style.opacity = "1"
+            menuToggle.textContent = "(close)"
+            menuToggle.style.color = "#F6F4F2"
+            document.documentElement.style.overflowY = "hidden"
+            document.body.style.overflowY = "hidden"
             setIsMenuOpen(true)
         } else {
             menu.style.zIndex = "-88"
             menu.style.opacity = "0"
             menuContainer.style.opacity = "0"
+            menuToggle.textContent = "(menu)"
+            menuToggle.style.color = "var(--primary-dark)"
+            document.documentElement.style.overflowY = "scroll"
+            document.body.style.overflowY = "scroll"
             setIsMenuOpen(false)
         }
     }
 
+    useEffect(() => {
+        const contactContainer = document.getElementById("contactContainer")
+        const headerContainer = document.getElementById("headerContainer")
+        const logoContainer = document.getElementById("logoContainer")
+        const dateContainer = document.getElementById("dateContainer")
+        const menuBtn = document.getElementById("menu-btn")
+
+        function isInViewport(element) {
+            const bounding = element.getBoundingClientRect();
+            if (
+                bounding.top >= 0
+            ) {
+                return true
+
+            } else {
+                return false
+
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            if (isInViewport(contactContainer)) {
+                headerContainer.style.borderBottomColor = "var(--primary-dark)"
+                logoContainer.style.backgroundColor = "var(--primary-dark)"
+                logoContainer.style.color = "var(--primary-light)"
+                dateContainer.style.color = "var(--primary-dark)"
+                menuBtn.style.color = "var(--primary-dark)"
+            } else {
+                headerContainer.style.borderBottomColor = "var(--primary-light)"
+                logoContainer.style.backgroundColor = "var(--primary-light)"
+                logoContainer.style.color = "var(--primary-dark)"
+                dateContainer.style.color = "var(--primary-light)"
+                menuBtn.style.color = "var(--primary-light)"
+            }
+        }, true);
+    })
+
+
+
     return (
         <>
             <header className={Style.header} >
-                <div className={Style.headerContainer}>
+                <div className={Style.headerContainer} id="headerContainer">
                     <div className={Style.logo}>
-                        <div className={Style.logoContainer}>
+                        <div className={Style.logoContainer} id="logoContainer">
                             <ul className="logoname">
                                 <li>F</li>
                                 <li>A</li>
@@ -130,7 +179,7 @@ function Header() {
                             </ul>
                         </div>
                     </div>
-                    <div className={Style.date}>
+                    <div className={Style.date} id="dateContainer">
                         <p>Portfolio {year}</p>
                         <p>{`${days}, ${date} ${months}, ${year}`}</p>
                     </div>

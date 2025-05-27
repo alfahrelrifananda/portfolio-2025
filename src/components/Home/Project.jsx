@@ -24,7 +24,7 @@ function Project() {
         <>
             <div className={Style.projectContainer}>
                 <div className={Style.projectList} id="project-list-card">
-                    <a href="#" onMouseEnter={() => pHandleMouseEnter(1)}>
+                    <div className={Style.projectLi} onMouseEnter={() => pHandleMouseEnter(1)}>
                         <div className={Style.lines}>
                             <div className={Style.line}></div>
                             <div className={Style.lineChild}></div>
@@ -57,8 +57,8 @@ function Project() {
 
                         </div>
 
-                    </a>
-                    <a href="#" onMouseEnter={() => pHandleMouseEnter(2)}>
+                    </div>
+                    <div className={Style.projectLi} onMouseEnter={() => pHandleMouseEnter(3)}>
                         <div className={Style.lines}>
                             <div className={Style.line}></div>
                             <div className={Style.lineChild}></div>
@@ -68,22 +68,13 @@ function Project() {
                             <div className={Style.liT}>
                                 <h2>
                                     <span>
-                                        <span>P</span>
+                                        <span>T</span>
                                         <span>O</span>
-                                        <span>S</span>
-                                        <span> </span>
-                                        <span>P</span>
-                                        <span>S</span>
-                                        <span>I</span>
-                                        <span>K</span>
+                                        <span>D</span>
                                         <span>O</span>
-                                        <span>L</span>
-                                        <span>O</span>
-                                        <span>G</span>
-                                        <span>I</span>
                                     </span>
                                 </h2>
-                                <i>CONSULTATE WEBSITE</i>
+                                <i>TO-DO LIST APP</i>
                                 <div>
                                     <FontAwesomeIcon icon={faArrowUp} className={Style.arrow} />
                                 </div>
@@ -91,8 +82,8 @@ function Project() {
 
                         </div>
 
-                    </a>
-                    <a href="#" onMouseEnter={() => pHandleMouseEnter(3)}>
+                    </div>
+                    <div className={Style.projectLi} onMouseEnter={() => pHandleMouseEnter(3)}>
                         <div className={Style.lines}>
                             <div className={Style.line}></div>
                             <div className={Style.lineChild}></div>
@@ -120,7 +111,77 @@ function Project() {
 
                         </div>
 
-                    </a>
+                    </div>
+                    <div className={Style.projectLi} onMouseEnter={() => pHandleMouseEnter(3)}>
+                        <div className={Style.lines}>
+                            <div className={Style.line}></div>
+                            <div className={Style.lineChild}></div>
+                        </div>
+                        <div className={Style.li}>
+                            <p>04</p>
+                            <div className={Style.liT}>
+                                <h2>
+                                    <span>
+                                        <span>A</span>
+                                        <span>N</span>
+                                        <span>D</span>
+                                        <span>R</span>
+                                        <span>O</span>
+                                        <span>I</span>
+                                        <span>D</span>
+                                        <span> </span>
+                                        <span>I</span>
+                                        <span>N</span>
+                                        <span>F</span>
+                                        <span>O</span>
+                                    </span>
+                                </h2>
+                                <i>SYSTEM INFO APP</i>
+                                <div>
+                                    <FontAwesomeIcon icon={faArrowUp} className={Style.arrow} />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div className={Style.projectLi} onMouseEnter={() => pHandleMouseEnter(2)}>
+                        <div className={Style.lines}>
+                            <div className={Style.line}></div>
+                            <div className={Style.lineChild}></div>
+                        </div>
+                        <div className={Style.li}>
+                            <p>05</p>
+                            <div className={Style.liT}>
+                                <h2>
+                                    <span>
+                                        <span>P</span>
+                                        <span>O</span>
+                                        <span>S</span>
+                                        <span> </span>
+                                        <span>P</span>
+                                        <span>S</span>
+                                        <span>I</span>
+                                        <span>K</span>
+                                        <span>O</span>
+                                        <span>L</span>
+                                        <span>O</span>
+                                        <span>G</span>
+                                        <span>I</span>
+                                    </span>
+                                </h2>
+                                <i>CONSULTATE WEBSITE</i>
+                                <div>
+                                    <FontAwesomeIcon icon={faArrowUp} className={Style.arrow} />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
                 </div>
                 <div className={Style.projectImage} id="dds">
 
