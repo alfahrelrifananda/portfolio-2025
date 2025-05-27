@@ -4,6 +4,8 @@ import { animate, stagger } from "framer-motion"
 import StyleMenu from "../style/Menu.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import gsap from "gsap"
+import SplitText from "gsap/dist/SplitText"
 
 function Header() {
 
@@ -183,6 +185,27 @@ function Header() {
         }, true);
     })
 
+    useEffect(() => {
+        gsap.registerPlugin(SplitText);
+        gsap.set("span", { opacity: 1 });
+        gsap.set("h1", { opacity: 1 });
+        let split = [
+            SplitText.create(".menu-list-label", { type: "chars" }),
+            SplitText.create(".menu-big-label", { type: "chars" })
+        ]
+
+        gsap.from(split[0].chars, {
+            y: 20,
+            autoAlpha: 0,
+            stagger: 0.05
+        });
+        gsap.from(split[1].chars, {
+            y: 20,
+            autoAlpha: 0,
+            stagger: 0.05
+        });
+
+    },)
 
 
     return (
@@ -229,11 +252,8 @@ function Header() {
                                 <div className={StyleMenu.li}>
                                     <p>01</p>
                                     <h3>
-                                        <span>
-                                            <span>H</span>
-                                            <span>O</span>
-                                            <span>M</span>
-                                            <span>E</span>
+                                        <span className="menu-list-label">
+                                            HOME
                                         </span>
                                     </h3>
                                     <div>
@@ -257,12 +277,8 @@ function Header() {
                                 <div className={StyleMenu.li}>
                                     <p>02</p>
                                     <h3>
-                                        <span>
-                                            <span>A</span>
-                                            <span>B</span>
-                                            <span>O</span>
-                                            <span>U</span>
-                                            <span>T</span>
+                                        <span className="menu-list-label">
+                                            ABOUT
                                         </span>
                                     </h3>
                                     <div>
@@ -286,14 +302,8 @@ function Header() {
                                 <div className={StyleMenu.li}>
                                     <p>03</p>
                                     <h3>
-                                        <span>
-                                            <span>P</span>
-                                            <span>R</span>
-                                            <span>O</span>
-                                            <span>J</span>
-                                            <span>E</span>
-                                            <span>C</span>
-                                            <span>T</span>
+                                        <span className="menu-list-label">
+                                            PROJECT
                                         </span>
                                     </h3>
                                     <div>
@@ -317,11 +327,8 @@ function Header() {
                                 <div className={StyleMenu.li}>
                                     <p>04</p>
                                     <h3>
-                                        <span>
-                                            <span>B</span>
-                                            <span>L</span>
-                                            <span>O</span>
-                                            <span>G</span>
+                                        <span className="menu-list-label">
+                                            BLOG
                                         </span>
                                     </h3>
                                     <div>
@@ -345,14 +352,8 @@ function Header() {
                                 <div className={StyleMenu.li}>
                                     <p>05</p>
                                     <h3>
-                                        <span>
-                                            <span>C</span>
-                                            <span>O</span>
-                                            <span>N</span>
-                                            <span>T</span>
-                                            <span>A</span>
-                                            <span>C</span>
-                                            <span>T</span>
+                                        <span className="menu-list-label">
+                                            CONTACT
                                         </span>
                                     </h3>
                                     <div>
@@ -384,7 +385,7 @@ function Header() {
                         </div>
                     </div>
                     <div className={StyleMenu.menuLabel}>
-                        <h1>
+                        <h1 className="menu-big-label">
                             CREATIVITY IN MOTION
                         </h1>
                     </div>

@@ -21,6 +21,7 @@ function MyBlog() {
                 scrollTrigger: {
                     trigger: slider.current,
                     pin: true,
+                    start: "15% 15%",
                     scrub: 1,
                     snap: 0 / (panels.length - 1),
                     end: () => "+=" + slider.current.offsetWidth,

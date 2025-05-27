@@ -5,9 +5,13 @@ import Particles from "../ReactBits/Particles"
 import MagnetLines from "../ReactBits/MagnetLines"
 
 
+
 function Greeting() {
 
     const theme = useContext(ThemeContext)
+
+   
+
 
     return (
         <>
