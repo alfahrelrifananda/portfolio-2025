@@ -17,8 +17,6 @@ function Header() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-
-
     let days = null
     let months = null
     let menu = "(menu)"
@@ -93,6 +91,8 @@ function Header() {
 
 
     useEffect(() => {
+
+
         animate(".logoname li", {
             opacity: 1, y: [30, 0]
         }, {
@@ -205,7 +205,10 @@ function Header() {
             stagger: 0.05
         });
 
+
+
     },)
+
 
 
     return (

@@ -1,18 +1,40 @@
+// import { useEffect } from "react"
 import Style from "../../style/Home.module.css"
 import { ThemeContext } from "../../App"
 import React, { useContext } from "react"
 import Particles from "../ReactBits/Particles"
 import MagnetLines from "../ReactBits/MagnetLines"
-
+// import gsap from "gsap"
+// import SplitText from "gsap/dist/SplitText"
 
 
 function Greeting() {
 
     const theme = useContext(ThemeContext)
 
-   
-
-
+    // ? NOT WORKING
+    // useEffect(() => {
+    //     gsap.registerPlugin(SplitText);
+    //     console.clear();
+    //     gsap.set("p", { opacity: 1 });
+    //     let split;
+    //     SplitText.create(".pGreeting", {
+    //         type: "words,lines",
+    //         linesClass: "line",
+    //         autoSplit: true,
+    //         mask: "lines",
+    //         onSplit: (self) => {
+    //             split = gsap.from(self.lines, {
+    //                 duration: 0.6,
+    //                 yPercent: 100,
+    //                 opacity: 0,
+    //                 stagger: 0.1,
+    //                 ease: "expo.out",
+    //             });
+    //             return split;
+    //         }
+    //     });
+    // })
     return (
         <>
             <div className={Style.greeting} id="greetingContainer">
