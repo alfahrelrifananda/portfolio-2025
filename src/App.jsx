@@ -14,6 +14,7 @@ import Footer from "./components/Footer"
 // eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext()
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
+
 function App() {
 
   const main = useRef();

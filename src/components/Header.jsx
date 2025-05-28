@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useLayoutEffect, useState, useEffect } from "react"
 import Style from "../style/Header.module.css"
 import { animate, stagger } from "framer-motion"
 import StyleMenu from "../style/Menu.module.css"
@@ -185,7 +185,7 @@ function Header() {
         }, true);
     })
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         gsap.registerPlugin(SplitText);
         gsap.set("span", { opacity: 1 });
         gsap.set("h1", { opacity: 1 });
@@ -382,6 +382,11 @@ function Header() {
                                 <li>
                                     <h5>address</h5>
                                     <p>Banyuagung, Kadipiro, Banjarsari, Surakarta</p>
+                                </li>
+                                <li>
+                                    <button>
+                                        DOWNLOAD CV
+                                    </button>
                                 </li>
 
                             </ul>

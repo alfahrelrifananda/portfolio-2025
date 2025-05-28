@@ -36,6 +36,13 @@
 .blogCard .blogTitle {
     font-size: 24px;
     font-family: Poppins-Medium-Bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    opacity: .5;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .blogCard .blogDesc {

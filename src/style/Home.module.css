@@ -176,7 +176,7 @@
 
 .blogContainer {
     width: 600vw;
-    height: 100vh;
+    height: fit-content;
     display: flex;
     flex-wrap: wrap;
 }
@@ -187,6 +187,14 @@
     display: grid;
     place-items: center;
 }
+
+.testContainer {
+    height: fit-content;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 
 
 .blogMoreBlog {
@@ -368,13 +376,8 @@
     }
 
     .blogContainer {
-        width: fit-content;
-    }
-
-
-    .blogContainer {
         width: 3000px;
-        height: 80vh;
+        height: fit-content;
     }
 
     .blogPanel {

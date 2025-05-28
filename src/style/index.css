@@ -69,13 +69,11 @@ body {
   position: relative;
   overflow-x: hidden;
   background-color: var(--primary-light);
-
 }
 
 html,
 body {
   margin: 0;
-  scroll-behavior: smooth;
   height: 100%;
 }
 
@@ -133,6 +131,7 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
 }
 
+
 @media screen and (max-width: 900px) {
 
   .bg-strip span:nth-child(6),
@@ -141,5 +140,4 @@ body::-webkit-scrollbar-thumb {
   .bg-strip span:nth-child(9) {
     display: none;
   }
-
 }
