@@ -1,15 +1,55 @@
 import Style from "../../style/Home.module.css"
 import ScrollReveal from '../ReactBits/ScrollReveal'
 import { ThemeContext } from "../../App"
-
+import { useLayoutEffect } from "react"
+import gsap from "gsap"
+import SplitText from "gsap/dist/SplitText"
+import ScrollTrigger from "gsap/ScrollTrigger"
 function About() {
 
+    useLayoutEffect(() => {
 
+        gsap.registerPlugin(SplitText, ScrollTrigger);
+        console.clear();
+        gsap.set("#aboutContent p", { opacity: 1 });
+        gsap.set("#aboutSkillSpan span", { opacity: 1 });
+
+        // document.fonts.ready.then(() => {
+        //     let containers = gsap.utils.toArray("#aboutContent");
+
+        //     containers.forEach((container) => {
+        //         let text = container.querySelectorAll("#aboutContent p");
+
+        //         SplitText.create(text, {
+        //             type: "words,lines",
+        //             mask: "lines",
+        //             linesClass: "line",
+        //             autoSplit: true,
+        //             onSplit: (instance) => {
+        //                 console.log("split")
+        //                 return gsap.from(instance.lines, {
+        //                     yPercent: 120,
+        //                     stagger: 0.1,
+
+        //                     scrollTrigger: {
+        //                         trigger: container,
+        //                         scrub: true,
+        //                         once: true,
+        //                         start: "clamp(-500 top)",
+        //                         end: "clamp(200 center)"
+        //                     }
+        //                 });
+        //             }
+        //         });
+
+        //     });
+        // });
+    })
     return (
         <>
             <div className={Style.aboutContainer} id="aboutContainer">
                 <div className={Style.aboutImage}></div>
-                <div className={Style.aboutContent}>
+                <div className={Style.aboutContent} id="aboutContent">
                     <p>
                         In a previous life, I honed my skills at SMKN 5 Surakarta in Computer Science. From that time, I’ve carried over the ability to program web and application interfaces, along with a constant drive to make UIs appealing and a genuine love for learning new things.
                     </p>

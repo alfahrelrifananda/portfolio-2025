@@ -1,40 +1,60 @@
-// import { useEffect } from "react"
 import Style from "../../style/Home.module.css"
 import { ThemeContext } from "../../App"
-import React, { useContext } from "react"
+import React, { useContext, useLayoutEffect } from "react"
 import Particles from "../ReactBits/Particles"
 import MagnetLines from "../ReactBits/MagnetLines"
-// import gsap from "gsap"
-// import SplitText from "gsap/dist/SplitText"
-
+import gsap from "gsap"
+import SplitText from "gsap/dist/SplitText"
 
 function Greeting() {
 
     const theme = useContext(ThemeContext)
 
-    // ? NOT WORKING
-    // useEffect(() => {
-    //     gsap.registerPlugin(SplitText);
-    //     console.clear();
-    //     gsap.set("p", { opacity: 1 });
-    //     let split;
-    //     SplitText.create(".pGreeting", {
-    //         type: "words,lines",
-    //         linesClass: "line",
-    //         autoSplit: true,
-    //         mask: "lines",
-    //         onSplit: (self) => {
-    //             split = gsap.from(self.lines, {
-    //                 duration: 0.6,
-    //                 yPercent: 100,
-    //                 opacity: 0,
-    //                 stagger: 0.1,
-    //                 ease: "expo.out",
-    //             });
-    //             return split;
-    //         }
-    //     });
-    // })
+
+    useLayoutEffect(() => {
+
+        gsap.registerPlugin(SplitText);
+        console.clear();
+        document.fonts.ready.then(() => {
+            gsap.set("#bigGreeting", { opacity: 1 });
+            gsap.set("#pGreeting", { opacity: 1 });
+
+            let split;
+            SplitText.create("#bigGreeting", {
+                type: "words,lines",
+                linesClass: "line",
+                autoSplit: true,
+                mask: "lines",
+                onSplit: (self) => {
+                    split = gsap.from(self.lines, {
+                        duration: 1.0,
+                        yPercent: 100,
+                        opacity: 0,
+                        stagger: 0.1,
+                        ease: "expo.out",
+                    });
+                    return split;
+                }
+            });
+            SplitText.create("#pGreeting", {
+                type: "words,lines",
+                linesClass: "line",
+                autoSplit: true,
+                mask: "lines",
+                onSplit: (self) => {
+                    split = gsap.from(self.lines, {
+                        duration: 1.0,
+                        yPercent: 100,
+                        opacity: 0,
+                        stagger: 0.1,
+                        ease: "expo.out",
+                    });
+                    return split;
+                }
+            });
+        });
+
+    })
     return (
         <>
             <div className={Style.greeting} id="greetingContainer">
@@ -49,7 +69,7 @@ function Greeting() {
                     alphaParticles={false}
                     disableRotation={false}
                 />
-                <div className={Style.greetingContainer} >
+                <div className={Style.greetingContainer} id="containerGreeting">
                     <div className={Style.bigGreeting} id="bigGreeting">
                         HI, I'M
                         FAHREL
