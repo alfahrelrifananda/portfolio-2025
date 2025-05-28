@@ -108,6 +108,7 @@
     height: 100px;
     display: grid;
     grid-template-columns: 75px 1fr;
+    cursor: pointer;
     width: 100%;
 }
 
@@ -163,7 +164,7 @@
 
 .projectImage {
     /* background-image: url("https://miro.medium.com/v2/resize:fit:4800/format:webp/1*uGV8EmiF5OQ3ykWeChGsiQ.jpeg"); */
-    background-image: url(../assets/img_placeholder_3.png);
+    background-image: url(../assets/img_placeholder_cha.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

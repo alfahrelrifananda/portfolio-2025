@@ -5,7 +5,6 @@ function Contact() {
     function sendEmail() {
         alert("Under Construction")
     }
-
     return (
         <>
             <div className={Style.contactContainer} id="contactContainer">
@@ -24,7 +23,9 @@ function Contact() {
                             <input type="number" placeholder="Phone" />
                         </div>
                         <textarea name="message" placeholder="Message" ></textarea>
-                        <button type="submit" onClick={() => sendEmail()}>Get in touch</button>
+                        <button type="submit" onClick={() => sendEmail()} id="btn-send-contact">Get in touch
+                            <span></span>
+                        </button>
                     </form>
                 </div>
             </div>

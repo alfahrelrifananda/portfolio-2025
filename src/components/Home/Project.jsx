@@ -1,21 +1,26 @@
 import Style from "../../style/Home.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
-import img1 from "../../assets/img_placeholder_1.jpg"
-import img3 from "../../assets/img_placeholder_3.png"
+import img1 from "../../assets/img_placeholder_cha.png"
+import img2 from "../../assets/img_placeholder_todo.png"
+import img3 from "../../assets/img_placeholder_bel.png"
+import img4 from "../../assets/img_placeholder_and.png"
+import img5 from "../../assets/img_placeholder_pos.png"
 
 function Project() {
 
     function pHandleMouseEnter(pNumber) {
         let pFeatured = document.getElementById("dds")
-        console.log(pFeatured)
-        console.log(pNumber)
         if (pNumber === 1) {
             pFeatured.style.backgroundImage = `url(${img1})`
         } else if (pNumber === 2) {
-            pFeatured.style.backgroundImage = `url(${img1})`
-        } else {
+            pFeatured.style.backgroundImage = `url(${img2})`
+        } else if (pNumber === 3) {
             pFeatured.style.backgroundImage = `url(${img3})`
+        } else if (pNumber === 4) {
+            pFeatured.style.backgroundImage = `url(${img4})`
+        } else if (pNumber === 5) {
+            pFeatured.style.backgroundImage = `url(${img5})`
         }
     }
 
@@ -58,7 +63,7 @@ function Project() {
                         </div>
 
                     </div>
-                    <div className={Style.projectLi} onMouseEnter={() => pHandleMouseEnter(3)}>
+                    <div className={Style.projectLi} onMouseEnter={() => pHandleMouseEnter(2)}>
                         <div className={Style.lines}>
                             <div className={Style.line}></div>
                             <div className={Style.lineChild}></div>
@@ -112,7 +117,7 @@ function Project() {
                         </div>
 
                     </div>
-                    <div className={Style.projectLi} onMouseEnter={() => pHandleMouseEnter(3)}>
+                    <div className={Style.projectLi} onMouseEnter={() => pHandleMouseEnter(4)}>
                         <div className={Style.lines}>
                             <div className={Style.line}></div>
                             <div className={Style.lineChild}></div>
@@ -145,7 +150,7 @@ function Project() {
                         </div>
 
                     </div>
-                    <div className={Style.projectLi} onMouseEnter={() => pHandleMouseEnter(2)}>
+                    <div className={Style.projectLi} onMouseEnter={() => pHandleMouseEnter(5)}>
                         <div className={Style.lines}>
                             <div className={Style.line}></div>
                             <div className={Style.lineChild}></div>

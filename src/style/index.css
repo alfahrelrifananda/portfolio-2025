@@ -65,7 +65,7 @@ html {
 }
 
 body {
-  overflow-y: visible;
+  overflow-y: scroll;
   position: relative;
   overflow-x: hidden;
   background-color: var(--primary-light);

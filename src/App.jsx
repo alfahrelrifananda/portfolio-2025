@@ -19,7 +19,7 @@ function App() {
 
   const main = useRef();
   const smoother = useRef();
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(true)
 
   useGSAP(
     () => {
