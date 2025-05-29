@@ -10,7 +10,6 @@ function Greeting() {
 
     const theme = useContext(ThemeContext)
 
-
     useLayoutEffect(() => {
 
         gsap.registerPlugin(SplitText);

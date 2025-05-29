@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import gsap from "gsap"
 import SplitText from "gsap/dist/SplitText"
+import MyCV from "../assets/img_placeholder_1.jpg"
 
 function Header() {
 
@@ -384,9 +385,9 @@ function Header() {
                                     <p>Banyuagung, Kadipiro, Banjarsari, Surakarta</p>
                                 </li>
                                 <li>
-                                    <button>
+                                    <a href={MyCV} download>
                                         DOWNLOAD CV
-                                    </button>
+                                    </a>
                                 </li>
 
                             </ul>

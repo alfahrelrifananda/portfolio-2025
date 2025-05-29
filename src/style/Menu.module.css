@@ -111,19 +111,21 @@
     font-family: Poppins-Light-Italic;
 }
 
-.menuContact ul li button {
+.menuContact ul li a {
     width: fit-content;
     cursor: pointer;
+    text-decoration: none;
     border: none;
     background-color: transparent;
     border-radius: 10px;
-    border: 1px solid var(--primary-light);
+    border: 1px solid #F6F4F2;
     padding: 10px;
     padding-left: 30px;
     padding-right: 30px;
-    color: var(--primary-light);
+    color: #F6F4F2;
+    top: 5vh;
+    position: relative;
     font-family: Poppins-Medium;
-    margin-top: 10vh;
 }
 
 .menuLabel {

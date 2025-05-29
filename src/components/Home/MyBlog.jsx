@@ -28,7 +28,8 @@ function MyBlog() {
                         scrub: 1,
                         pinSpacer: false,
                         snap: 1 / (panels.length - 1),
-                        end: () => "+=" + slider.current.offsetWidth,
+                        // end: () => "+=" + slider.current.offsetWidth,
+                        end: "+=1500",
                     }
                 })
             }, [component])
@@ -40,7 +41,9 @@ function MyBlog() {
     return (
         <div className={Style.blogBigContainer} ref={component}>
             <div className={Style.blogContainer} id="blogContainer" ref={slider}>
-                <span className={Style.blogPanel}></span>
+                <span className={Style.blogPanel}>
+                    <h1 className={Style.blogRecentMy}>MY RECENT BLOG</h1>
+                </span>
                 <span className={Style.blogPanel}>
                     <CardBlog />
                 </span>

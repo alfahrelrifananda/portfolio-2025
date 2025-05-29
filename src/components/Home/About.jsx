@@ -14,36 +14,36 @@ function About() {
         gsap.set("#aboutContent p", { opacity: 1 });
         gsap.set("#aboutSkillSpan span", { opacity: 1 });
 
-        // document.fonts.ready.then(() => {
-        //     let containers = gsap.utils.toArray("#aboutContent");
+        document.fonts.ready.then(() => {
+            let containers = gsap.utils.toArray("#aboutContent");
 
-        //     containers.forEach((container) => {
-        //         let text = container.querySelectorAll("#aboutContent p");
+            containers.forEach((container) => {
+                let text = container.querySelectorAll("#aboutContent p");
 
-        //         SplitText.create(text, {
-        //             type: "words,lines",
-        //             mask: "lines",
-        //             linesClass: "line",
-        //             autoSplit: true,
-        //             onSplit: (instance) => {
-        //                 console.log("split")
-        //                 return gsap.from(instance.lines, {
-        //                     yPercent: 120,
-        //                     stagger: 0.1,
+                SplitText.create(text, {
+                    type: "words,lines",
+                    mask: "lines",
+                    linesClass: "line",
+                    autoSplit: true,
+                    onSplit: (instance) => {
+                        console.log("split")
+                        return gsap.from(instance.lines, {
+                            yPercent: 120,
+                            stagger: 0.1,
 
-        //                     scrollTrigger: {
-        //                         trigger: container,
-        //                         scrub: true,
-        //                         once: true,
-        //                         start: "clamp(-500 top)",
-        //                         end: "clamp(200 center)"
-        //                     }
-        //                 });
-        //             }
-        //         });
+                            scrollTrigger: {
+                                trigger: container,
+                                scrub: true,
+                                once: true,
+                                start: "clamp(-500 top)",
+                                end: "clamp(200 center)"
+                            }
+                        });
+                    }
+                });
 
-        //     });
-        // });
+            });
+        });
     })
     return (
         <>

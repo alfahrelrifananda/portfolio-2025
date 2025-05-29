@@ -19,7 +19,8 @@
     height: 300px;
     border-radius: 5px;
     /* background-image: url("https://miro.medium.com/v2/resize:fit:4800/format:webp/1*uGV8EmiF5OQ3ykWeChGsiQ.jpeg"); */
-    background-color: var(--primary-dark);
+    /* background-color: var(--primary-dark); */
+    border: 2px solid var(--primary-dark);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
