@@ -1,72 +1,110 @@
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { useRef } from "react";
-import Style from "../../style/Home.module.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import styles from "../../style/MyBlog.module.css"
 import CardBlog from "./CardBlog";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+gsap.registerPlugin(ScrollTrigger)
 
 function MyBlog() {
+    const containerRef = useRef(null)
+    const cardsRef = useRef(null)
 
-    const component = useRef()
-    const slider = useRef()
+    useEffect(() => {
+        const container = containerRef.current
+        const cards = cardsRef.current
 
+        if (!container || !cards) return
 
-    useGSAP(
-        () => {
-            let ctx = gsap.context(() => {
-                let panels = gsap.utils.toArray("#blogContainer span")
-                gsap.to(panels, {
-                    xPercent: -100 * (panels.length - 1),
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: slider.current,
-                        pin: true,
-                        scrub: 1,
-                        pinSpacer: false,
-                        snap: 1 / (panels.length - 1),
-                        // end: () => "+=" + slider.current.offsetWidth,
-                        end: "+=1500",
-                    }
-                })
-            }, [component])
-            return () => ctx.revert();
-        },
-        { scope: component }
-    );
+        const initScrollTrigger = () => {
+            const cardWidth = 500
+            const totalWidth = cardWidth * 5
+
+            const horizontalScroll = gsap.to(cards, {
+                x: -totalWidth + window.innerWidth,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: container,
+                    start: "top top",
+                    end: () => `+=${totalWidth}`,
+                    scrub: 1,
+                    pin: true,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
+                },
+            })
+
+            return horizontalScroll
+        }
+
+        const timer = setTimeout(() => {
+            const animation = initScrollTrigger()
+
+            setTimeout(() => {
+                ScrollTrigger.refresh()
+            }, 100)
+
+            return () => {
+                if (animation) animation.kill()
+            }
+        }, 100)
+
+        const handleLoad = () => {
+            ScrollTrigger.refresh()
+        }
+
+        const handleResize = () => {
+            ScrollTrigger.refresh()
+        }
+
+        window.addEventListener("load", handleLoad)
+        window.addEventListener("resize", handleResize)
+
+        return () => {
+            clearTimeout(timer)
+            window.removeEventListener("load", handleLoad)
+            window.removeEventListener("resize", handleResize)
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+        }
+    }, [])
 
     return (
-        <div className={Style.blogBigContainer} ref={component}>
-            <div className={Style.blogContainer} id="blogContainer" ref={slider}>
-                <span className={Style.blogPanel}>
-                    <h1 className={Style.blogRecentMy}>MY RECENT BLOG</h1>
-                </span>
-                <span className={Style.blogPanel}>
-                    <CardBlog />
-                </span>
-                <span className={Style.blogPanel}>
-                    <CardBlog />
-                </span>
-                <span className={Style.blogPanel}>
-                    <CardBlog />
-                </span>
-                <span className={Style.blogPanel}>
-                    <CardBlog />
-                </span>
-                <span className={Style.blogPanel}>
-                    <CardBlog />
-                </span>
-                <span className={Style.blogPanel}>
-                    <a href="" className={Style.blogMoreBlog}>
-                        <FontAwesomeIcon icon={faArrowUp} className={Style.blogMoreBlogArrow} />
-                    </a>
-                </span>
-            </div>
+        <div className={styles.pageContainer}>
+            <section className={styles.sectionOne}>
+            </section>
+
+            <section ref={containerRef} className={styles.sectionTwo}>
+
+                <div ref={cardsRef} className={styles.cardsContainer}>
+                    <div className={styles.card}>
+                        <CardBlog />
+                    </div>
+                    <div className={styles.card}>
+                        <CardBlog />
+
+                    </div>
+                    <div className={styles.card}>
+                        <CardBlog />
+
+                    </div>
+                    <div className={styles.card}>
+                        <CardBlog />
+
+                    </div>
+                    <div className={styles.card}>
+                        <CardBlog />
+
+                    </div>
+
+                </div>
+            </section>
+
+            <section className={styles.sectionThree}>
+            </section>
         </div>
-    );
+    )
 }
+
 
 export default MyBlog

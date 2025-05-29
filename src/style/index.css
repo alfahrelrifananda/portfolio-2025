@@ -141,3 +141,194 @@ body::-webkit-scrollbar-thumb {
     display: none;
   }
 }
+
+
+.page-container {
+  font-family: Arial, sans-serif;
+}
+
+/* Section 1 Styles */
+.section-one {
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.section-content {
+  text-align: center;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.section-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Section 2 Styles - Horizontal Scroll */
+.section-two {
+  height: 100vh;
+  background: #f8f9fa;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.section-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
+}
+
+.overlay-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.overlay-text {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.cards-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 2rem;
+  will-change: transform;
+}
+
+.card {
+  min-width: 350px;
+  height: 400px;
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  flex-shrink: 0;
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-icon-1 {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+}
+
+.card-icon-2 {
+  background: linear-gradient(135deg, #4ecdc4, #44a08d);
+}
+
+.card-icon-3 {
+  background: linear-gradient(135deg, #45b7d1, #96c93d);
+}
+
+.card-icon-4 {
+  background: linear-gradient(135deg, #f9ca24, #f0932b);
+}
+
+.card-icon-5 {
+  background: linear-gradient(135deg, #eb4d4b, #6c5ce7);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.card-content {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Section 3 Styles */
+.section-three {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  position: relative;
+  z-index: 3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-text {
+    font-size: 1rem;
+  }
+
+  .overlay-title {
+    font-size: 2rem;
+  }
+
+  .card {
+    min-width: 280px;
+    height: 350px;
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .card-content {
+    font-size: 0.9rem;
+  }
+}
+
+/* Fix for scroll smoother compatibility */
+.page-container {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Ensure sections are properly positioned */
+.section-one,
+.section-two,
+.section-three {
+  position: relative;
+  width: 100%;
+}

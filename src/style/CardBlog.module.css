@@ -1,5 +1,5 @@
 .blogCard {
-    width: 25vw;
+    width: 350px;
     height: 30vw;
     gap: 5px;
     overflow: hidden;
@@ -16,11 +16,11 @@
 
 .blogCard .blogFeatured {
     width: calc(100% - 4px);
-    height: 300px;
+    height: 350px;
     border-radius: 5px;
-    /* background-image: url("https://miro.medium.com/v2/resize:fit:4800/format:webp/1*uGV8EmiF5OQ3ykWeChGsiQ.jpeg"); */
+    background-image: url(../assets/img_placeholder.jpg);
     /* background-color: var(--primary-dark); */
-    border: 2px solid var(--primary-dark);
+    /* border: 2px solid var(--primary-dark); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@
 }
 
 .blogCard .blogDesc {
-    height: 50px;
+    height: 40px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
