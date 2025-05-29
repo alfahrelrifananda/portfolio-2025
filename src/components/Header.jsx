@@ -384,7 +384,7 @@ function Header() {
                                     <p>Banyuagung, Kadipiro, Banjarsari, Surakarta</p>
                                 </li>
                                 <li>
-                                    <a href="../assets/CV.docx" download>
+                                    <a href="/CV.docx" download="FahrelCV.docx">
                                         DOWNLOAD CV
                                     </a>
                                 </li>
