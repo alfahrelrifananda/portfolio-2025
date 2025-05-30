@@ -100,7 +100,7 @@
 
 
 .section3 {
-    height: 100vh;
+    height: fit-content;
 }
 
 .btnPosnawr {
@@ -184,10 +184,6 @@ a {
         gap: 24px;
     }
 
-    .section3 {
-        min-height: 100vh;
-
-    }
 
     .btnPosnawr {
         margin: 0;
