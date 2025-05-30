@@ -26,8 +26,6 @@ function App() {
       smoother.current = ScrollSmoother.create({
         smooth: 2,
         smoothTouch: true,
-        ignoreMobileResize: true,
-        normalizeScroll: true,
       });
 
 

@@ -6,7 +6,7 @@
     transition: all 1s;
     transition-behavior: ease-in;
     opacity: 0;
-    background-color: #1c0f13c2;
+    background-color: #1c0f13eb;
 }
 
 
@@ -16,7 +16,6 @@
     transition: all 1.5s;
     opacity: 0;
     height: 100%;
-    animation: blur-in 500ms 1.5s forwards;
 }
 
 
@@ -132,16 +131,6 @@
     padding: 20px;
     font-size: 4vw;
     font-family: Poppins-Bold;
-}
-
-@keyframes blur-in {
-    from {
-        backdrop-filter: blur(0px);
-    }
-
-    to {
-        backdrop-filter: blur(15px);
-    }
 }
 
 @media screen and (max-width: 900px) {

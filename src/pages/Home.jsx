@@ -43,7 +43,7 @@ function Home() {
             <About />
             <AboutMore/>
             <div id="blogTreshold"></div>
-            <MyBlog />
+            {/* <MyBlog /> */}
             <Contact />
 
         </>

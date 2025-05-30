@@ -60,10 +60,10 @@ function Greeting() {
 
                 <Particles
                     particleColors={[theme ? "#F6F4F2" : "#1C0F13", theme ? "#1C0F13" : "#F6F4F2"]}
-                    particleCount={300}
+                    particleCount={100}
                     particleSpread={30}
                     speed={0.3}
-                    particleBaseSize={300}
+                    particleBaseSize={100}
                     moveParticlesOnHover={true}
                     alphaParticles={false}
                     disableRotation={false}

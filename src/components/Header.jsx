@@ -1,6 +1,5 @@
 import { useLayoutEffect, useState, useEffect } from "react"
 import Style from "../style/Header.module.css"
-import { animate, stagger } from "framer-motion"
 import StyleMenu from "../style/Menu.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
@@ -88,17 +87,6 @@ function Header() {
         default:
             break;
     }
-
-
-    useEffect(() => {
-
-
-        animate(".logoname li", {
-            opacity: 1, y: [30, 0]
-        }, {
-            delay: stagger(0.1)
-        })
-    },)
 
     function closeMenu() {
         const menu = document.getElementById("theMenu")
@@ -309,7 +297,7 @@ function Header() {
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
                             </a>
-                            <a href="#myblog-section" onClick={() => {
+                            {/* <a href="#myblog-section" onClick={() => {
                                 const element = document.getElementById('blogTreshold');
                                 if (!element) return;
                                 window.scroll({
@@ -333,7 +321,7 @@ function Header() {
                                     <div className={StyleMenu.line}></div>
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
-                            </a>
+                            </a> */}
                             <a href="#contact-section" onClick={() => {
                                 const element = document.getElementById('contactContainer');
                                 if (!element) return;
