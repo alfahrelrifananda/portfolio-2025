@@ -1,17 +1,16 @@
-import { useEffect, useRef, useCallback, useContext } from "react"
-import { ThemeContext } from "../../App"
+import { useEffect, useRef, useCallback } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import styles from "../../style/AboutMore.module.css"
 import MyCV from "../../assets/MyCV.pdf"
-import MagnetLines from "../ReactBits/MagnetLines"
+import Project from "./Project"
+import ScrollVelocity from "../ReactBits/ScrollVelocity"
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger)
 }
 
 function AboutMore() {
-    const theme = useContext(ThemeContext)
     const section2Ref = useRef(null)
     const textRef = useRef(null)
     const buttonRef = useRef(null)
@@ -58,38 +57,72 @@ function AboutMore() {
         gsap.set(words, { opacity: 0.2 })
         gsap.set(button, { opacity: 0 })
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: section2,
-                start: "top top",
-                end: "bottom top",
-                pin: true,
-                scrub: 1,
-                onUpdate: (self) => {
-                    const progress = self.progress
-                    const totalWords = words.length
-                    const wordsToReveal = Math.floor(progress * totalWords)
+        const moreAbout = () => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section2,
+                    start: "top top",
+                    end: "bottom top",
+                    pin: true,
+                    scrub: 1,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
+                    onUpdate: (self) => {
+                        const progress = self.progress
+                        const totalWords = words.length
+                        const wordsToReveal = Math.floor(progress * totalWords)
 
-                    words.forEach((word, index) => {
-                        if (index <= wordsToReveal) {
-                            gsap.to(word, { opacity: 1, duration: 0.3 })
+                        words.forEach((word, index) => {
+                            if (index <= wordsToReveal) {
+                                gsap.to(word, { opacity: 1, duration: 0.3 })
+                            } else {
+                                gsap.to(word, { opacity: 0.2, duration: 0.3 })
+                            }
+                        })
+
+                        if (progress > 0.9) {
+                            gsap.to(button, { opacity: 1, duration: 0.5 })
                         } else {
-                            gsap.to(word, { opacity: 0.2, duration: 0.3 })
+                            gsap.to(button, { opacity: 0, duration: 0.3 })
                         }
-                    })
-
-                    if (progress > 0.9) {
-                        gsap.to(button, { opacity: 1, duration: 0.5 })
-                    } else {
-                        gsap.to(button, { opacity: 0, duration: 0.3 })
-                    }
+                    },
                 },
-            },
-        })
+            })
+
+            return tl
+        }
+
+
+
+        const timer = setTimeout(() => {
+            const animation = moreAbout()
+
+            setTimeout(() => {
+                ScrollTrigger.refresh()
+            }, 100)
+
+            return () => {
+                if (animation) animation.kill()
+            }
+        }, 100)
+
+        const handleLoad = () => {
+            ScrollTrigger.refresh()
+        }
+
+        const handleResize = () => {
+            ScrollTrigger.refresh()
+        }
+
+        window.addEventListener("load", handleLoad)
+        window.addEventListener("resize", handleResize)
 
         return () => {
-            tl.kill()
+            clearTimeout(timer)
+            window.removeEventListener("load", handleLoad)
+            window.removeEventListener("resize", handleResize)
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+
         }
     }, [])
 
@@ -128,16 +161,12 @@ function AboutMore() {
             </section>
 
             <section className={styles.section3}>
-                <MagnetLines
-                    rows={10}
-                    columns={15}
-                    containerSize="100%"
-                    lineColor={theme ? "#F6F4F2" : "#1C0F13"}
-                    lineWidth="0.4vmin"
-                    lineHeight="5vmin"
-                    baseAngle={0}
-                    style={{ margin: "0 auto" }}
+                <ScrollVelocity
+                    texts={['', 'RECENT PROJECT -']}
+                    className="custom-scroll-text"
                 />
+                <Project />
+
             </section>
         </div>
     )

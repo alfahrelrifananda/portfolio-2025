@@ -42,11 +42,6 @@ function Home() {
             />
             <About />
             <AboutMore/>
-            <ScrollVelocity
-                texts={['', 'RECENT PROJECT -']}
-                className="custom-scroll-text"
-            />
-            <Project />
             <div id="blogTreshold"></div>
             <MyBlog />
             <Contact />
