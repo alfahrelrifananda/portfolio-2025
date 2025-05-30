@@ -1,15 +1,17 @@
-import { useEffect, useRef, useCallback } from "react"
+import { useEffect, useRef, useCallback, useContext } from "react"
+import { ThemeContext } from "../../App"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import styles from "../../style/AboutMore.module.css"
 import MyCV from "../../assets/MyCV.pdf"
-
+import MagnetLines from "../ReactBits/MagnetLines"
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger)
 }
 
 function AboutMore() {
+    const theme = useContext(ThemeContext)
     const section2Ref = useRef(null)
     const textRef = useRef(null)
     const buttonRef = useRef(null)
@@ -126,7 +128,16 @@ function AboutMore() {
             </section>
 
             <section className={styles.section3}>
-
+                <MagnetLines
+                    rows={10}
+                    columns={15}
+                    containerSize="100%"
+                    lineColor={theme ? "#F6F4F2" : "#1C0F13"}
+                    lineWidth="0.4vmin"
+                    lineHeight="5vmin"
+                    baseAngle={0}
+                    style={{ margin: "0 auto" }}
+                />
             </section>
         </div>
     )

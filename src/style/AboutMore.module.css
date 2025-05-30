@@ -100,7 +100,8 @@
 
 
 .section3 {
-    min-height: 600px;
+    height: 600px;
+    background-color: red;
 }
 
 .btnPosnawr {
