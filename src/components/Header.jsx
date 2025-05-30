@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import gsap from "gsap"
 import SplitText from "gsap/dist/SplitText"
-import MyCV from "../assets/MyCV.pdf"
 
 function Header() {
 
@@ -136,16 +135,7 @@ function Header() {
             document.body.style.overflowY = "hidden"
             setIsMenuOpen(true)
         } else {
-            menu.style.zIndex = "-88"
-            menu.style.opacity = "0"
-            menuContainer.style.opacity = "0"
-            menuToggle.textContent = "(menu)"
-            menuToggle.style.color = "var(--primary-dark)"
-            menuDateContainer.style.color = "var(--primary-dark)"
-            menuHeaderContainer.style.borderBottomColor = "var(--primary-dark)"
-            document.documentElement.style.overflowY = "scroll"
-            document.body.style.overflowY = "scroll"
-            setIsMenuOpen(false)
+            closeMenu()
         }
     }
 
@@ -384,11 +374,7 @@ function Header() {
                                     <h5>address</h5>
                                     <p>Banyuagung, Kadipiro, Banjarsari, Surakarta</p>
                                 </li>
-                                <li>
-                                    <a href={MyCV} download>
-                                        DOWNLOAD CV
-                                    </a>
-                                </li>
+
 
                             </ul>
                         </div>

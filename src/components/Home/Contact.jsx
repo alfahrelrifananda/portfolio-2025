@@ -1,10 +1,44 @@
 import Style from "../../style/Home.module.css"
+import { useRef, useCallback } from "react"
 
 function Contact() {
 
     function sendEmail() {
         alert("Under Construction")
     }
+
+    const buttonRef = useRef(null)
+
+    const handleMouseEnter = useCallback((e) => {
+        const button = buttonRef.current
+        if (!button) return
+
+        const parentOffset = button.getBoundingClientRect()
+        const relX = e.clientX - parentOffset.left
+        const relY = e.clientY - parentOffset.top
+
+        const span = button.querySelector(`.${Style.hoverEffect}`)
+        if (span) {
+            span.style.top = relY + "px"
+            span.style.left = relX + "px"
+        }
+    }, [])
+
+    const handleMouseLeave = useCallback((e) => {
+        const button = buttonRef.current
+        if (!button) return
+
+        const parentOffset = button.getBoundingClientRect()
+        const relX = e.clientX - parentOffset.left
+        const relY = e.clientY - parentOffset.top
+
+        const span = button.querySelector(`.${Style.hoverEffect}`)
+        if (span) {
+            span.style.top = relY + "px"
+            span.style.left = relX + "px"
+        }
+    }, [])
+
     return (
         <>
             <div className={Style.contactContainer} id="contactContainer">
@@ -23,12 +57,21 @@ function Contact() {
                             <input type="number" placeholder="Phone" />
                         </div>
                         <textarea name="message" placeholder="Message" ></textarea>
-                        <button type="submit" onClick={() => sendEmail()} id="btn-send-contact">Get in touch
-                            <span></span>
-                        </button>
+                        <div className={Style.btncontainer}>
+                            <button
+                                type="submit" onClick={() => sendEmail()}
+                                ref={buttonRef}
+                                className={Style.btnPosnawr}
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                <span className={Style.hoverEffect}></span>
+                                <span className={Style.buttonText}>Get in touch</span>
+                            </button>
+                        </div>
                     </form>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

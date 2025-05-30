@@ -24,11 +24,16 @@ function App() {
   useGSAP(
     () => {
       smoother.current = ScrollSmoother.create({
-        smooth: 3,
-        smoothTouch: true
+        smooth: 2,
+        smoothTouch: true,
+        ignoreMobileResize: true,
+        normalizeScroll: true,
       });
 
+
     },
+
+
     { scope: main }
   );
 
@@ -54,6 +59,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={isDarkMode}>
+
       <Header />
       <div className="bg-strip">
         <span></span>

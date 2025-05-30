@@ -18,7 +18,7 @@
     width: calc(100% - 4px);
     height: 350px;
     border-radius: 5px;
-    background-image: url(../assets/img_placeholder.jpg);
+    background-image: url(../assets/img-placeholder.svg);
     /* background-color: var(--primary-dark); */
     /* border: 2px solid var(--primary-dark); */
     background-position: center;

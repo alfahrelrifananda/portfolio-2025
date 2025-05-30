@@ -1,5 +1,4 @@
 import Style from "../../style/Home.module.css"
-import ScrollReveal from '../ReactBits/ScrollReveal'
 import { ThemeContext } from "../../App"
 import { useLayoutEffect } from "react"
 import gsap from "gsap"
