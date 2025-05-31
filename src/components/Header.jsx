@@ -297,7 +297,7 @@ function Header() {
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
                             </a>
-                            {/* <a href="#myblog-section" onClick={() => {
+                            <a href="#myblog-section" onClick={() => {
                                 const element = document.getElementById('blogTreshold');
                                 if (!element) return;
                                 window.scroll({
@@ -321,7 +321,7 @@ function Header() {
                                     <div className={StyleMenu.line}></div>
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
-                            </a> */}
+                            </a>
                             <a href="#contact-section" onClick={() => {
                                 const element = document.getElementById('contactContainer');
                                 if (!element) return;

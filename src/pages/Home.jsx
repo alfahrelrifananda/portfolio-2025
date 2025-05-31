@@ -9,7 +9,6 @@ import MyBlog from "../components/Home/MyBlog"
 import Contact from "../components/Home/Contact"
 import BlobCursor from "../components/ReactBits/BlobCursor"
 
-
 function Home() {
 
 
@@ -41,9 +40,14 @@ function Home() {
                 className="custom-scroll-text"
             />
             <About />
-            <AboutMore/>
+            <AboutMore />
+            <ScrollVelocity
+                texts={['RECENT BLOG -']}
+                className="custom-scroll-text"
+            />
             <div id="blogTreshold"></div>
-            {/* <MyBlog /> */}
+            <MyBlog />
+            {/* <Test/> */}
             <Contact />
 
         </>

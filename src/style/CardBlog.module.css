@@ -1,6 +1,6 @@
 .blogCard {
     width: 350px;
-    height: 30vw;
+    height: 100%;
     gap: 5px;
     overflow: hidden;
     display: flex;
@@ -16,11 +16,10 @@
 
 .blogCard .blogFeatured {
     width: calc(100% - 4px);
-    height: 350px;
+    height: 70vh;
     border-radius: 5px;
-    background-image: url(../assets/img-placeholder.svg);
     /* background-color: var(--primary-dark); */
-    /* border: 2px solid var(--primary-dark); */
+    border: 2px solid var(--primary-dark);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -47,7 +46,7 @@
 }
 
 .blogCard .blogDesc {
-    height: 40px;
+    height: 50px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -60,11 +59,11 @@
 @media screen and (max-width: 900px) {
     .blogCard {
         width: 100%;
-        height: 75%;
+        height: 100%;
     }
 
     .blogCard .blogFeatured {
-        height: 250px;
+        height: 500px;
     }
 
     .blogCard .blogTitle {

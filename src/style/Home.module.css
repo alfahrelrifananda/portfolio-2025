@@ -87,6 +87,10 @@
     opacity: 0;
 }
 
+
+
+
+
 .projectContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -181,6 +185,12 @@
 .arrow {
     transform: rotate(45deg);
 }
+
+
+
+
+
+
 
 
 
