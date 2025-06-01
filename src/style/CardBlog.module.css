@@ -67,13 +67,14 @@
     }
 
     .blogCard .blogTitle {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 24px;
+        line-height: 25px;
     }
 
     .blogCard .blogDesc {
-        font-size: 16px;
-        height: 40px;
-        line-height: 20px;
+        font-size: 14px;
+        height: 30px;
+        font-family: Poppins-Light;
+        line-height: 15px;
     }
 }

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
 import styles from '../../style/Project.module.css';
 import img1 from "../../assets/img_placeholder_cha.png"
 import img2 from "../../assets/img_placeholder_todo.png"
@@ -11,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import ScrollVelocity from "../ReactBits/ScrollVelocity"
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const projects = [
     {
         number: 1,
@@ -49,6 +50,23 @@ function Project() {
     const pinnedRef = useRef(null);
     const closingRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
+    const scrollTriggerRef = useRef(null);
+
+    const handleMenuHover = (index) => {
+        if (scrollTriggerRef.current) {
+            const targetProgress = index / (projects.length - 1);
+            const scrollStart = scrollTriggerRef.current.start;
+            const scrollEnd = scrollTriggerRef.current.end;
+            const totalScrollDistance = scrollEnd - scrollStart;
+            const targetScroll = scrollStart + (totalScrollDistance * targetProgress);
+
+            gsap.to(window, {
+                duration: 1.2,
+                scrollTo: { y: targetScroll, autoKill: false },
+                ease: "power2.inOut"
+            });
+        }
+    };
 
     useEffect(() => {
         let currentIndex = 0;
@@ -81,6 +99,9 @@ function Project() {
                 }
             }
         });
+
+        scrollTriggerRef.current = scrollTrigger;
+
         const closingElements = closingRef.current.querySelectorAll('[data-animation="fadeInUp"]');
         closingElements.forEach((element, index) => {
             const delay = index * 0.3;
@@ -128,6 +149,7 @@ function Project() {
                                     <div
                                         key={index}
                                         className={`${styles.menuItem} ${activeIndex === index ? styles.menuItemActive : ''}`}
+                                        onMouseEnter={() => handleMenuHover(index)}
                                     >
                                         <div className={`${styles.menuIndicator} ${activeIndex === index ? styles.menuIndicatorActive : ''}`}></div>
                                         <div className={`${styles.menuContent} ${activeIndex === index ? styles.menuContentActive : ''}`}>
