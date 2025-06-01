@@ -14,16 +14,23 @@ function MyBlog() {
     const containerRef = useRef(null)
     const cardsRef = useRef(null)
 
-
     useEffect(() => {
+
+
         const container = containerRef.current
         const cards = cardsRef.current
 
         if (!container || !cards) return
 
         const initScrollTrigger = () => {
-            const cardWidth = 450
+            let cardWidth = 450
+
+            if (window.innerWidth < 1000) {
+                cardWidth = 350
+            }
+
             const totalWidth = cardWidth * 6
+
 
             const horizontalScroll = gsap.to(cards, {
                 x: -totalWidth + window.innerWidth,

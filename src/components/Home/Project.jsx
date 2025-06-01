@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Style from '../../style/Project.module.css';
+import styles from '../../style/Project.module.css';
 import img1 from "../../assets/img_placeholder_cha.png"
 import img2 from "../../assets/img_placeholder_todo.png"
 import img3 from "../../assets/img_placeholder_bel.png"
@@ -111,42 +111,42 @@ function Project() {
     // };
     return (
         <div>
-            <section section ref={heroRef} className={Style.heroSection} id="projectContainer" >
+            <section ref={heroRef} className={styles.heroSection} id="projectContainer" >
 
             </section >
-            <section section ref={pinnedRef} className={Style.pinnedSection} >
+            <section ref={pinnedRef} className={styles.pinnedSection} >
                 <ScrollVelocity
                     texts={['', 'RECENT PROJECT -']}
                     className="custom-scroll-text"
                 />
-                <div className={Style.container}>
-                    <div className={Style.grid}>
+                <div className={styles.container}>
+                    <div className={styles.grid}>
 
-                        <div className={Style.menuColumn}>
-                            <div className={Style.menuItems}>
-                                {projects.map((project, index) => (
+                        <div className={styles.menuColumn}>
+                            <div className={styles.menuItems}>
+                                {projects.map((service, index) => (
                                     <div
                                         key={index}
-                                        className={`${Style.menuItem} ${activeIndex === index ? Style.menuItemActive : ''}`}
+                                        className={`${styles.menuItem} ${activeIndex === index ? styles.menuItemActive : ''}`}
                                     >
-                                        <div className={`${Style.menuIndicator} ${activeIndex === index ? Style.menuIndicatorActive : ''}`}></div>
-                                        <div className={`${Style.menuContent} ${activeIndex === index ? Style.menuContentActive : ''}`}>
-                                            <div className={`${Style.projectLi} ${activeIndex === index ? Style.projectLiActive : ''}`}>
-                                                <div className={Style.lines}>
-                                                    <div className={`${Style.line} ${activeIndex === index ? Style.lineActive : ''}`}></div>
-                                                    <div className={Style.lineChild}></div>
+                                        <div className={`${styles.menuIndicator} ${activeIndex === index ? styles.menuIndicatorActive : ''}`}></div>
+                                        <div className={`${styles.menuContent} ${activeIndex === index ? styles.menuContentActive : ''}`}>
+                                            <div className={`${styles.projectLi} ${activeIndex === index ? styles.projectLiActive : ''}`}>
+                                                <div className={styles.lines}>
+                                                    <div className={`${styles.line} ${activeIndex === index ? styles.lineActive : ''}`}></div>
+                                                    <div className={styles.lineChild}></div>
                                                 </div>
-                                                <div className={Style.li}>
-                                                    <p>{project.number}</p>
-                                                    <div className={Style.liT}>
+                                                <div className={styles.li}>
+                                                    <p>{service.number}</p>
+                                                    <div className={styles.liT}>
                                                         <h2>
                                                             <span>
-                                                                {project.title}
+                                                                {service.title}
                                                             </span>
                                                         </h2>
-                                                        <i>{project.description}</i>
+                                                        <i>{service.description}</i>
                                                         <div>
-                                                            <FontAwesomeIcon icon={faArrowUp} className={Style.arrow} />
+                                                            <FontAwesomeIcon icon={faArrowUp} className={styles.arrow} />
                                                         </div>
                                                     </div>
 
@@ -162,17 +162,17 @@ function Project() {
                                 ))}
                             </div>
                         </div>
-                        <div className={Style.imageColumn}>
-                            <div className={Style.imageContainer}>
-                                {projects.map((project, index) => (
+                        <div className={styles.imageColumn}>
+                            <div className={styles.imageContainer}>
+                                {projects.map((service, index) => (
                                     <div
                                         key={index}
-                                        className={`${Style.projectImage} ${activeIndex === index ? Style.projectImageActive : ''}`}
+                                        className={`${styles.serviceImage} ${activeIndex === index ? styles.serviceImageActive : ''}`}
                                     >
-                                        <div className={Style.rippleContainer}>
+                                        <div className={styles.rippleContainer}>
                                             <img
-                                                src={project.image}
-                                                alt={project.title}
+                                                src={service.image}
+                                                alt={service.title}
                                             />
                                         </div>
                                     </div>
@@ -183,7 +183,7 @@ function Project() {
                 </div>
 
             </section >
-            <section section ref={closingRef} className={Style.closingSection} >
+            <section ref={closingRef} className={styles.closingSection} >
             </section >
         </div >
     );
