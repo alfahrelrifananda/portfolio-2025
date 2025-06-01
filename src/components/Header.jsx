@@ -101,8 +101,8 @@ function Header() {
         menuToggle.style.color = "var(--primary-dark)"
         menuDateContainer.style.color = "var(--primary-dark)"
         menuHeaderContainer.style.borderBottomColor = "var(--primary-dark)"
-        document.documentElement.style.overflowY = "scroll"
-        document.body.style.overflowY = "scroll"
+        document.documentElement.style.overflowY = "auto"
+        document.body.style.overflowY = "auto"
         setIsMenuOpen(false)
     }
     function toggleMenu() {

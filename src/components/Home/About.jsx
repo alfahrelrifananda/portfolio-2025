@@ -1,9 +1,15 @@
 import Style from "../../style/Home.module.css"
+import ScrollVelocity from "../ReactBits/ScrollVelocity"
 function About() {
 
     return (
         <>
-            <div className={Style.aboutContainer} id="aboutContainer">
+            <div className={Style.aboutReferences}  id="aboutContainer"></div>
+            <ScrollVelocity
+                texts={['ABOUT ME -']}
+                className="custom-scroll-text"
+            />
+            <div className={Style.aboutContainer} >
                 <div className={Style.aboutImage}></div>
                 <div className={Style.aboutContent} id="aboutContent">
                     <p>

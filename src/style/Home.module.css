@@ -37,17 +37,21 @@
     will-change: transform;
 }
 
+.aboutReferences {
+    height: 5vh;
+    width: 100vw;
+}
 
 .aboutContainer {
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 5vh;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
     padding-left: 25vw;
     padding-right: 25vw;
     color: var(--primary-dark);
+
 }
+
 
 .aboutContainer .aboutImage {
     background-image: url(../assets/profile.jpg);
@@ -87,100 +91,6 @@
     opacity: 0;
 }
 
-
-
-
-
-.projectContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 20px;
-    gap: 20px;
-    padding-top: 10vh;
-}
-
-.projectList {
-    width: 100%;
-}
-
-.projectList .projectLi {
-    display: flex;
-    flex-direction: column;
-    height: 85px;
-    text-decoration: none;
-    gap: 25px;
-    margin: 20px;
-    color: var(--primary-dark);
-    opacity: .7;
-    transition: all.3s;
-}
-
-.projectList .projectLi .li {
-    height: 100px;
-    display: grid;
-    grid-template-columns: 75px 1fr;
-    cursor: pointer;
-    width: 100%;
-}
-
-.projectList .projectLi .li .liT {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 30px;
-    align-items: center;
-    padding-bottom: 30px;
-}
-
-.projectList .projectLi .li p {
-    font-family: Poppins-light-italic;
-}
-
-.projectList .projectLi .li .liT h2 {
-    font-size: 26px;
-    font-family: Poppins-Medium-Bold;
-    padding: 0;
-    margin: 0;
-}
-
-.projectList .projectLi .li .liT i {
-    font-family: Poppins-Light;
-}
-
-
-.projectList .lines {
-    height: 2px;
-    width: 100%;
-}
-
-.projectList .lines .line {
-    background-color: var(--primary-dark);
-    height: 2px;
-    width: 0%;
-    transition: all .3s;
-}
-
-.projectList .lines .lineChild {
-    background-color: var(--primary-dark);
-    width: 100%;
-    height: .1px;
-}
-
-.projectList .projectLi:hover {
-    opacity: 1;
-}
-
-.projectList .projectLi:hover .lines .line {
-    width: 100%;
-}
-
-.projectImage {
-    /* background-image: url("https://miro.medium.com/v2/resize:fit:4800/format:webp/1*uGV8EmiF5OQ3ykWeChGsiQ.jpeg"); */
-    background-image: url(../assets/img_placeholder_cha.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 75vh;
-}
 
 .arrow {
     transform: rotate(45deg);
@@ -350,7 +260,9 @@
         display: flex;
         width: calc(100vw - 40px);
         flex-direction: column;
-        padding: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+
     }
 
     .aboutContainer .aboutImage {
@@ -360,33 +272,6 @@
     .aboutContainer .aboutContent .title {
         font-size: 36px;
         line-height: 40px;
-    }
-
-    .projectContainer {
-        width: calc(100vw - 40px);
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .projectList .projectLi {
-        width: 100%;
-        margin: 0;
-        cursor: pointer;
-    }
-
-    .projectList .projectLi .li {
-        grid-template-columns: 35px 1fr;
-    }
-
-    .projectList .projectLi .li .liT h2,
-    .projectList .projectLi .li .liT i {
-        font-size: 14px;
-        line-height: 15px;
-    }
-
-    .projectImage {
-        height: 30vh;
     }
 
     .contactContainer {

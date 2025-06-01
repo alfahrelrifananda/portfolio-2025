@@ -1,39 +1,32 @@
 .pinnedSection {
-    height: 100vh;
+    height: 110vh;
+    width: 100vw;
+    overflow: hidden;
+    padding: 0 !important;
     position: relative;
 }
 
 .container {
     max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
     margin: 0 auto;
     height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    
 }
 
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100%;
-    gap: 48px;
-    align-items: center;
+    gap: 30px;
 }
 
 .menuColumn {
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
-.sectionTitle {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 700;
-    margin-bottom: 48px;
-}
-
-.titleAccent {
-    color: #6366f1;
-}
 
 .menuItems {
     display: flex;
@@ -60,7 +53,7 @@
 
 .imageColumn {
     display: flex;
-    align-items: center;
+    height: 75vh;
     justify-content: center;
 }
 
@@ -89,35 +82,20 @@
     height: 100%;
 }
 
-@media (max-width: 1024px) {
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .menuColumn {
-        order: 2;
-    }
-
-    .imageColumn {
-        order: 1;
-    }
-
-    .imageContainer {
-        max-width: 400px;
-    }
+.rippleContainer img {
+    width: 100%;
+    height: 100%;
 }
-
 
 
 .projectLi {
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: 85px;
+    height: 75px;
     text-decoration: none;
     gap: 25px;
-    margin: 20px;
+    margin-top: 20px;
     color: var(--primary-dark);
     opacity: .5;
     transition: all.3s;
@@ -127,10 +105,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: 85px;
+    height: 75px;
     text-decoration: none;
     gap: 25px;
-    margin: 20px;
+    margin-top: 20px;
+
     color: var(--primary-dark);
     opacity: 1;
     transition: all.3s;
@@ -200,9 +179,39 @@
 }
 
 .closingSection {
-    height: 10vh;
+    height: 0vh;
 }
+
 @media (max-width: 1000px) {
+
+    .container {
+        height: 80vh;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        height: fit-content;
+    }
+
+    .menuColumn {
+        order: 1;
+    }
+
+    .imageColumn {
+        order: 2;
+        height: fit-content;
+
+    }
+
+    .imageContainer {
+        max-width: 100%;
+        height: 30vh;
+    }
+
+
+
+
+
     .menuItem {
         display: block;
         padding: 0 !important;
@@ -228,26 +237,14 @@
         font-size: 14px;
         line-height: 15px;
     }
-
-    .buttonGroup {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .button {
-        width: 100%;
-        max-width: 280px;
-    }
-
-    .container {
-        padding: 0 16px;
-    }
-
     .menuItems {
         gap: 16px;
     }
 
     .menuItem {
         padding: 12px;
+    }
+    .pinnedSection {
+        height: 95vh !important;
     }
 }

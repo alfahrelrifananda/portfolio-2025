@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import styles from "../../style/AboutMore.module.css"
 import MyCV from "../../assets/MyCV.pdf"
 import Project from "./Project"
-import ScrollVelocity from "../ReactBits/ScrollVelocity"
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger)
@@ -161,11 +160,7 @@ function AboutMore() {
             </section>
 
             <section className={styles.section3}>
-                <ScrollVelocity
-                    texts={['', 'RECENT PROJECT -']}
-                    className="custom-scroll-text"
-                />
-                {/* <Project /> */}
+                
                 <Project/>
 
             </section>

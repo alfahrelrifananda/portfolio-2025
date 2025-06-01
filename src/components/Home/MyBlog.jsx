@@ -1,8 +1,11 @@
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import styles from "../../style/MyBlog.module.css"
+import Style from "../../style/MyBlog.module.css"
 import CardBlog from "./CardBlog";
+import ScrollVelocity from "../ReactBits/ScrollVelocity";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -11,6 +14,7 @@ function MyBlog() {
     const containerRef = useRef(null)
     const cardsRef = useRef(null)
 
+
     useEffect(() => {
         const container = containerRef.current
         const cards = cardsRef.current
@@ -18,15 +22,15 @@ function MyBlog() {
         if (!container || !cards) return
 
         const initScrollTrigger = () => {
-            const cardWidth = 500
-            const totalWidth = cardWidth * 5
+            const cardWidth = 450
+            const totalWidth = cardWidth * 6
 
             const horizontalScroll = gsap.to(cards, {
                 x: -totalWidth + window.innerWidth,
                 ease: "none",
                 scrollTrigger: {
                     trigger: container,
-                    start: "top top",
+                    start: "top 50",
                     end: () => `+=${totalWidth}`,
                     scrub: 1,
                     pin: true,
@@ -70,37 +74,48 @@ function MyBlog() {
     }, [])
 
     return (
-        <div className={styles.pageContainer}>
-            <section className={styles.sectionOne}>
+        <div className={Style.pageContainer}>
+            <section className={Style.sectionOne}>
             </section>
 
-            <section ref={containerRef} className={styles.sectionTwo}>
-
-                <div ref={cardsRef} className={styles.cardsContainer}>
-                    <div className={styles.card}>
+            <section ref={containerRef} className={Style.sectionTwo}>
+                <ScrollVelocity
+                    texts={['RECENT BLOG -']}
+                    className="custom-scroll-text"
+                />
+                <div ref={cardsRef} className={Style.cardsContainer}>
+                    <div className={Style.card}>
                         <CardBlog />
                     </div>
-                    <div className={styles.card}>
-                        <CardBlog />
-
-                    </div>
-                    <div className={styles.card}>
-                        <CardBlog />
-
-                    </div>
-                    <div className={styles.card}>
+                    <div className={Style.card}>
                         <CardBlog />
 
                     </div>
-                    <div className={styles.card}>
+                    <div className={Style.card}>
                         <CardBlog />
 
+                    </div>
+                    <div className={Style.card}>
+                        <CardBlog />
+
+                    </div>
+                    <div className={Style.card}>
+                        <CardBlog />
+
+                    </div>
+                    <div className={Style.card}>
+                        <div className={Style.moreBlog}>
+                            <span>
+                                <FontAwesomeIcon icon={faArrowUp} className={Style.arrow} />
+                            </span>
+                            <p>Show more</p>
+                        </div>
                     </div>
 
                 </div>
             </section>
 
-            <section className={styles.sectionThree}>
+            <section className={Style.sectionThree}>
             </section>
         </div>
     )

@@ -65,7 +65,7 @@ html {
 }
 
 body {
-  overflow-y: scroll;
+  overflow-y: auto;
   position: relative;
   overflow-x: hidden;
   background-color: var(--primary-light);
@@ -102,6 +102,7 @@ body::-webkit-scrollbar-thumb {
   z-index: 66;
   padding-left: 15px;
   padding-right: 15px;
+  overflow: hidden;
 }
 
 .bg-strip span {
@@ -129,6 +130,10 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#blogTreshold {
+  margin-top: 5vh;
 }
 
 

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import styles from '../../style/Project.module.css';
+import Style from '../../style/Project.module.css';
 import img1 from "../../assets/img_placeholder_cha.png"
 import img2 from "../../assets/img_placeholder_todo.png"
 import img3 from "../../assets/img_placeholder_bel.png"
@@ -9,11 +9,10 @@ import img4 from "../../assets/img_placeholder_and.png"
 import img5 from "../../assets/img_placeholder_pos.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
-
-
+import ScrollVelocity from "../ReactBits/ScrollVelocity"
 
 gsap.registerPlugin(ScrollTrigger);
-const services = [
+const projects = [
     {
         number: 1,
         title: "CHAMELEON",
@@ -68,13 +67,13 @@ function Project() {
         const scrollTrigger = ScrollTrigger.create({
             trigger: pinnedRef.current,
             start: "top top",
-            end: "+=400%", // 5 services * 100vh each
+            end: "+=400%", // 5 projects * 100vh each
             pin: true,
             scrub: 1,
             onUpdate: (self) => {
                 const progress = self.progress;
-                const newIndex = Math.floor(progress * services.length);
-                const clampedIndex = Math.min(newIndex, services.length - 1);
+                const newIndex = Math.floor(progress * projects.length);
+                const clampedIndex = Math.min(newIndex, projects.length - 1);
 
                 if (clampedIndex !== currentIndex) {
                     currentIndex = clampedIndex;
@@ -112,38 +111,42 @@ function Project() {
     // };
     return (
         <div>
-            <section section ref={heroRef} className={styles.heroSection} id="projectContainer" >
+            <section section ref={heroRef} className={Style.heroSection} id="projectContainer" >
 
             </section >
-            <section section ref={pinnedRef} className={styles.pinnedSection} >
-                <div className={styles.container}>
-                    <div className={styles.grid}>
+            <section section ref={pinnedRef} className={Style.pinnedSection} >
+                <ScrollVelocity
+                    texts={['', 'RECENT PROJECT -']}
+                    className="custom-scroll-text"
+                />
+                <div className={Style.container}>
+                    <div className={Style.grid}>
 
-                        <div className={styles.menuColumn}>
-                            <div className={styles.menuItems}>
-                                {services.map((service, index) => (
+                        <div className={Style.menuColumn}>
+                            <div className={Style.menuItems}>
+                                {projects.map((project, index) => (
                                     <div
                                         key={index}
-                                        className={`${styles.menuItem} ${activeIndex === index ? styles.menuItemActive : ''}`}
+                                        className={`${Style.menuItem} ${activeIndex === index ? Style.menuItemActive : ''}`}
                                     >
-                                        <div className={`${styles.menuIndicator} ${activeIndex === index ? styles.menuIndicatorActive : ''}`}></div>
-                                        <div className={`${styles.menuContent} ${activeIndex === index ? styles.menuContentActive : ''}`}>
-                                            <div className={`${styles.projectLi} ${activeIndex === index ? styles.projectLiActive : ''}`}>
-                                                <div className={styles.lines}>
-                                                    <div className={`${styles.line} ${activeIndex === index ? styles.lineActive : ''}`}></div>
-                                                    <div className={styles.lineChild}></div>
+                                        <div className={`${Style.menuIndicator} ${activeIndex === index ? Style.menuIndicatorActive : ''}`}></div>
+                                        <div className={`${Style.menuContent} ${activeIndex === index ? Style.menuContentActive : ''}`}>
+                                            <div className={`${Style.projectLi} ${activeIndex === index ? Style.projectLiActive : ''}`}>
+                                                <div className={Style.lines}>
+                                                    <div className={`${Style.line} ${activeIndex === index ? Style.lineActive : ''}`}></div>
+                                                    <div className={Style.lineChild}></div>
                                                 </div>
-                                                <div className={styles.li}>
-                                                    <p>{service.number}</p>
-                                                    <div className={styles.liT}>
+                                                <div className={Style.li}>
+                                                    <p>{project.number}</p>
+                                                    <div className={Style.liT}>
                                                         <h2>
                                                             <span>
-                                                                {service.title}
+                                                                {project.title}
                                                             </span>
                                                         </h2>
-                                                        <i>{service.description}</i>
+                                                        <i>{project.description}</i>
                                                         <div>
-                                                            <FontAwesomeIcon icon={faArrowUp} className={styles.arrow} />
+                                                            <FontAwesomeIcon icon={faArrowUp} className={Style.arrow} />
                                                         </div>
                                                     </div>
 
@@ -159,17 +162,17 @@ function Project() {
                                 ))}
                             </div>
                         </div>
-                        <div className={styles.imageColumn}>
-                            <div className={styles.imageContainer}>
-                                {services.map((service, index) => (
+                        <div className={Style.imageColumn}>
+                            <div className={Style.imageContainer}>
+                                {projects.map((project, index) => (
                                     <div
                                         key={index}
-                                        className={`${styles.serviceImage} ${activeIndex === index ? styles.serviceImageActive : ''}`}
+                                        className={`${Style.projectImage} ${activeIndex === index ? Style.projectImageActive : ''}`}
                                     >
-                                        <div className={styles.rippleContainer}>
+                                        <div className={Style.rippleContainer}>
                                             <img
-                                                src={service.image}
-                                                alt={service.title}
+                                                src={project.image}
+                                                alt={project.title}
                                             />
                                         </div>
                                     </div>
@@ -180,7 +183,7 @@ function Project() {
                 </div>
 
             </section >
-            <section section ref={closingRef} className={styles.closingSection} >
+            <section section ref={closingRef} className={Style.closingSection} >
             </section >
         </div >
     );
