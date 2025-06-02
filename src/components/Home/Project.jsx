@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
-import styles from '../../style/Project.module.css';
+import styles from '../../style/HomeModule/Project.module.css';
 import img1 from "../../assets/img_placeholder_cha.png"
 import img2 from "../../assets/img_placeholder_todo.png"
 import img3 from "../../assets/img_placeholder_bel.png"

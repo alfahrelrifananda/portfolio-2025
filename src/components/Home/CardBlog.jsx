@@ -1,4 +1,4 @@
-import Style from "../../style/CardBlog.module.css"
+import Style from "../../style/HomeModule/CardBlog.module.css"
 
 function CardBlog() {
     return (

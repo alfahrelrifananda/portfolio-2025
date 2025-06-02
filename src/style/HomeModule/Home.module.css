@@ -54,7 +54,7 @@
 
 
 .aboutContainer .aboutImage {
-    background-image: url(../assets/profile.jpg);
+    background-image: url(../../assets/profile.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -114,7 +114,7 @@
 }
 
 .contactImage {
-    background-image: url(../assets/img_placeholder_1.jpg);
+    background-image: url(../../assets/img_placeholder_1.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -236,7 +236,7 @@
     }
 
     .greeting .greetingContainer .bigGreeting {
-        font-size: 50px;
+        font-size: 45px;
         line-height: 56px;
         text-align: justify;
         width: 100%;
@@ -275,6 +275,7 @@
     }
 
     .contactContainer {
+        height: 130vh;
         padding: 20px;
         width: calc(100vw - 40px);
         display: flex;
@@ -293,4 +294,24 @@
     .contactContent {
         padding: 0;
     }
+}
+
+.loadingclass {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.loadingclass h1 {
+    font-size: 56px;
+    line-height: 56px;
+    font-family: Poppins-Bold;
+    color: var(--primary-dark);
 }

@@ -12,7 +12,7 @@
     height: 100%;
     padding-left: 20px;
     padding-right: 20px;
-    
+
 }
 
 .grid {
@@ -154,14 +154,14 @@
 
 .lines .line {
     background-color: var(--primary-dark);
-    height: 2px;
+    height: 1px;
     width: 0%;
     transition: all .3s;
 }
 
 .lines .lineActive {
     background-color: var(--primary-dark);
-    height: 2px;
+    height: 1px;
     width: 100%;
     transition: all .3s;
 }
@@ -199,7 +199,7 @@
 
     .imageColumn {
         order: 2;
-        height: fit-content;
+        height: 300px;
 
     }
 
@@ -208,28 +208,41 @@
         height: 300px;
     }
 
+    .rippleContainer {
+        background-color: darkblue;
+    }
 
-
-
+    .menuContent {
+        height: 60px;
+    }
 
     .menuItem {
+
         display: block;
         padding: 0 !important;
     }
 
     .menuItems {
-        gap: 0;
+        gap: 15px;
         display: block;
     }
 
     .projectLi {
+        gap: 15px;
+        height: 55px;
+        margin-top: 0;
         width: 100%;
         margin: 0;
         cursor: pointer;
     }
 
+    .projectLiActive {
+        gap: 15px;
+        height: 55px;
+    }
+
     .projectLi .li {
-        grid-template-columns: 35px 1fr;
+        grid-template-columns: 30px 1fr;
     }
 
     .projectLi .li .liT h2,
@@ -237,6 +250,7 @@
         font-size: 14px;
         line-height: 15px;
     }
+
     .menuItems {
         gap: 16px;
     }
@@ -244,6 +258,7 @@
     .menuItem {
         padding: 12px;
     }
+
     .pinnedSection {
         height: 95vh !important;
     }

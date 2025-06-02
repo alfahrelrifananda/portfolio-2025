@@ -27,19 +27,22 @@
 .menuList {
     width: 100%;
 }
+.menuList .link {
+    margin: 20px;
+}
 
-.menuList a {
+.menuList .link {
     display: flex;
     flex-direction: column;
     height: 60px;
     text-decoration: none;
-    margin: 20px;
     color: #F6F4F2;
     opacity: .7;
+    padding: 0px;
     transition: all .3s;
 }
 
-.menuList a .li {
+.menuList .link .li {
     display: flex;
     height: 100px;
     display: grid;
@@ -48,24 +51,24 @@
 
 }
 
-.menuList a .li p {
+.menuList .link .li p {
     font-family: Poppins-light-italic;
 }
 
-.menuList a .li h3 {
+.menuList .link .li h3 {
     font-size: 26px;
     padding: 0;
     margin: 0;
 }
 
-.menuList a .li div {
+.menuList .link .li div {
     height: 30px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
-.menuList a .li div .arrow {
+.menuList .link .li div .arrow {
     transform: rotate(45deg);
 }
 
@@ -88,11 +91,11 @@
     width: 100%;
 }
 
-.menuList a:hover {
+.menuList .link:hover {
     opacity: 1;
 }
 
-.menuList a:hover .lines .line {
+.menuList .link:hover .lines .line {
     width: 100%;
 }
 
@@ -134,6 +137,10 @@
 }
 
 @media screen and (max-width: 900px) {
+    .menuContainer {
+        padding-top: 10vh;
+    }
+
     .menuContent {
         display: flex;
         flex-direction: column;
@@ -148,7 +155,11 @@
         display: none;
     }
 
-    .menuList a .li {
+    .menuList .link .li {
         grid-template-columns: 35px 1fr 30px;
+    }
+
+    .menuList .link {
+        height: 55px;
     }
 }

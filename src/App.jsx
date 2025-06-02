@@ -2,7 +2,7 @@ import React, { useState, createContext, useRef } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 import Header from "./components/Header"
-import Style from "./style/Header.module.css"
+import Style from "./style/ComponentsModule/Header.module.css"
 import Home from "./pages/Home"
 import "./style/index.css"
 import gsap from "gsap"
@@ -10,6 +10,9 @@ import ScrollTrigger from "gsap/ScrollTrigger"
 import ScrollSmoother from "gsap/ScrollSmoother"
 import { useGSAP } from "@gsap/react"
 import Footer from "./components/Footer"
+import BlogPage from "./pages/BlogPage"
+import ProjectPage from "./pages/ProjectPage"
+import { Route, Routes } from 'react-router-dom'
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext()
@@ -57,7 +60,6 @@ function App() {
 
   return (
     <ThemeContext.Provider value={isDarkMode}>
-
       <Header />
       <div className="bg-strip">
         <span></span>
@@ -72,7 +74,11 @@ function App() {
       </div>
       <div id="smooth-wrapper" ref={main} >
         <div id="smooth-content">
-          <Home />
+          <Routes>
+            <Route path='/portfolio-2025/' element={<Home />} />
+            <Route path='/portfolio-2025/blog' element={<BlogPage />} />
+            <Route path='/portfolio-2025/project' element={<ProjectPage />} />
+          </Routes>
           <Footer />
         </div>
 

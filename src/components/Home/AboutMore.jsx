@@ -1,9 +1,8 @@
 import { useEffect, useRef, useCallback } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import styles from "../../style/AboutMore.module.css"
+import styles from "../../style/HomeModule/AboutMore.module.css"
 import MyCV from "../../assets/MyCV.pdf"
-import Project from "./Project"
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger)
@@ -161,7 +160,6 @@ function AboutMore() {
 
             <section className={styles.section3}>
                 
-                <Project/>
 
             </section>
         </div>

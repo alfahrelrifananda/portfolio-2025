@@ -1,10 +1,11 @@
 import { useLayoutEffect, useState, useEffect } from "react"
-import Style from "../style/Header.module.css"
-import StyleMenu from "../style/Menu.module.css"
+import Style from "../style/ComponentsModule/Header.module.css"
+import StyleMenu from "../style/ComponentsModule/Menu.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import gsap from "gsap"
 import SplitText from "gsap/dist/SplitText"
+import { HashLink } from "react-router-hash-link"
 
 function Header() {
 
@@ -134,6 +135,7 @@ function Header() {
         const dateContainer = document.getElementById("dateContainer")
         const menuBtn = document.getElementById("menu-btn")
 
+
         function isInViewport(element) {
             const bounding = element.getBoundingClientRect();
             if (
@@ -186,6 +188,7 @@ function Header() {
 
 
 
+
     },)
 
 
@@ -222,15 +225,8 @@ function Header() {
                 <div className={StyleMenu.menuContainer} id="theMenuContainer">
                     <div className={StyleMenu.menuContent}>
                         <div className={StyleMenu.menuList}>
-                            <a href="#home-section" onClick={() => {
-                                const element = document.getElementById('greetingContainer');
-                                if (!element) return;
-                                window.scroll({
-                                    top: element.offsetTop - 30,
-                                    behavior: 'smooth'
-                                })
-                                closeMenu()
-                            }}>
+                            <HashLink smooth to="/portfolio-2025/" className={StyleMenu.link} onClick={closeMenu}>
+
                                 <div className={StyleMenu.li}>
                                     <p>01</p>
                                     <h3>
@@ -246,16 +242,12 @@ function Header() {
                                     <div className={StyleMenu.line}></div>
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
-                            </a>
-                            <a href="#about-section" onClick={() => {
-                                const element = document.getElementById('aboutContainer');
-                                if (!element) return;
-                                window.scroll({
-                                    top: element.offsetTop - 30,
-                                    behavior: 'smooth'
-                                })
-                                closeMenu()
-                            }}>
+                            </HashLink>
+                            <HashLink smooth to="/portfolio-2025/#aboutTreshold"
+                                className={StyleMenu.link}
+                                onClick={closeMenu}
+                            >
+
                                 <div className={StyleMenu.li}>
                                     <p>02</p>
                                     <h3>
@@ -271,16 +263,9 @@ function Header() {
                                     <div className={StyleMenu.line}></div>
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
-                            </a>
-                            <a href="#project-section" onClick={() => {
-                                const element = document.getElementById('projectContainer');
-                                if (!element) return;
-                                window.scroll({
-                                    top: element.offsetTop - 30,
-                                    behavior: 'smooth'
-                                })
-                                closeMenu()
-                            }}>
+                            </HashLink>
+                            <HashLink smooth to="/portfolio-2025#projectTreshold" className={StyleMenu.link} onClick={closeMenu}>
+
                                 <div className={StyleMenu.li}>
                                     <p>03</p>
                                     <h3>
@@ -296,16 +281,9 @@ function Header() {
                                     <div className={StyleMenu.line}></div>
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
-                            </a>
-                            <a href="#myblog-section" onClick={() => {
-                                const element = document.getElementById('blogTreshold');
-                                if (!element) return;
-                                window.scroll({
-                                    top: element.offsetTop - 30,
-                                    behavior: 'smooth'
-                                })
-                                closeMenu()
-                            }}>
+                            </HashLink>
+                            <HashLink smooth to="/portfolio-2025#blogTreshold" className={StyleMenu.link} onClick={closeMenu}>
+
                                 <div className={StyleMenu.li}>
                                     <p>04</p>
                                     <h3>
@@ -321,16 +299,9 @@ function Header() {
                                     <div className={StyleMenu.line}></div>
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
-                            </a>
-                            <a href="#contact-section" onClick={() => {
-                                const element = document.getElementById('contactContainer');
-                                if (!element) return;
-                                window.scroll({
-                                    top: element.offsetTop - 30,
-                                    behavior: 'smooth'
-                                })
-                                closeMenu()
-                            }}>
+                            </HashLink>
+                            <HashLink smooth to="/portfolio-2025#contactTreshold" className={StyleMenu.link} onClick={closeMenu}>
+
                                 <div className={StyleMenu.li}>
                                     <p>05</p>
                                     <h3>
@@ -346,7 +317,7 @@ function Header() {
                                     <div className={StyleMenu.line}></div>
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
-                            </a>
+                            </HashLink>
                         </div>
                         <div className={StyleMenu.menuContact}>
                             <ul>
@@ -373,7 +344,7 @@ function Header() {
                         </h1>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

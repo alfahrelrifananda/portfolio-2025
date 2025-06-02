@@ -1,4 +1,4 @@
-import Style from "../../style/Home.module.css"
+import Style from "../../style/HomeModule/Home.module.css"
 import { ThemeContext } from "../../App"
 import React, { useContext, useLayoutEffect } from "react"
 import Particles from "../ReactBits/Particles"

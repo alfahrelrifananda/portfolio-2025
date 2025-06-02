@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import Style from "../../style/MyBlog.module.css"
-import CardBlog from "./CardBlog";
-import ScrollVelocity from "../ReactBits/ScrollVelocity";
+import Style from "../../style/HomeModule/MyBlog.module.css"
+import CardBlog from "./CardBlog"
+import ScrollVelocity from "../ReactBits/ScrollVelocity"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom"
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -111,12 +112,14 @@ function MyBlog() {
 
                     </div>
                     <div className={Style.card}>
-                        <div className={Style.moreBlog}>
-                            <span>
-                                <FontAwesomeIcon icon={faArrowUp} className={Style.arrow} />
-                            </span>
-                            <p>Show more</p>
-                        </div>
+                        <Link to="/portfolio-2025/blog">
+                            <div className={Style.moreBlog}>
+                                <span>
+                                    <FontAwesomeIcon icon={faArrowUp} className={Style.arrow} />
+                                </span>
+                                <p>Show more</p>
+                            </div>
+                        </Link>
                     </div>
 
                 </div>

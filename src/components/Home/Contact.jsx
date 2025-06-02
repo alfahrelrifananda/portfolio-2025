@@ -1,4 +1,4 @@
-import Style from "../../style/Home.module.css"
+import Style from "../../style/HomeModule/Home.module.css"
 import { useRef, useCallback } from "react"
 
 function Contact() {
