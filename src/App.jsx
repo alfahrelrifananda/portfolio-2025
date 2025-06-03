@@ -23,6 +23,7 @@ function App() {
   const main = useRef();
   const smoother = useRef();
   const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useGSAP(
     () => {
@@ -30,11 +31,7 @@ function App() {
         smooth: 2,
         smoothTouch: true,
       });
-
-
     },
-
-
     { scope: main }
   );
 
@@ -58,9 +55,14 @@ function App() {
     }
   }
 
+  setTimeout(() => {
+    setIsLoading(false)
+  }, 3300);
+
+
   return (
     <ThemeContext.Provider value={isDarkMode}>
-      <Header />
+      {!isLoading ? <Header /> : ""}
       <div className="bg-strip">
         <span></span>
         <span></span>
@@ -79,18 +81,20 @@ function App() {
             <Route path='/portfolio-2025/blog' element={<BlogPage />} />
             <Route path='/portfolio-2025/project' element={<ProjectPage />} />
           </Routes>
-          <Footer />
+          {!isLoading ? <Footer /> : ""}
         </div>
 
       </div >
       <div className={Style.BottomHeaderContainer}>
-        <button onClick={toggleTheme}>
-          {isDarkMode ?
-            <FontAwesomeIcon icon={faSun} className={Style.arrow} />
-            :
-            <FontAwesomeIcon icon={faMoon} className={Style.arrow} />
-          }
-        </button>
+        {!isLoading ?
+          <button onClick={toggleTheme}>
+            {isDarkMode ?
+              <FontAwesomeIcon icon={faSun} className={Style.arrow} />
+              :
+              <FontAwesomeIcon icon={faMoon} className={Style.arrow} />
+            }
+          </button>
+          : ""}
       </div>
     </ThemeContext.Provider>
 

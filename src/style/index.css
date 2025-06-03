@@ -137,6 +137,27 @@ body::-webkit-scrollbar-thumb {
   margin-top: 5vh;
 }
 
+#loadingPage {
+  animation-name: loadingGone;
+  animation-duration: 2s;
+  animation-delay: 2.5s;
+}
+#loadingPage h1 {
+  opacity: 0;
+  will-change: transform;
+}
+#loadingPage h1 * {
+  will-change: transform;
+}
+
+@keyframes loadingGone {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(150vh);
+  }
+}
 
 @media screen and (max-width: 900px) {
 
@@ -147,3 +168,4 @@ body::-webkit-scrollbar-thumb {
     display: none;
   }
 }
+
