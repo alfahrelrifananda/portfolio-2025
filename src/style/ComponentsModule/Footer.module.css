@@ -1,7 +1,7 @@
 .footer {
     padding: 20px;
-    color: var(--primary-light);
-    background-color: var(--primary-dark);
+    color: var(--primary-dark);
+    /* background-color: var(--primary-dark); */
 }
 
 .footer .contact {
@@ -15,7 +15,7 @@
 .footer .contact a {
     text-decoration: none;
     text-align: end;
-    color: var(--primary-light);
+    color: var(--primary-dark);
 }
 
 .footer .contact p:nth-child(3) {

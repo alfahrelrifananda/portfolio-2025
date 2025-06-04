@@ -60,7 +60,7 @@
     bottom: 0;
     position: fixed;
     z-index: 87;
-    width: 100%;
+    width: fit-content;
     padding: 20px;
 }
 

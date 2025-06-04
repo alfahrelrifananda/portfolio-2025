@@ -106,7 +106,6 @@
 
 
 .contactContainer {
-    background-color: var(--primary-dark);
     height: 85vh;
     padding: 20px;
     gap: 20px;
@@ -123,7 +122,7 @@
 
 .contactContent {
     display: flex;
-    color: var(--primary-light);
+    color: var(--primary-dark);
     flex-direction: column;
     padding: 5%;
     justify-content: center;
@@ -155,26 +154,26 @@
     padding: 10px;
     width: calc(100% - 10px);
     outline: none;
-    border-bottom: 1px solid var(--primary-light);
+    border-bottom: 1px solid var(--primary-dark);
     font-family: Poppins-Medium;
     padding-left: 0;
     background-color: transparent;
-    color: var(--primary-light);
+    color: var(--primary-dark);
 }
 
 .contactContent form textarea {
     border: none;
     padding: 30px;
     outline: none;
-    border-bottom: 1px solid var(--primary-light);
+    border-bottom: 1px solid var(--primary-dark);
     font-family: Poppins-Medium;
     padding-left: 0;
     background-color: transparent;
-    color: var(--primary-light);
+    color: var(--primary-dark);
 }
 
 .btnPosnawr {
-    color: var(--primary-light);
+    color: var(--primary-dark);
     position: relative;
     display: block;
     overflow: hidden;
@@ -189,13 +188,13 @@
     line-height: 1.6;
     text-align: center;
     text-decoration: none;
-    border: 1px solid var(--primary-light);
+    border: 1px solid var(--primary-dark);
     background-color: transparent;
     cursor: pointer;
 }
 
 .btnPosnawr:hover {
-    color: var(--primary-dark);
+    color: var(--primary-light);
 }
 
 .hoverEffect {
@@ -203,7 +202,7 @@
     width: 0;
     height: 0;
     border-radius: 50%;
-    background-color: var(--primary-light);
+    background-color: var(--primary-dark);
     transition: width 0.3s ease-out, height 0.3s ease-out;
     transform: translate(-50%, -50%);
     z-index: 1;

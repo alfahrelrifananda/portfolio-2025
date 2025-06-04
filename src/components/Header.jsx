@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState, useEffect } from "react"
+import { useLayoutEffect, useState } from "react"
 import Style from "../style/ComponentsModule/Header.module.css"
 import StyleMenu from "../style/ComponentsModule/Menu.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -128,43 +128,43 @@ function Header() {
         }
     }
 
-    useEffect(() => {
-        const contactContainer = document.getElementById("contactContainer")
-        const headerContainer = document.getElementById("headerContainer")
-        const logoContainer = document.getElementById("logoContainer")
-        const dateContainer = document.getElementById("dateContainer")
-        const menuBtn = document.getElementById("menu-btn")
+    // useEffect(() => {
+    //     const contactContainer = document.getElementById("contactContainer")
+    //     const headerContainer = document.getElementById("headerContainer")
+    //     const logoContainer = document.getElementById("logoContainer")
+    //     const dateContainer = document.getElementById("dateContainer")
+    //     const menuBtn = document.getElementById("menu-btn")
 
 
-        function isInViewport(element) {
-            const bounding = element.getBoundingClientRect();
-            if (
-                bounding.top >= 0
-            ) {
-                return true
+    //     function isInViewport(element) {
+    //         const bounding = element.getBoundingClientRect();
+    //         if (
+    //             bounding.top >= 0
+    //         ) {
+    //             return true
 
-            } else {
-                return false
+    //         } else {
+    //             return false
 
-            }
-        }
+    //         }
+    //     }
 
-        window.addEventListener('scroll', () => {
-            if (isInViewport(contactContainer)) {
-                headerContainer.style.borderBottomColor = "var(--primary-dark)"
-                logoContainer.style.backgroundColor = "var(--primary-dark)"
-                logoContainer.style.color = "var(--primary-light)"
-                dateContainer.style.color = "var(--primary-dark)"
-                menuBtn.style.color = "var(--primary-dark)"
-            } else {
-                headerContainer.style.borderBottomColor = "var(--primary-light)"
-                logoContainer.style.backgroundColor = "var(--primary-light)"
-                logoContainer.style.color = "var(--primary-dark)"
-                dateContainer.style.color = "var(--primary-light)"
-                menuBtn.style.color = "var(--primary-light)"
-            }
-        }, true);
-    })
+    //     window.addEventListener('scroll', () => {
+    //         if (isInViewport(contactContainer)) {
+    //             headerContainer.style.borderBottomColor = "var(--primary-dark)"
+    //             logoContainer.style.backgroundColor = "var(--primary-dark)"
+    //             logoContainer.style.color = "var(--primary-light)"
+    //             dateContainer.style.color = "var(--primary-dark)"
+    //             menuBtn.style.color = "var(--primary-dark)"
+    //         } else {
+    //             headerContainer.style.borderBottomColor = "var(--primary-light)"
+    //             logoContainer.style.backgroundColor = "var(--primary-light)"
+    //             logoContainer.style.color = "var(--primary-dark)"
+    //             dateContainer.style.color = "var(--primary-light)"
+    //             menuBtn.style.color = "var(--primary-light)"
+    //         }
+    //     }, true);
+    // })
 
     useLayoutEffect(() => {
         gsap.registerPlugin(SplitText);

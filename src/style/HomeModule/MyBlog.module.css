@@ -25,10 +25,8 @@
 .cardsContainer {
     display: flex;
     height: 100vh;
-    align-items: baseline;
     gap: 2rem;
     padding-left: 2rem;
-    will-change: transform;
 }
 
 .card {
