@@ -11,24 +11,23 @@ import ScrollSmoother from "gsap/ScrollSmoother"
 import { useGSAP } from "@gsap/react"
 import Footer from "./components/Footer"
 import BlogPage from "./pages/BlogPage"
-import ProjectPage from "./pages/ProjectPage"
 import { Route, Routes } from 'react-router-dom'
+import {Chameleon, Todo, BelaTarr, AndroidInfo, PosPsikologi} from "./pages/ProjectPage"
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext()
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
 function App() {
-
   const main = useRef();
   const smoother = useRef();
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(true)
   const [isLoading, setIsLoading] = useState(true)
 
   useGSAP(
     () => {
       smoother.current = ScrollSmoother.create({
-        smooth: 2,
+        smooth: 1,
         smoothTouch: true,
       });
     },
@@ -77,9 +76,15 @@ function App() {
       <div id="smooth-wrapper" ref={main} >
         <div id="smooth-content">
           <Routes>
-            <Route path='/portfolio-2025/' element={<Home />} />
-            <Route path='/portfolio-2025/blog' element={<BlogPage />} />
-            <Route path='/portfolio-2025/project' element={<ProjectPage />} />
+            <Route index element={<Home />} />
+            <Route path='blog' element={<BlogPage />} />
+            <Route path='project' >
+              <Route path='chameleon' element={<Chameleon />} />
+              <Route path='todo' element={<Todo />} />
+              <Route path='belatarr' element={<BelaTarr />} />
+              <Route path='androidinfo' element={<AndroidInfo />} />
+              <Route path='pospsikologi' element={<PosPsikologi />} />
+            </Route>
           </Routes>
           {!isLoading ? <Footer /> : ""}
         </div>

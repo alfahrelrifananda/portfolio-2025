@@ -48,6 +48,7 @@ function AboutMore() {
         const textContainer = textRef.current
         const button = buttonRef.current
 
+
         if (!section2 || !textContainer || !button) return
 
         const words = textContainer.querySelectorAll(".word")
@@ -156,13 +157,13 @@ function AboutMore() {
 
                 </div>
 
-            </section>
+            </section >
 
             <section className={styles.section3}>
-                
+
 
             </section>
-        </div>
+        </div >
     )
 }
 
