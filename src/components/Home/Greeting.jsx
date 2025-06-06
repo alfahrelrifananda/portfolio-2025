@@ -13,7 +13,6 @@ function Greeting() {
     useLayoutEffect(() => {
 
         gsap.registerPlugin(SplitText);
-        console.clear();
         document.fonts.ready.then(() => {
             gsap.set("#bigGreeting", { opacity: 1 });
             gsap.set("#pGreeting", { opacity: 1 });

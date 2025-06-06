@@ -1,44 +1,30 @@
+import Style from "../style/ProjectModule/Project.module.css"
+
 export const Chameleon = () => {
     return (
         <>
-            <h1>CHAMELEON</h1>
-            <h1>CHAMELEON</h1>
-            <h1>CHAMELEON</h1>
-            <h1>CHAMELEON</h1>
-            <h1>CHAMELEON</h1>
+            <h1 className={Style.title}>CHAMELEON</h1>
         </>
     )
 }
 export const Todo = () => {
     return (
         <>
-            <h1>TODO</h1>
-            <h1>TODO</h1>
-            <h1>TODO</h1>
-            <h1>TODO</h1>
-            <h1>TODO</h1>
+            <h1 className={Style.title}>TODO</h1>
         </>
     )
 }
 export const BelaTarr = () => {
     return (
         <>
-            <h1>BELATARR</h1>
-            <h1>BELATARR</h1>
-            <h1>BELATARR</h1>
-            <h1>BELATARR</h1>
-            <h1>BELATARR</h1>
+            <h1 className={Style.title}>BELATARR</h1>
         </>
     )
 }
 export const AndroidInfo = () => {
     return (
         <>
-            <h1>ANDROIDINFO</h1>
-            <h1>ANDROIDINFO</h1>
-            <h1>ANDROIDINFO</h1>
-            <h1>ANDROIDINFO</h1>
-            <h1>ANDROIDINFO</h1>
+            <h1 className={Style.title}>ANDROIDINFO</h1>
         </>
     )
 }
@@ -46,11 +32,7 @@ export const AndroidInfo = () => {
 export const PosPsikologi = () => {
     return (
         <>
-            <h1>POSPSIKOLOGI</h1>
-            <h1>POSPSIKOLOGI</h1>
-            <h1>POSPSIKOLOGI</h1>
-            <h1>POSPSIKOLOGI</h1>
-            <h1>POSPSIKOLOGI</h1>
+            <h1 className={Style.title}>POSPSIKOLOGI</h1>
         </>
     )
 }

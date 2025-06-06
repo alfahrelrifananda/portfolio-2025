@@ -7,15 +7,17 @@
     transition-behavior: ease-in;
     opacity: 0;
     background-color: #1c0f13eb;
+
 }
 
 
 .menuContainer {
     padding-top: 100px;
     width: 100%;
-    transition: all 1.5s;
+    transition: all .5s;
     opacity: 0;
     height: 100%;
+    backdrop-filter: blur(15px);
 }
 
 

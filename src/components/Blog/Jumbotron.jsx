@@ -1,9 +1,9 @@
-
+import Style from "../../style/BlogModule/Blog.module.css"
 
 function Jumbotron() {
     return (
         <>
-        <h1>THIS IS BLOG!</h1>
+            <h1 className={Style.jumbotron}>THIS IS BLOG PAGE!</h1>
         </>
     )
 }

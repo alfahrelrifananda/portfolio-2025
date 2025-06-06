@@ -27,6 +27,7 @@
     font-size: 20px;
     line-height: 28px;
     text-align: center;
+    cursor: pointer;
     font-family: Poppins-Bold;
     background-color: var(--primary-dark);
     color: var(--primary-light);

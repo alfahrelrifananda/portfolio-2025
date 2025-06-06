@@ -124,7 +124,6 @@
     background-color: transparent;
     cursor: pointer;
 }
-
 .btnPosnawr:hover {
     color: var(--primary-light);
 }

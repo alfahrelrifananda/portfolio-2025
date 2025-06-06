@@ -1,5 +1,6 @@
 import Style from "../../style/HomeModule/Home.module.css"
 import { useRef, useCallback } from "react"
+import ScrollVelocity from "../ReactBits/ScrollVelocity"
 
 function Contact() {
 
@@ -41,6 +42,10 @@ function Contact() {
 
     return (
         <>
+            <ScrollVelocity
+                texts={['', 'CONTACT ME -']}
+                className="custom-scroll-text"
+            />
             <div className={Style.contactContainer} id="contactContainer">
                 <div className={Style.contactImage}>
                 </div>

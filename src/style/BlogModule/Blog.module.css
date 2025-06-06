@@ -1,0 +1,8 @@
+.jumbotron {
+    height: 100vh;
+    width: 100vw;
+    font-size: 46px;
+    display: grid;
+    font-family: Poppins-Medium-Bold;
+    place-items: center;
+}

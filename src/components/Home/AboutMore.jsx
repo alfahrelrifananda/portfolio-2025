@@ -1,7 +1,7 @@
 import { useEffect, useRef, useCallback } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import styles from "../../style/HomeModule/AboutMore.module.css"
+import Style from "../../style/HomeModule/AboutMore.module.css"
 import MyCV from "../../assets/MyCV.pdf"
 
 if (typeof window !== "undefined") {
@@ -21,7 +21,7 @@ function AboutMore() {
         const relX = e.clientX - parentOffset.left
         const relY = e.clientY - parentOffset.top
 
-        const span = button.querySelector(`.${styles.hoverEffect}`)
+        const span = button.querySelector(`.${Style.hoverEffect}`)
         if (span) {
             span.style.top = relY + "px"
             span.style.left = relX + "px"
@@ -36,7 +36,7 @@ function AboutMore() {
         const relX = e.clientX - parentOffset.left
         const relY = e.clientY - parentOffset.top
 
-        const span = button.querySelector(`.${styles.hoverEffect}`)
+        const span = button.querySelector(`.${Style.hoverEffect}`)
         if (span) {
             span.style.top = relY + "px"
             span.style.left = relX + "px"
@@ -48,14 +48,10 @@ function AboutMore() {
         const textContainer = textRef.current
         const button = buttonRef.current
 
-
         if (!section2 || !textContainer || !button) return
-
         const words = textContainer.querySelectorAll(".word")
-
         gsap.set(words, { opacity: 0.2 })
         gsap.set(button, { opacity: 0 })
-
         const moreAbout = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -78,9 +74,8 @@ function AboutMore() {
                                 gsap.to(word, { opacity: 0.2, duration: 0.3 })
                             }
                         })
-
                         if (progress > 0.9) {
-                            gsap.to(button, { opacity: 1, duration: 0.5 })
+                            gsap.to(button, { opacity: 1, duration: 0.3 })
                         } else {
                             gsap.to(button, { opacity: 0, duration: 0.3 })
                         }
@@ -129,37 +124,31 @@ function AboutMore() {
     const words = textContent.split(" ")
 
     return (
-        <div className={styles.scrollContainer}>
-
-            <section ref={section2Ref} className={styles.section2}>
-                <div className={styles.pinnedContent}>
-                    <div ref={textRef} className={styles.textContainer}>
+        <div className={Style.scrollContainer}>
+            <section ref={section2Ref} className={Style.section2}>
+                <div className={Style.pinnedContent}>
+                    <div ref={textRef} className={Style.textContainer}>
                         {words.map((word, index) => (
-                            <span key={index} className="word">
+                            <p key={index} className="word">
                                 {word}{"  "}
-                            </span>
+                            </p>
                         ))}
                     </div>
                     <a href={MyCV} download>
                         <button
                             type="submit"
                             ref={buttonRef}
-                            className={styles.btnPosnawr}
+                            className={Style.btnPosnawr}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         >
-                            <span className={styles.hoverEffect}></span>
-                            <span className={styles.buttonText}>Get CV</span>
+                            <span className={Style.hoverEffect}></span>
+                            <span className={Style.buttonText}>Get CV</span>
                         </button>
                     </a>
-
                 </div>
-
             </section >
-
-            <section className={styles.section3}>
-
-
+            <section className={Style.section3}>
             </section>
         </div >
     )

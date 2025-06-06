@@ -88,7 +88,7 @@ function MyBlog() {
 
             <section ref={containerRef} className={Style.sectionTwo}>
                 <ScrollVelocity
-                    texts={['RECENT BLOG -']}
+                    texts={['MY BLOG -']}
                     className="custom-scroll-text"
                 />
                 <div ref={cardsRef} className={Style.cardsContainer}>
@@ -112,7 +112,7 @@ function MyBlog() {
 
                     </div>
                     <div className={Style.card}>
-                        <Link to="/portfolio-2025/blog">
+                        <Link to="/blog">
                             <div className={Style.moreBlog}>
                                 <span>
                                     <FontAwesomeIcon icon={faArrowUp} className={Style.arrow} />

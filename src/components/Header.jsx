@@ -6,6 +6,7 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import gsap from "gsap"
 import SplitText from "gsap/dist/SplitText"
 import { HashLink } from "react-router-hash-link"
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
 
@@ -14,6 +15,7 @@ function Header() {
     const date = dates.getDate()
     const month = dates.getMonth()
     const year = dates.getFullYear()
+    const navigate = useNavigate();
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -127,7 +129,6 @@ function Header() {
             closeMenu()
         }
     }
-
     // useEffect(() => {
     //     const contactContainer = document.getElementById("contactContainer")
     //     const headerContainer = document.getElementById("headerContainer")
@@ -165,7 +166,6 @@ function Header() {
     //         }
     //     }, true);
     // })
-
     useLayoutEffect(() => {
         gsap.registerPlugin(SplitText);
         gsap.set("span", { opacity: 1 });
@@ -174,7 +174,6 @@ function Header() {
             SplitText.create(".menu-list-label", { type: "chars" }),
             SplitText.create(".menu-big-label", { type: "chars" })
         ]
-
         gsap.from(split[0].chars, {
             y: 20,
             autoAlpha: 0,
@@ -185,19 +184,21 @@ function Header() {
             autoAlpha: 0,
             stagger: 0.05
         });
-
-
-
-
     },)
-
-
+    function handleLogoClick() {
+        setTimeout(() => {
+            window.location.reload()
+        }, 100);
+        setTimeout(() => {
+            navigate('/', { replace: true })
+        }, 99);
+    }
 
     return (
         <>
             <header className={Style.header} >
                 <div className={Style.headerContainer} id="headerContainer">
-                    <div className={Style.logo}>
+                    <div className={Style.logo} onClick={handleLogoClick}>
                         <div className={Style.logoContainer} id="logoContainer">
                             <ul className="logoname">
                                 <li>F</li>
@@ -225,7 +226,7 @@ function Header() {
                 <div className={StyleMenu.menuContainer} id="theMenuContainer">
                     <div className={StyleMenu.menuContent}>
                         <div className={StyleMenu.menuList}>
-                            <HashLink smooth to="/portfolio-2025/" className={StyleMenu.link} onClick={closeMenu}>
+                            <HashLink smooth to="//" className={StyleMenu.link} onClick={closeMenu}>
 
                                 <div className={StyleMenu.li}>
                                     <p>01</p>
@@ -243,7 +244,7 @@ function Header() {
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
                             </HashLink>
-                            <HashLink smooth to="/portfolio-2025/#aboutTreshold"
+                            <HashLink smooth to="//#aboutTreshold"
                                 className={StyleMenu.link}
                                 onClick={closeMenu}
                             >
@@ -264,7 +265,7 @@ function Header() {
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
                             </HashLink>
-                            <HashLink smooth to="/portfolio-2025#projectTreshold" className={StyleMenu.link} onClick={closeMenu}>
+                            <HashLink smooth to="/#projectTreshold" className={StyleMenu.link} onClick={closeMenu}>
 
                                 <div className={StyleMenu.li}>
                                     <p>03</p>
@@ -282,7 +283,7 @@ function Header() {
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
                             </HashLink>
-                            <HashLink smooth to="/portfolio-2025#blogTreshold" className={StyleMenu.link} onClick={closeMenu}>
+                            <HashLink smooth to="/#blogTreshold" className={StyleMenu.link} onClick={closeMenu}>
 
                                 <div className={StyleMenu.li}>
                                     <p>04</p>
@@ -300,7 +301,7 @@ function Header() {
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
                             </HashLink>
-                            <HashLink smooth to="/portfolio-2025#contactTreshold" className={StyleMenu.link} onClick={closeMenu}>
+                            <HashLink smooth to="/#contactTreshold" className={StyleMenu.link} onClick={closeMenu}>
 
                                 <div className={StyleMenu.li}>
                                     <p>05</p>

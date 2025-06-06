@@ -51,6 +51,7 @@ function Project() {
     const closingRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const scrollTriggerRef = useRef(null);
+    const baseUrl = "portfolio-2025"
 
     const handleMenuHover = (index) => {
         if (scrollTriggerRef.current) {
@@ -124,12 +125,20 @@ function Project() {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
     }, []);
-    // const handleContactClick = () => {
-    //     console.log('Opening contact form...');
-    // };
-    // const handlePortfolioClick = () => {
-    //     console.log('Navigating to portfolio...');
-    // };
+    function handleClick(i) {
+        if (i === 0) {
+            window.location = `${baseUrl}/project/chameleon/`
+        } else if (i === 1) {
+            window.location = `${baseUrl}/project/todo/`
+        } else if (i === 2) {
+            window.location = `${baseUrl}/project/belatarr/`
+        } else if (i === 3) {
+            window.location = `${baseUrl}/project/androidinfo/`
+        } else if (i === 4) {
+            window.location = `${baseUrl}/project/pospsikologi/`
+        }
+    };
+
     return (
         <div>
             <section ref={heroRef} className={styles.heroSection} id="projectContainer" >
@@ -150,6 +159,7 @@ function Project() {
                                         key={index}
                                         className={`${styles.menuItem} ${activeIndex === index ? styles.menuItemActive : ''}`}
                                         onMouseEnter={() => handleMenuHover(index)}
+                                        onClick={() => handleClick(index)}
                                     >
                                         <div className={`${styles.menuIndicator} ${activeIndex === index ? styles.menuIndicatorActive : ''}`}></div>
                                         <div className={`${styles.menuContent} ${activeIndex === index ? styles.menuContentActive : ''}`}>

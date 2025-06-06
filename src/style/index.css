@@ -97,6 +97,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: space-between;
   width: calc(100% - 30px);
+  background-color: var(--primary-light);
   height: 100vh;
   top: 0;
   position: fixed;
@@ -106,6 +107,8 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
 }
 
+
+
 .bg-strip span {
   height: 100%;
   width: .1px;
@@ -113,6 +116,10 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--primary-dark);
 }
 
+
+.word {
+  display: inline;
+}
 
 .custom-scroll-text {
   color: var(--primary-dark);
@@ -170,9 +177,4 @@ body::-webkit-scrollbar-thumb {
   .bg-strip span:nth-child(9) {
     display: none;
   }
-}
-
-
-.word {
-  opacity: .2;
 }

@@ -12,7 +12,7 @@ import { useGSAP } from "@gsap/react"
 import Footer from "./components/Footer"
 import BlogPage from "./pages/BlogPage"
 import { Route, Routes } from 'react-router-dom'
-import {Chameleon, Todo, BelaTarr, AndroidInfo, PosPsikologi} from "./pages/ProjectPage"
+import { Chameleon, Todo, BelaTarr, AndroidInfo, PosPsikologi } from "./pages/ProjectPage"
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext()
@@ -54,9 +54,22 @@ function App() {
     }
   }
 
-  setTimeout(() => {
-    setIsLoading(false)
-  }, 3300);
+
+  if (document.URL.indexOf('portfolio-2025/project') >= 0) {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 0);
+  } else {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 3300);
+  }
+
+
+
+  // if (location.pathname === "portfolio-2025") {
+  //   console.log("dasjkhd")
+  // }
 
 
   return (

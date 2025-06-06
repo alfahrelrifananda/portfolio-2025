@@ -4,9 +4,7 @@ import gsap from "gsap"
 import SplitText from "gsap/dist/SplitText"
 
 function LoadingPage() {
-
     useLayoutEffect(() => {
-
         gsap.registerPlugin(SplitText);
         document.fonts.ready.then(() => {
             gsap.set("#loadingPage h1", { opacity: 1 });
@@ -29,7 +27,6 @@ function LoadingPage() {
                 }
             });
         });
-
     })
     return (
         <div className={Style.loadingclass} id="loadingPage">
