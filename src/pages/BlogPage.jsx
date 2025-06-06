@@ -4,6 +4,7 @@ import Jumbotron from "../components/Blog/Jumbotron"
 function BlogPage() {
     return (
         <>
+            <div id="jumbo_blog"></div>
             <Jumbotron />
         </>
     )

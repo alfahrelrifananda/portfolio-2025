@@ -1,4 +1,10 @@
 import Style from "../style/ProjectModule/Project.module.css"
+// import chaImg from "../assets/img_placeholder_cha.png"
+// import todoImg from "../assets/img_placeholder_todo.png"
+// import belImg from "../assets/img_placeholder_bel.png"
+// import andImg from "../assets/img_placeholder_and.png"
+// import posImg from "../assets/img_placeholder_pos.png"
+
 
 export const Chameleon = () => {
     return (
