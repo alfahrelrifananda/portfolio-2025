@@ -7,6 +7,7 @@ import ScrollVelocity from "../ReactBits/ScrollVelocity"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
+import blog1 from "../../assets/blog_featured/img_placeholder_and.png"
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -93,22 +94,62 @@ function MyBlog() {
                 />
                 <div ref={cardsRef} className={Style.cardsContainer}>
                     <div className={Style.card}>
-                        <CardBlog />
+                        <CardBlog
+                            day="Friday"
+                            date="6 June, 2025"
+                            FeatImg={blog1}
+                            hour="02.20 PM"
+                            minutenRead="12 min"
+                            category="Tech"
+                            title="Masa Depan Open Source dan GNU"
+                            desc="Open source, dengan kode programnya yang terbuka dan bebas diakses, dimodifikasi, serta disebarkan, adalah fondasi penting di dunia teknologi. Begitu pula GNU, proyek ambisius Richard Stallman untuk menciptakan sistem operasi yang benar-benar bebas, yang telah melahirkan banyak alat krusial termasuk dasar bagi Linux. Konsep ini menjanjikan kolaborasi global, transparansi, dan inovasi tanpa batas, memungkinkan ribuan orang bekerja sama untuk mengembangkan dan memperbaiki perangkat lunak. Ide dasarnya sangat mulia: perangkat lunak harusnya menjadi kebebasan, bukan batasan." />
                     </div>
                     <div className={Style.card}>
-                        <CardBlog />
+                        <CardBlog
+                            day="Friday"
+                            date="6 June, 2025"
+                            FeatImg={blog1}
+                            hour="02.20 PM"
+                            minutenRead="12 min"
+                            category="Tech"
+                            title="Masa Depan Open Source dan GNU"
+                            desc="Open source, dengan kode programnya yang terbuka dan bebas diakses, dimodifikasi, serta disebarkan, adalah fondasi penting di dunia teknologi. Begitu pula GNU, proyek ambisius Richard Stallman untuk menciptakan sistem operasi yang benar-benar bebas, yang telah melahirkan banyak alat krusial termasuk dasar bagi Linux. Konsep ini menjanjikan kolaborasi global, transparansi, dan inovasi tanpa batas, memungkinkan ribuan orang bekerja sama untuk mengembangkan dan memperbaiki perangkat lunak. Ide dasarnya sangat mulia: perangkat lunak harusnya menjadi kebebasan, bukan batasan." />
 
                     </div>
                     <div className={Style.card}>
-                        <CardBlog />
+                        <CardBlog
+                            day="Friday"
+                            date="6 June, 2025"
+                            FeatImg={blog1}
+                            hour="02.20 PM"
+                            minutenRead="12 min"
+                            category="Tech"
+                            title="Masa Depan Open Source dan GNU"
+                            desc="Open source, dengan kode programnya yang terbuka dan bebas diakses, dimodifikasi, serta disebarkan, adalah fondasi penting di dunia teknologi. Begitu pula GNU, proyek ambisius Richard Stallman untuk menciptakan sistem operasi yang benar-benar bebas, yang telah melahirkan banyak alat krusial termasuk dasar bagi Linux. Konsep ini menjanjikan kolaborasi global, transparansi, dan inovasi tanpa batas, memungkinkan ribuan orang bekerja sama untuk mengembangkan dan memperbaiki perangkat lunak. Ide dasarnya sangat mulia: perangkat lunak harusnya menjadi kebebasan, bukan batasan." />
 
                     </div>
                     <div className={Style.card}>
-                        <CardBlog />
+                        <CardBlog
+                            day="Friday"
+                            date="6 June, 2025"
+                            FeatImg={blog1}
+                            hour="02.20 PM"
+                            minutenRead="12 min"
+                            category="Tech"
+                            title="Masa Depan Open Source dan GNU"
+                            desc="Open source, dengan kode programnya yang terbuka dan bebas diakses, dimodifikasi, serta disebarkan, adalah fondasi penting di dunia teknologi. Begitu pula GNU, proyek ambisius Richard Stallman untuk menciptakan sistem operasi yang benar-benar bebas, yang telah melahirkan banyak alat krusial termasuk dasar bagi Linux. Konsep ini menjanjikan kolaborasi global, transparansi, dan inovasi tanpa batas, memungkinkan ribuan orang bekerja sama untuk mengembangkan dan memperbaiki perangkat lunak. Ide dasarnya sangat mulia: perangkat lunak harusnya menjadi kebebasan, bukan batasan." />
 
                     </div>
                     <div className={Style.card}>
-                        <CardBlog />
+                        <CardBlog
+                            day="Friday"
+                            date="6 June, 2025"
+                            FeatImg={blog1}
+                            hour="02.20 PM"
+                            minutenRead="12 min"
+                            category="Tech"
+                            title="Masa Depan Open Source dan GNU"
+                            desc="Open source, dengan kode programnya yang terbuka dan bebas diakses, dimodifikasi, serta disebarkan, adalah fondasi penting di dunia teknologi. Begitu pula GNU, proyek ambisius Richard Stallman untuk menciptakan sistem operasi yang benar-benar bebas, yang telah melahirkan banyak alat krusial termasuk dasar bagi Linux. Konsep ini menjanjikan kolaborasi global, transparansi, dan inovasi tanpa batas, memungkinkan ribuan orang bekerja sama untuk mengembangkan dan memperbaiki perangkat lunak. Ide dasarnya sangat mulia: perangkat lunak harusnya menjadi kebebasan, bukan batasan." />
 
                     </div>
                     <div className={Style.card}>

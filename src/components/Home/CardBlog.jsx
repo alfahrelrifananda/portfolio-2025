@@ -5,7 +5,7 @@ import { useRef, useCallback } from "react"
 import BlogPlaceholder from "../../assets/img_placeholder_1.jpg"
 import ProfilePlaceholder from "../../assets/profile.jpg"
 
-function CardBlog() {
+function CardBlog(props) {
 
     function ReadAll() {
         alert("Under Construction")
@@ -45,15 +45,15 @@ function CardBlog() {
     return (
         <div className={Style.blogCard}>
             <div className={Style.blogCardTop}>
-                <div className={Style.blogCardDay}>Wednesday</div>
+                <div className={Style.blogCardDay}>{props.day}</div>
                 <div className={Style.blogCardNewLabel}>
                     New
                     <span></span>
                 </div>
             </div>
-            <div className={Style.blogCardDate}>June 4, 2025</div>
+            <div className={Style.blogCardDate}>{props.date}</div>
             <div className={Style.blogCardFeatImg}>
-                <img src={BlogPlaceholder} alt="" />
+                <img src={props.FeatImg} alt="" />
             </div>
             <div className={Style.blogCardAuthor}>
                 <div className={Style.blogCardAuthorCol1}>
@@ -64,11 +64,11 @@ function CardBlog() {
                         <div className={Style.blogCardName}>Fahrel</div>
                     </div>
                     <div className={Style.blogCardCategory}>
-                        <div className={Style.blogCardHour}>01.30 PM</div>
+                        <div className={Style.blogCardHour}>{props.hour}</div>
                         <span></span>
-                        <div className={Style.blogCardMinuteRead}>12 min read</div>
+                        <div className={Style.blogCardMinuteRead}>{props.minuteRead}</div>
                         <span></span>
-                        <div className={Style.blogCardCat}>Tech</div>
+                        <div className={Style.blogCardCat}>{props.category}</div>
                     </div>
                 </div>
                 <div className={Style.blogCardAuthorCol2}>
@@ -78,10 +78,10 @@ function CardBlog() {
                 </div>
             </div>
             <div className={Style.blogCardTitle}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error tenetur qui saepe, placeat modi possimus?
+                {props.title}
             </div>
             <div className={Style.blogCardDesc}>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id mollitia, illo eligendi harum est dolore eos officia odio, quasi veritatis voluptate. Non voluptatum magnam delectus animi consequatur explicabo, deserunt quos! Voluptas eaque praesentium illo consequuntur, veritatis quod facilis, sequi ea rem optio modi quam vitae ipsa quisquam quasi quia vel magnam iure magni. Sapiente eius maxime ipsum voluptates consectetur commodi?
+                {props.desc}
             </div>
             <button
                 type="submit" onClick={() => { ReadAll() }}
