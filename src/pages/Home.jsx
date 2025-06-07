@@ -26,7 +26,7 @@ function Home() {
                         <About />
                         {/* <AboutMore /> */}
                         <div id="projectTreshold"></div>
-                        <Project />
+                        {/* <Project /> */}
                         <div id="blogTreshold"></div>
                         <MyBlog />
                         <div id="contactTreshold"></div>
