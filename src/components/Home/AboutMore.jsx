@@ -12,6 +12,7 @@ function AboutMore() {
     const section2Ref = useRef(null)
     const textRef = useRef(null)
     const buttonRef = useRef(null)
+    const Wrapper = useRef(null)
 
     const handleMouseEnter = useCallback((e) => {
         const button = buttonRef.current
@@ -47,6 +48,7 @@ function AboutMore() {
         const section2 = section2Ref.current
         const textContainer = textRef.current
         const button = buttonRef.current
+        const wrapperContainer = Wrapper.current
 
         if (!section2 || !textContainer || !button) return
 
@@ -57,6 +59,7 @@ function AboutMore() {
         const moreAbout = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
+                    pinSpacer: wrapperContainer,
                     trigger: section2,
                     start: "top top",
                     end: "bottom top",
@@ -122,7 +125,7 @@ function AboutMore() {
     const words = textContent.split(" ")
 
     return (
-        <div className={Style.scrollContainer}>
+        <div className={Style.scrollContainer} ref={Wrapper}>
             <section ref={section2Ref} className={Style.section2}>
                 <div className={Style.pinnedContent}>
                     <div ref={textRef} className={Style.textContainer}>
