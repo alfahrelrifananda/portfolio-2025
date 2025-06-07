@@ -116,6 +116,8 @@ function AboutMore() {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
         }
     }, [])
+    
+    ScrollTrigger.refresh()
 
     const textContent =
         "From Solo, Indonesia. As a creative developer, I'm driven by a love for crafting digital magic. My passion for innovative solutions goes hand-in-hand with my dedication as a GNU/Linux user and free software advocate, as I believe in open principles to transform ideas into captivating online experiences."

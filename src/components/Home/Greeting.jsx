@@ -52,7 +52,7 @@ function Greeting() {
             });
         });
 
-    })
+    }, [])
     return (
         <>
             <div className={Style.greeting} id="greetingContainer">

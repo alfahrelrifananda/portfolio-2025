@@ -12,6 +12,7 @@ import { useGSAP } from "@gsap/react"
 import Footer from "./components/Footer"
 import BlogPage from "./pages/BlogPage"
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
+import { useScrollTriggerRefresh } from "./components/ScrollTriggerFix"
 import { Chameleon, Todo, BelaTarr, AndroidInfo, PosPsikologi } from "./pages/ProjectPage"
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -19,6 +20,9 @@ export const ThemeContext = createContext()
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
 function App() {
+
+  useScrollTriggerRefresh()
+
   const main = useRef();
   const smoother = useRef();
   const [isDarkMode, setIsDarkMode] = useState(true)
@@ -65,9 +69,13 @@ function App() {
   }
 
 
+
+
   // if (location.pathname === "portfolio-2025") {
   //   console.log("dasjkhd")
   // }
+
+
 
 
   return (
