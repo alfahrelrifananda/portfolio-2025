@@ -24,6 +24,16 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
+
+  window.addEventListener('load', () => {
+    document.fonts.ready.then(() => {
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 300);
+    });
+  });
+
+
   useGSAP(
     () => {
       smoother.current = ScrollSmoother.create({

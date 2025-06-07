@@ -55,64 +55,63 @@ function AboutMore() {
         gsap.set(words, { opacity: 0.2 })
         gsap.set(button, { opacity: 0 })
         const moreAbout = () => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: section2,
-                start: "top top",
-                end: "bottom top",
-                pin: true,
-                scrub: 1,
-                anticipatePin: 1,
-                invalidateOnRefresh: true,
-                onUpdate: (self) => {
-                    const progress = self.progress
-                    const totalWords = words.length
-                    const wordsToReveal = Math.floor(progress * totalWords)
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section2,
+                    start: "top top",
+                    end: "bottom top",
+                    pin: true,
+                    scrub: 1,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
+                    onUpdate: (self) => {
+                        const progress = self.progress
+                        const totalWords = words.length
+                        const wordsToReveal = Math.floor(progress * totalWords)
 
-                    words.forEach((word, index) => {
-                        if (index <= wordsToReveal) {
-                            gsap.to(word, { opacity: 1, duration: 0.3 })
+                        words.forEach((word, index) => {
+                            if (index <= wordsToReveal) {
+                                gsap.to(word, { opacity: 1, duration: 0.3 })
+                            } else {
+                                gsap.to(word, { opacity: 0.2, duration: 0.3 })
+                            }
+                        })
+                        if (progress > 0.9) {
+                            gsap.to(button, { opacity: 1, duration: 0.3 })
                         } else {
-                            gsap.to(word, { opacity: 0.2, duration: 0.3 })
+                            gsap.to(button, { opacity: 0, duration: 0.3 })
                         }
-                    })
-                    if (progress > 0.9) {
-                        gsap.to(button, { opacity: 1, duration: 0.3 })
-                    } else {
-                        gsap.to(button, { opacity: 0, duration: 0.3 })
-                    }
+                    },
                 },
-            },
-        })
-        return tl
+            })
+            return tl
         }
 
-        moreAbout()
-        // const timer = setTimeout(() => {
-        //     const animation = moreAbout()
-        //     // setTimeout(() => {
-        //     //     ScrollTrigger.refresh()
-        //     // }, 100)
-        //     return () => {
-        //         if (animation) animation.kill()
-        //     }
-        // }, 100)
+        const timer = setTimeout(() => {
+            const animation = moreAbout()
+            setTimeout(() => {
+                ScrollTrigger.refresh()
+            }, 100)
+            return () => {
+                if (animation) animation.kill()
+            }
+        }, 100)
 
-        // const handleLoad = () => {
-        //     ScrollTrigger.refresh()
-        // }
+        const handleLoad = () => {
+            ScrollTrigger.refresh()
+        }
 
-        // const handleResize = () => {
-        //     ScrollTrigger.refresh()
-        // }
+        const handleResize = () => {
+            ScrollTrigger.refresh()
+        }
 
-        // window.addEventListener("load", handleLoad)
-        // window.addEventListener("resize", handleResize)
+        window.addEventListener("load", handleLoad)
+        window.addEventListener("resize", handleResize)
 
         return () => {
-            // clearTimeout(timer)
-            // window.removeEventListener("load", handleLoad)
-            // window.removeEventListener("resize", handleResize)
+            clearTimeout(timer)
+            window.removeEventListener("load", handleLoad)
+            window.removeEventListener("resize", handleResize)
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
         }
     }, [])
