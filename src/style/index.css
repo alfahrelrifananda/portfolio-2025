@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: Poppins-Light;
   src: url(/src/fonts/Poppins/Poppins-Light.ttf);
 }
@@ -35,7 +35,7 @@
 @font-face {
   font-family: Poppins-Italic;
   src: url(/src/fonts/Poppins/Poppins-Italic.ttf);
-}
+} */
 
 :root {
   font-family: Poppins-Medium;

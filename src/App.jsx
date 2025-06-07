@@ -31,8 +31,8 @@ function App() {
   useGSAP(
     () => {
       smoother.current = ScrollSmoother.create({
-        smooth: 1,
-        smoothTouch: true,
+        smooth: 0.5,
+        smoothTouch: 0.1,
       });
     },
     { scope: main }
