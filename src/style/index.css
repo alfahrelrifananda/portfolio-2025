@@ -38,7 +38,6 @@
 } */
 
 :root {
-  font-family: Poppins-Medium;
   /* line-height: 1.5;
   font-weight: 400; */
 
@@ -70,6 +69,9 @@ body {
   overflow-y: auto;
   position: relative;
   overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   background-color: var(--primary-light);
 }
 

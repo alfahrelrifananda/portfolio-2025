@@ -54,7 +54,9 @@
 }
 
 .menuList .link .li p {
-    font-family: Poppins-light-italic;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
 }
 
 .menuList .link .li h3 {
@@ -112,7 +114,9 @@
 }
 
 .menuContact ul li h5 {
-    font-family: Poppins-Light-Italic;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
 }
 
 .menuContact ul li a {
@@ -129,13 +133,15 @@
     color: #F6F4F2;
     top: 5vh;
     position: relative;
-    font-family: Poppins-Medium;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
 }
 
 .menuLabel {
     padding: 20px;
     font-size: 4vw;
-    font-family: Poppins-Bold;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
 }
 
 @media screen and (max-width: 900px) {

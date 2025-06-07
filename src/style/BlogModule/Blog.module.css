@@ -3,7 +3,8 @@
     width: 100vw;
     font-size: 46px;
     display: grid;
-    font-family: Poppins-Medium-Bold;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
     place-items: center;
     color: var(--primary-dark);
 }

@@ -20,7 +20,8 @@
 
 .greeting .greetingContainer p {
     width: 30vw;
-    font-family: Poppins-Light;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
     margin: 0 auto;
     opacity: 0;
 }
@@ -28,7 +29,8 @@
 .greeting .greetingContainer .bigGreeting {
     font-size: 120px;
     line-height: 120px;
-    font-family: Poppins-Bold;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
     width: 30vw;
     will-change: transform;
     opacity: 0;
@@ -72,17 +74,20 @@
 .aboutContainer .aboutContent div {
     display: flex;
     flex-wrap: wrap;
-    font-family: Poppins-Medium;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
     gap: 10px;
 }
 
 .aboutContainer .aboutContent p {
-    font-family: Poppins-Light;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
 }
 
 .aboutContainer .aboutContent .title {
     font-size: 3em;
-    font-family: Poppins-Medium-Bold;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
 }
 
 .aboutContainer .aboutContent div span {
@@ -129,11 +134,13 @@
 }
 
 .contactContent h1 {
-    font-family: Poppins-Medium-Bold;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
 }
 
 .contactContent p {
-    font-family: Poppins-Light;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
 }
 
 .contactContent form {
@@ -155,7 +162,8 @@
     width: calc(100% - 10px);
     outline: none;
     border-bottom: 1px solid var(--primary-dark);
-    font-family: Poppins-Medium;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
     padding-left: 0;
     background-color: transparent;
     color: var(--primary-dark);
@@ -166,7 +174,8 @@
     padding: 30px;
     outline: none;
     border-bottom: 1px solid var(--primary-dark);
-    font-family: Poppins-Medium;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
     padding-left: 0;
     background-color: transparent;
     color: var(--primary-dark);
@@ -182,7 +191,8 @@
     max-width: 175px;
     border-radius: 8px;
     padding: 10px 20px;
-    font-family: Poppins-Medium;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
     font-size: 16px;
     font-weight: normal;
     line-height: 1.6;
@@ -324,6 +334,7 @@
 .loadingclass h1 {
     font-size: 56px;
     line-height: 56px;
-    font-family: Poppins-Bold;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
     color: var(--primary-dark);
 }

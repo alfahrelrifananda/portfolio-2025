@@ -66,7 +66,7 @@ function CardBlog(props) {
                     <div className={Style.blogCardCategory}>
                         <div className={Style.blogCardHour}>{props.hour}</div>
                         <span></span>
-                        <div className={Style.blogCardMinuteRead}>{props.minuteRead}</div>
+                        <div className={Style.blogCardMinuteRead}>{props.minutenRead}</div>
                         <span></span>
                         <div className={Style.blogCardCat}>{props.category}</div>
                     </div>

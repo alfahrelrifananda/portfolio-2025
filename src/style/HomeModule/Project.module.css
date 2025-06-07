@@ -132,18 +132,22 @@
 }
 
 .projectLi .li p {
-    font-family: Poppins-light-italic;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
 }
 
 .projectLi .li .liT h2 {
     font-size: 26px;
-    font-family: Poppins-Medium-Bold;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
     padding: 0;
     margin: 0;
 }
 
 .projectLi .li .liT i {
-    font-family: Poppins-Light;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
 }
 
 
