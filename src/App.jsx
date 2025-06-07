@@ -30,6 +30,7 @@ function App() {
         smooth: 1,
         smoothTouch: true,
       });
+      ScrollTrigger.refresh()
     },
     { scope: main }
   );
