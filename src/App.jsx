@@ -34,6 +34,13 @@ function App() {
     { scope: main }
   );
 
+  window.addEventListener('load', () => {
+    if (!sessionStorage.getItem('visited')) {
+      sessionStorage.setItem('visited', '1');
+      setTimeout(() => window.dispatchEvent(new Event('resize')), 100);
+    }
+  });
+
   if (isDarkMode) {
     document.documentElement.style.setProperty('--primary-dark', '#F6F4F2')
     document.documentElement.style.setProperty('--primary-light', '#1C0F13')
