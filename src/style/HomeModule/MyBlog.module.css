@@ -63,7 +63,7 @@
 
 @media (max-width: 1000px) {
     .card {
-        min-width: 280px;
+        min-width: 330px;
         height: fit-content;
         margin: 10px;
     }

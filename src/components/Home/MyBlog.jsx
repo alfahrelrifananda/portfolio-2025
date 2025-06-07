@@ -33,7 +33,7 @@ function MyBlog() {
             let cardWidth = 450
 
             if (window.innerWidth < 1000) {
-                cardWidth = 350
+                cardWidth = 400
             }
 
             const totalWidth = cardWidth * 6
