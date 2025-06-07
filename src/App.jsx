@@ -22,7 +22,7 @@ function App() {
   const main = useRef();
   const smoother = useRef();
   const [isDarkMode, setIsDarkMode] = useState(true)
-  const [isLoading, setIsLoading] = useState(true)
+  // const [isLoading, setIsLoading] = useState(true)
 
   useGSAP(
     () => {
@@ -33,14 +33,6 @@ function App() {
     },
     { scope: main }
   );
-
-  window.addEventListener('load', () => {
-    if (!sessionStorage.getItem('visited')) {
-      sessionStorage.setItem('visited', '1');
-      setTimeout(() => window.dispatchEvent(new Event('reload')), 100);
-    }
-  });
-
   if (isDarkMode) {
     document.documentElement.style.setProperty('--primary-dark', '#F6F4F2')
     document.documentElement.style.setProperty('--primary-light', '#1C0F13')
@@ -62,15 +54,15 @@ function App() {
   }
 
 
-  if (document.URL.indexOf('portfolio-2025/project') >= 0) {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 0);
-  } else {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 3300);
-  }
+  // if (document.URL.indexOf('portfolio-2025/project') >= 0) {
+  //   setTimeout(() => {
+  //     setIsLoading(false)
+  //   }, 0);
+  // } else {
+  //   setTimeout(() => {
+  //     setIsLoading(false)
+  //   }, 3300);
+  // }
 
 
   // if (location.pathname === "portfolio-2025") {
@@ -80,7 +72,8 @@ function App() {
 
   return (
     <ThemeContext.Provider value={isDarkMode}>
-      {!isLoading ? <Header /> : ""}
+      {/* {!isLoading ? <Header /> : ""} */}
+      <Header />
       <div className="bg-strip">
         <span></span>
         <span></span>
@@ -105,12 +98,13 @@ function App() {
               <Route path='pospsikologi' element={<PosPsikologi />} />
             </Route>
           </Routes>
-          {!isLoading ? <Footer /> : ""}
+          {/* {!isLoading ? <Footer /> : ""} */}
+          <Footer />
         </div>
 
       </div >
       <div className={Style.BottomHeaderContainer}>
-        {!isLoading ?
+        {/* {!isLoading ?
           <button onClick={toggleTheme}>
             {isDarkMode ?
               <FontAwesomeIcon icon={faSun} className={Style.arrow} />
@@ -118,7 +112,14 @@ function App() {
               <FontAwesomeIcon icon={faMoon} className={Style.arrow} />
             }
           </button>
-          : ""}
+          : ""} */}
+        <button onClick={toggleTheme}>
+          {isDarkMode ?
+            <FontAwesomeIcon icon={faSun} className={Style.arrow} />
+            :
+            <FontAwesomeIcon icon={faMoon} className={Style.arrow} />
+          }
+        </button>
       </div>
     </ThemeContext.Provider>
 
