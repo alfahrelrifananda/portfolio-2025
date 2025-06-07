@@ -112,8 +112,7 @@ body::-webkit-scrollbar-thumb {
 .bg-strip span {
   height: 100%;
   width: .1px;
-  opacity: .5;
-  background-color: var(--primary-dark);
+  background-color: #343434;
 }
 
 
@@ -158,7 +157,6 @@ body::-webkit-scrollbar-thumb {
 #loadingPage h1 * {
   will-change: transform;
 }
-
 @keyframes loadingGone {
   0% {
     transform: translateY(0);

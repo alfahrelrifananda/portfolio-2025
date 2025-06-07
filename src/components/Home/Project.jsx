@@ -53,21 +53,21 @@ function Project() {
     const scrollTriggerRef = useRef(null);
     const baseUrl = "portfolio-2025"
 
-    const handleMenuHover = (index) => {
-        if (scrollTriggerRef.current) {
-            const targetProgress = index / (projects.length - 1);
-            const scrollStart = scrollTriggerRef.current.start;
-            const scrollEnd = scrollTriggerRef.current.end;
-            const totalScrollDistance = scrollEnd - scrollStart;
-            const targetScroll = scrollStart + (totalScrollDistance * targetProgress);
+    // const handleMenuHover = (index) => {
+    //     if (scrollTriggerRef.current) {
+    //         const targetProgress = index / (projects.length - 1);
+    //         const scrollStart = scrollTriggerRef.current.start;
+    //         const scrollEnd = scrollTriggerRef.current.end;
+    //         const totalScrollDistance = scrollEnd - scrollStart;
+    //         const targetScroll = scrollStart + (totalScrollDistance * targetProgress);
 
-            gsap.to(window, {
-                duration: 1.2,
-                scrollTo: { y: targetScroll, autoKill: false },
-                ease: "power2.inOut"
-            });
-        }
-    };
+    //         gsap.to(window, {
+    //             duration: 1.2,
+    //             scrollTo: { y: targetScroll, autoKill: false },
+    //             ease: "power2.inOut"
+    //         });
+    //     }
+    // };
 
     useEffect(() => {
         let currentIndex = 0;
@@ -158,7 +158,7 @@ function Project() {
                                     <div
                                         key={index}
                                         className={`${styles.menuItem} ${activeIndex === index ? styles.menuItemActive : ''}`}
-                                        onMouseEnter={() => handleMenuHover(index)}
+                                        // onMouseEnter={() => handleMenuHover(index)}
                                         onClick={() => handleClick(index)}
                                     >
                                         <div className={`${styles.menuIndicator} ${activeIndex === index ? styles.menuIndicatorActive : ''}`}></div>
