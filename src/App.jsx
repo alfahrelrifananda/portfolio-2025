@@ -37,7 +37,7 @@ function App() {
   window.addEventListener('load', () => {
     if (!sessionStorage.getItem('visited')) {
       sessionStorage.setItem('visited', '1');
-      setTimeout(() => window.dispatchEvent(new Event('resize')), 100);
+      setTimeout(() => window.dispatchEvent(new Event('reload')), 100);
     }
   });
 

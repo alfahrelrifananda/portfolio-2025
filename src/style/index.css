@@ -1,42 +1,33 @@
 @font-face {
   font-family: Poppins-Light;
   src: url(/src/fonts/Poppins/Poppins-Light.ttf);
-  font-display: swap;
 }
 
 @font-face {
   font-family: Poppins-Medium;
   src: url(/src/fonts/Poppins/Poppins-Medium.ttf);
-  font-display: swap;
-
 }
 
 @font-face {
   font-family: Poppins-Medium-Bold;
   src: url(/src/fonts/Poppins/Poppins-Bold.ttf);
-  font-display: swap;
-
 }
 
 
 @font-face {
   font-family: Poppins-Bold;
   src: url(/src/fonts/Poppins/Poppins-Black.ttf);
-  font-display: swap;
 
 }
 
 @font-face {
   font-family: Poppins-Bold-Italic;
   src: url(/src/fonts/Poppins/Poppins-BlackItalic.ttf);
-  font-display: swap;
-
 }
 
 @font-face {
   font-family: Poppins-Light-Italic;
   src: url(/src/fonts/Poppins/Poppins-LightItalic.ttf);
-  font-display: swap;
 
 }
 
@@ -44,8 +35,6 @@
 @font-face {
   font-family: Poppins-Italic;
   src: url(/src/fonts/Poppins/Poppins-Italic.ttf);
-  font-display: swap;
-
 }
 
 :root {
