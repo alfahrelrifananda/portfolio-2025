@@ -18,22 +18,22 @@ function Home() {
     }, []);
     return (
         <>
-            {loading ? (<LoadingPage />) :
-                (
-                    <main>
-                        <Greeting />
-                        <div id="aboutTreshold"></div>
-                        <About />
-                        <AboutMore />
-                        <div id="projectTreshold"></div>
-                        <Project />
-                        <div id="blogTreshold"></div>
-                        <MyBlog />
-                        <div id="contactTreshold"></div>
-                        <Contact />
-                    </main>
-                )
-            }
+            {/* {loading ? (<LoadingPage />) : */}
+                // (
+            <main>
+                <Greeting />
+                <div id="aboutTreshold"></div>
+                <About />
+                <AboutMore />
+                <div id="projectTreshold"></div>
+                <Project />
+                <div id="blogTreshold"></div>
+                <MyBlog />
+                <div id="contactTreshold"></div>
+                <Contact />
+            </main>
+            {/* ) */}
+            {/* } */}
 
 
         </>

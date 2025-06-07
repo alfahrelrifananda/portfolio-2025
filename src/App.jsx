@@ -22,7 +22,7 @@ function App() {
   const main = useRef();
   const smoother = useRef();
   const [isDarkMode, setIsDarkMode] = useState(true)
-  // const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
 
   useGSAP(
     () => {
@@ -54,15 +54,15 @@ function App() {
   }
 
 
-  // if (document.URL.indexOf('portfolio-2025/project') >= 0) {
-  //   setTimeout(() => {
-  //     setIsLoading(false)
-  //   }, 0);
-  // } else {
-  //   setTimeout(() => {
-  //     setIsLoading(false)
-  //   }, 3300);
-  // }
+  if (document.URL.indexOf('portfolio-2025/project') >= 0) {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 0);
+  } else {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 3300);
+  }
 
 
   // if (location.pathname === "portfolio-2025") {
@@ -72,8 +72,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={isDarkMode}>
-      {/* {!isLoading ? <Header /> : ""} */}
-      <Header />
+      {!isLoading ? <Header /> : ""}
       <div className="bg-strip">
         <span></span>
         <span></span>
@@ -98,13 +97,12 @@ function App() {
               <Route path='pospsikologi' element={<PosPsikologi />} />
             </Route>
           </Routes>
-          {/* {!isLoading ? <Footer /> : ""} */}
-          <Footer />
+          {!isLoading ? <Footer /> : ""}
         </div>
 
       </div >
       <div className={Style.BottomHeaderContainer}>
-        {/* {!isLoading ?
+        {!isLoading ?
           <button onClick={toggleTheme}>
             {isDarkMode ?
               <FontAwesomeIcon icon={faSun} className={Style.arrow} />
@@ -112,14 +110,7 @@ function App() {
               <FontAwesomeIcon icon={faMoon} className={Style.arrow} />
             }
           </button>
-          : ""} */}
-        <button onClick={toggleTheme}>
-          {isDarkMode ?
-            <FontAwesomeIcon icon={faSun} className={Style.arrow} />
-            :
-            <FontAwesomeIcon icon={faMoon} className={Style.arrow} />
-          }
-        </button>
+          : ""}
       </div>
     </ThemeContext.Provider>
 
