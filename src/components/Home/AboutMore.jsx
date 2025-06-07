@@ -88,15 +88,13 @@ function AboutMore() {
 
         const timer = setTimeout(() => {
             const animation = moreAbout()
-
             setTimeout(() => {
                 ScrollTrigger.refresh()
-            }, 10)
-
+            }, 0)
             return () => {
                 if (animation) animation.kill()
             }
-        }, 10)
+        }, 0)
 
         const handleLoad = () => {
             ScrollTrigger.refresh()
