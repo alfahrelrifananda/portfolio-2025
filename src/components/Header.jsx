@@ -201,12 +201,7 @@ function Header() {
                     <div className={Style.logo} onClick={handleLogoClick}>
                         <div className={Style.logoContainer} id="logoContainer">
                             <ul className="logoname">
-                                <li>F</li>
-                                <li>A</li>
-                                <li>H</li>
-                                <li>R</li>
-                                <li>E</li>
-                                <li>L</li>
+                                FAHREL
                             </ul>
                         </div>
                     </div>

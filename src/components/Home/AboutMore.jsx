@@ -82,19 +82,17 @@ function AboutMore() {
                     },
                 },
             })
-
             return tl
         }
-
         const timer = setTimeout(() => {
             const animation = moreAbout()
             setTimeout(() => {
                 ScrollTrigger.refresh()
-            }, 0)
+            }, 100)
             return () => {
                 if (animation) animation.kill()
             }
-        }, 0)
+        }, 100)
 
         const handleLoad = () => {
             ScrollTrigger.refresh()
