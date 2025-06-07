@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useLayoutEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Style from "../../style/HomeModule/MyBlog.module.css"
@@ -21,7 +21,7 @@ function MyBlog() {
     const containerRef = useRef(null)
     const cardsRef = useRef(null)
 
-    useEffect(() => {
+    useLayoutEffect(() => {
 
 
         const container = containerRef.current

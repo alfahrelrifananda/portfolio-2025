@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
@@ -69,7 +69,7 @@ function Project() {
     //     }
     // };
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         let currentIndex = 0;
         const heroElements = heroRef.current.querySelectorAll('[data-animation="fadeInUp"]');
         heroElements.forEach((element, index) => {

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from "react"
+import { useLayoutEffect, useRef, useCallback } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Style from "../../style/HomeModule/AboutMore.module.css"
@@ -43,13 +43,15 @@ function AboutMore() {
         }
     }, [])
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const section2 = section2Ref.current
         const textContainer = textRef.current
         const button = buttonRef.current
 
         if (!section2 || !textContainer || !button) return
+
         const words = textContainer.querySelectorAll(".word")
+
         gsap.set(words, { opacity: 0.2 })
         gsap.set(button, { opacity: 0 })
         const moreAbout = () => {
