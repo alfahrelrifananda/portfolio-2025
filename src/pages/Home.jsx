@@ -18,8 +18,8 @@ function Home() {
     }, []);
     return (
         <>
-            {/* {loading ? (<LoadingPage />) :
-                ( */}
+            {loading ? (<LoadingPage />) :
+                (
                     <main>
                         <Greeting />
                         <div id="aboutTreshold"></div>
@@ -32,8 +32,8 @@ function Home() {
                         <div id="contactTreshold"></div>
                         <Contact />
                     </main>
-                {/* )
-            } */}
+                )
+            }
 
 
         </>
