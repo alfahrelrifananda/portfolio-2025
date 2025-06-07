@@ -24,11 +24,8 @@ function Home() {
                         <Greeting />
                         <div id="aboutTreshold"></div>
                         <About />
-                        <AboutMore />
-                        <div id="projectTreshold">
-                            <div className="box-separator"></div>
-                            <div className="line-separator"></div>
-                        </div>
+                        {/* <AboutMore /> */}
+                        <div id="projectTreshold"></div>
                         <Project />
                         <div id="blogTreshold"></div>
                         <MyBlog />
