@@ -53,6 +53,7 @@
     display: flex;
     justify-content: center;
     position: relative;
+    transform: translate(0px, 0px) !important;
 }
 
 .pinnedContent {
@@ -124,6 +125,7 @@
     background-color: transparent;
     cursor: pointer;
 }
+
 .btnPosnawr:hover {
     color: var(--primary-light);
 }
