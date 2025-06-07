@@ -62,6 +62,7 @@ function AboutMore() {
                     end: "bottom top",
                     pin: true,
                     scrub: 1,
+                    triggerHook: 0,
                     anticipatePin: 1,
                     invalidateOnRefresh: true,
                     onUpdate: (self) => {

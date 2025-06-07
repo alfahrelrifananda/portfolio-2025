@@ -11,7 +11,7 @@ import ScrollSmoother from "gsap/ScrollSmoother"
 import { useGSAP } from "@gsap/react"
 import Footer from "./components/Footer"
 import BlogPage from "./pages/BlogPage"
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import { Chameleon, Todo, BelaTarr, AndroidInfo, PosPsikologi } from "./pages/ProjectPage"
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -72,46 +72,49 @@ function App() {
 
   return (
     <ThemeContext.Provider value={isDarkMode}>
-      {!isLoading ? <Header /> : ""}
-      <div className="bg-strip">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div id="smooth-wrapper" ref={main} >
-        <div id="smooth-content">
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path='blog' element={<BlogPage />} />
-            <Route path='project' >
-              <Route path='chameleon' element={<Chameleon />} />
-              <Route path='todo' element={<Todo />} />
-              <Route path='belatarr' element={<BelaTarr />} />
-              <Route path='androidinfo' element={<AndroidInfo />} />
-              <Route path='pospsikologi' element={<PosPsikologi />} />
-            </Route>
-          </Routes>
-          {!isLoading ? <Footer /> : ""}
-        </div>
+      <BrowserRouter basename="/portfolio-2025">
 
-      </div >
-      <div className={Style.BottomHeaderContainer}>
-        {!isLoading ?
-          <button onClick={toggleTheme}>
-            {isDarkMode ?
-              <FontAwesomeIcon icon={faSun} className={Style.arrow} />
-              :
-              <FontAwesomeIcon icon={faMoon} className={Style.arrow} />
-            }
-          </button>
-          : ""}
-      </div>
+        {!isLoading ? <Header /> : ""}
+        <div className="bg-strip">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="smooth-wrapper" ref={main} >
+          <div id="smooth-content">
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path='blog' element={<BlogPage />} />
+              <Route path='project' >
+                <Route path='chameleon' element={<Chameleon />} />
+                <Route path='todo' element={<Todo />} />
+                <Route path='belatarr' element={<BelaTarr />} />
+                <Route path='androidinfo' element={<AndroidInfo />} />
+                <Route path='pospsikologi' element={<PosPsikologi />} />
+              </Route>
+            </Routes>
+            {!isLoading ? <Footer /> : ""}
+          </div>
+
+        </div >
+        <div className={Style.BottomHeaderContainer}>
+          {!isLoading ?
+            <button onClick={toggleTheme}>
+              {isDarkMode ?
+                <FontAwesomeIcon icon={faSun} className={Style.arrow} />
+                :
+                <FontAwesomeIcon icon={faMoon} className={Style.arrow} />
+              }
+            </button>
+            : ""}
+        </div>
+      </BrowserRouter>
     </ThemeContext.Provider>
 
   )
