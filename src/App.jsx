@@ -1,6 +1,4 @@
 import React, { useState, createContext, useRef } from "react"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 import Header from "./components/Header"
 import Style from "./style/ComponentsModule/Header.module.css"
 import Home from "./pages/Home"
@@ -112,11 +110,7 @@ function App() {
         <div className={Style.BottomHeaderContainer}>
           {!isLoading ?
             <button onClick={toggleTheme}>
-              {isDarkMode ?
-                <FontAwesomeIcon icon={faSun} className={Style.arrow} />
-                :
-                <FontAwesomeIcon icon={faMoon} className={Style.arrow} />
-              }
+              D
             </button>
             : ""}
         </div>

@@ -187,6 +187,7 @@
     .blogCardDate {
         font-size: 44px;
     }
+
     .blogCard {
         height: 500px;
     }
@@ -197,6 +198,7 @@
     .blogCard {
         height: 650px;
     }
+
     .blogCardDate {
         font-size: 52px;
     }
@@ -215,5 +217,6 @@
         -webkit-line-clamp: 7;
         line-clamp: 7;
         height: 105px;
+        margin-bottom: 20px;
     }
 }

@@ -2,6 +2,7 @@
     position: fixed;
     width: 100%;
     z-index: 98;
+    background-color: #1c0f13eb;
 }
 
 .header .headerContainer {
@@ -10,7 +11,7 @@
     padding: 10px;
     font-size: 14px;
     line-height: 20px;
-    backdrop-filter: blur(30px);
+    /* backdrop-filter: blur(30px); */
     align-items: center;
     color: var(--primary-dark);
     border-bottom: 1px solid var(--primary-dark);

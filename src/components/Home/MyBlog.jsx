@@ -3,9 +3,7 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Style from "../../style/HomeModule/MyBlog.module.css"
 import CardBlog from "./CardBlog"
-import ScrollVelocity from "../ReactBits/ScrollVelocity"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+// import ScrollVelocity from "../ReactBits/ScrollVelocity"
 import blog1 from "../../assets/blog_featured/img_placeholder_and.png"
 import blog2 from "../../assets/blog_featured/image_placeholder_blog2.jpg"
 import blog3 from "../../assets/blog_featured/image_placeholder_blog3.jpg"
@@ -93,10 +91,10 @@ function MyBlog() {
             </section>
 
             <section ref={containerRef} className={Style.sectionTwo}>
-                <ScrollVelocity
+                {/* <ScrollVelocity
                     texts={['MY BLOG -']}
                     className="custom-scroll-text"
-                />
+                /> */}
                 <div ref={cardsRef} className={Style.cardsContainer}>
                     <div className={Style.card}>
                         <CardBlog
@@ -161,7 +159,6 @@ function MyBlog() {
                         <HashLink to="/blog">
                             <div className={Style.moreBlog}>
                                 <span>
-                                    <FontAwesomeIcon icon={faArrowUp} className={Style.arrow} />
                                 </span>
                                 <p>Show more</p>
                             </div>

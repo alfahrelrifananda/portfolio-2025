@@ -1,6 +1,4 @@
 import Style from "../../style/HomeModule/CardBlog.module.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShare } from '@fortawesome/free-solid-svg-icons'
 import { useRef, useCallback } from "react"
 import BlogPlaceholder from "../../assets/img_placeholder_1.jpg"
 import ProfilePlaceholder from "../../assets/profile.jpg"
@@ -73,7 +71,6 @@ function CardBlog(props) {
                 </div>
                 <div className={Style.blogCardAuthorCol2}>
                     <div className={Style.blogCardShare}>
-                        <FontAwesomeIcon icon={faShare} />
                     </div>
                 </div>
             </div>

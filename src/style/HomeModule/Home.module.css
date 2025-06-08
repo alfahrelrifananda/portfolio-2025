@@ -23,7 +23,7 @@
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     margin: 0 auto;
-    opacity: 0;
+    opacity: 0.1;
 }
 
 .greeting .greetingContainer .bigGreeting {
@@ -33,7 +33,7 @@
     font-weight: 900;
     width: 30vw;
     will-change: transform;
-    opacity: 0;
+    opacity: 0.1;
 }
 
 .greeting .greetingContainer .bigGreeting * {
@@ -94,7 +94,7 @@
     padding: 10px;
     border: 1px solid var(--primary-dark);
     border-radius: 5px;
-    opacity: 0;
+    opacity: 0.1;
 }
 
 
@@ -265,7 +265,7 @@
 
     @keyframes greetingShapeAnimation {
         0% {
-            opacity: 0;
+            opacity: 0.1;
         }
 
         100% {

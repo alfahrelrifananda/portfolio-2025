@@ -8,9 +8,7 @@ import img2 from "../../assets/img_placeholder_todo.png"
 import img3 from "../../assets/img_placeholder_bel.png"
 import img4 from "../../assets/img_placeholder_and.png"
 import img5 from "../../assets/img_placeholder_pos.png"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
-import ScrollVelocity from "../ReactBits/ScrollVelocity"
+// import ScrollVelocity from "../ReactBits/ScrollVelocity"
 import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -156,10 +154,10 @@ function Project() {
 
             </section >
             <section ref={pinnedRef} className={styles.pinnedSection} >
-                <ScrollVelocity
+                {/* <ScrollVelocity
                     texts={['', 'RECENT PROJECT -']}
                     className="custom-scroll-text"
-                />
+                /> */}
                 <div className={styles.container}>
                     <div className={styles.grid}>
 
@@ -189,7 +187,6 @@ function Project() {
                                                         </h2>
                                                         <i>{service.description}</i>
                                                         <div>
-                                                            <FontAwesomeIcon icon={faArrowUp} className={styles.arrow} />
                                                         </div>
                                                     </div>
 

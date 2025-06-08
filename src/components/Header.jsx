@@ -1,8 +1,6 @@
-import { useLayoutEffect, useState } from "react"
+import { useLayoutEffect, useState, useEffect, useRef } from "react"
 import Style from "../style/ComponentsModule/Header.module.css"
 import StyleMenu from "../style/ComponentsModule/Menu.module.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import gsap from "gsap"
 import SplitText from "gsap/dist/SplitText"
 import { HashLink } from "react-router-hash-link"
@@ -10,86 +8,99 @@ import { useNavigate } from 'react-router-dom';
 
 function Header() {
 
-    const dates = new Date()
-    const day = dates.getDay()
-    const date = dates.getDate()
-    const month = dates.getMonth()
-    const year = dates.getFullYear()
-    const navigate = useNavigate();
-
+    let headerDate = useRef()
+    let headerHead = useRef()
+    const navigate = useNavigate()
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-    let days = null
-    let months = null
-    let menu = "(menu)"
+
+    useEffect(() => {
+
+        const dates = new Date()
+        const day = dates.getDay()
+        const date = dates.getDate()
+        const month = dates.getMonth()
+        const year = dates.getFullYear()
+
+        let days = null
+        let months = null
 
 
-    switch (day) {
-        case 0:
-            days = "Minggu"
-            break;
-        case 1:
-            days = "Senin"
-            break;
-        case 2:
-            days = "Selasa"
-            break;
-        case 3:
-            days = "Rabu"
-            break;
-        case 4:
-            days = "Kamis"
-            break;
-        case 5:
-            days = "Jum'at"
-            break;
-        case 6:
-            days = "Sabtu"
-            break;
-        default:
-            break;
-    }
+        switch (day) {
+            case 0:
+                days = "Minggu"
+                break;
+            case 1:
+                days = "Senin"
+                break;
+            case 2:
+                days = "Selasa"
+                break;
+            case 3:
+                days = "Rabu"
+                break;
+            case 4:
+                days = "Kamis"
+                break;
+            case 5:
+                days = "Jum'at"
+                break;
+            case 6:
+                days = "Sabtu"
+                break;
+            default:
+                break;
+        }
 
-    switch (month) {
-        case 0:
-            months = "Januari"
-            break;
-        case 1:
-            months = "Februari"
-            break;
-        case 2:
-            months = "Maret"
-            break;
-        case 3:
-            months = "April"
-            break;
-        case 4:
-            months = "Mei"
-            break;
-        case 5:
-            months = "Juni"
-            break;
-        case 6:
-            months = "Juli"
-            break;
-        case 7:
-            months = "Agustus"
-            break;
-        case 8:
-            months = "September"
-            break;
-        case 9:
-            months = "Oktober"
-            break;
-        case 10:
-            months = "Novmber"
-            break;
-        case 11:
-            months = "Desember"
-            break;
-        default:
-            break;
-    }
+        switch (month) {
+            case 0:
+                months = "Januari"
+                break;
+            case 1:
+                months = "Februari"
+                break;
+            case 2:
+                months = "Maret"
+                break;
+            case 3:
+                months = "April"
+                break;
+            case 4:
+                months = "Mei"
+                break;
+            case 5:
+                months = "Juni"
+                break;
+            case 6:
+                months = "Juli"
+                break;
+            case 7:
+                months = "Agustus"
+                break;
+            case 8:
+                months = "September"
+                break;
+            case 9:
+                months = "Oktober"
+                break;
+            case 10:
+                months = "Novmber"
+                break;
+            case 11:
+                months = "Desember"
+                break;
+            default:
+                break;
+        }
+
+
+        headerHead.current.textContent = `Portfolio ${year}`
+        headerDate.current.textContent = `${days}, ${date} ${months}, ${year}`
+
+    }, [])
+
+
+
 
     function closeMenu() {
         const menu = document.getElementById("theMenu")
@@ -106,8 +117,8 @@ function Header() {
         menuToggle.style.color = "var(--primary-dark)"
         menuDateContainer.style.color = "var(--primary-dark)"
         menuHeaderContainer.style.borderBottomColor = "var(--primary-dark)"
-        document.documentElement.style.overflowY = "auto"
-        document.body.style.overflowY = "auto"
+        // document.documentElement.style.overflowY = "auto"
+        // document.body.style.overflowY = "auto"
         setIsMenuOpen(false)
 
     }
@@ -126,8 +137,8 @@ function Header() {
                 menuToggle.style.color = "#F6F4F2"
                 menuDateContainer.style.color = "#F6F4F2"
                 menuHeaderContainer.style.borderBottomColor = "#F6F4F2"
-                document.documentElement.style.overflowY = "hidden"
-                document.body.style.overflowY = "hidden"
+                // document.documentElement.style.overflowY = "hidden"
+                // document.body.style.overflowY = "hidden"
                 setIsMenuOpen(true)
             }, 500);
 
@@ -135,43 +146,6 @@ function Header() {
             closeMenu()
         }
     }
-    // useEffect(() => {
-    //     const contactContainer = document.getElementById("contactContainer")
-    //     const headerContainer = document.getElementById("headerContainer")
-    //     const logoContainer = document.getElementById("logoContainer")
-    //     const dateContainer = document.getElementById("dateContainer")
-    //     const menuBtn = document.getElementById("menu-btn")
-
-
-    //     function isInViewport(element) {
-    //         const bounding = element.getBoundingClientRect();
-    //         if (
-    //             bounding.top >= 0
-    //         ) {
-    //             return true
-
-    //         } else {
-    //             return false
-
-    //         }
-    //     }
-
-    //     window.addEventListener('scroll', () => {
-    //         if (isInViewport(contactContainer)) {
-    //             headerContainer.style.borderBottomColor = "var(--primary-dark)"
-    //             logoContainer.style.backgroundColor = "var(--primary-dark)"
-    //             logoContainer.style.color = "var(--primary-light)"
-    //             dateContainer.style.color = "var(--primary-dark)"
-    //             menuBtn.style.color = "var(--primary-dark)"
-    //         } else {
-    //             headerContainer.style.borderBottomColor = "var(--primary-light)"
-    //             logoContainer.style.backgroundColor = "var(--primary-light)"
-    //             logoContainer.style.color = "var(--primary-dark)"
-    //             dateContainer.style.color = "var(--primary-light)"
-    //             menuBtn.style.color = "var(--primary-light)"
-    //         }
-    //     }, true);
-    // })
     useLayoutEffect(() => {
         gsap.registerPlugin(SplitText);
         gsap.set("span", { opacity: 1 });
@@ -206,19 +180,19 @@ function Header() {
                 <div className={Style.headerContainer} id="headerContainer">
                     <div className={Style.logo} onClick={handleLogoClick}>
                         <div className={Style.logoContainer} id="logoContainer">
-                            <ul className="logoname">
+                            <p className="logoname">
                                 FAHREL
-                            </ul>
+                            </p>
                         </div>
                     </div>
                     <div className={Style.date} id="dateContainer">
-                        <p>Portfolio {year}</p>
-                        <p>{`${days}, ${date} ${months}, ${year}`}</p>
+                        <p ref={headerHead}></p>
+                        <p ref={headerDate}></p>
                     </div>
                     <div className={Style.menuButton}
                         id="menu-btn" onClick={toggleMenu}>
                         <ul className="menu-btn">
-                            <p>{menu}</p>
+                            <p>(menu)</p>
                         </ul>
                     </div>
                 </div>
@@ -227,7 +201,7 @@ function Header() {
                 <div className={StyleMenu.menuContainer} id="theMenuContainer">
                     <div className={StyleMenu.menuContent}>
                         <div className={StyleMenu.menuList}>
-                            <HashLink smooth to="//" className={StyleMenu.link} onClick={closeMenu}>
+                            <HashLink smooth to="/" className={StyleMenu.link} onClick={closeMenu}>
 
                                 <div className={StyleMenu.li}>
                                     <p>01</p>
@@ -237,7 +211,6 @@ function Header() {
                                         </span>
                                     </h3>
                                     <div>
-                                        <FontAwesomeIcon icon={faArrowUp} className={StyleMenu.arrow} />
                                     </div>
                                 </div>
                                 <div className={StyleMenu.lines}>
@@ -245,7 +218,7 @@ function Header() {
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
                             </HashLink>
-                            <HashLink smooth to="//#aboutTreshold"
+                            <HashLink smooth to="/#aboutTreshold"
                                 className={StyleMenu.link}
                                 onClick={closeMenu}
                             >
@@ -258,7 +231,6 @@ function Header() {
                                         </span>
                                     </h3>
                                     <div>
-                                        <FontAwesomeIcon icon={faArrowUp} className={StyleMenu.arrow} />
                                     </div>
                                 </div>
                                 <div className={StyleMenu.lines}>
@@ -276,7 +248,6 @@ function Header() {
                                         </span>
                                     </h3>
                                     <div>
-                                        <FontAwesomeIcon icon={faArrowUp} className={StyleMenu.arrow} />
                                     </div>
                                 </div>
                                 <div className={StyleMenu.lines}>
@@ -294,7 +265,6 @@ function Header() {
                                         </span>
                                     </h3>
                                     <div>
-                                        <FontAwesomeIcon icon={faArrowUp} className={StyleMenu.arrow} />
                                     </div>
                                 </div>
                                 <div className={StyleMenu.lines}>
@@ -312,7 +282,6 @@ function Header() {
                                         </span>
                                     </h3>
                                     <div>
-                                        <FontAwesomeIcon icon={faArrowUp} className={StyleMenu.arrow} />
                                     </div>
                                 </div>
                                 <div className={StyleMenu.lines}>
