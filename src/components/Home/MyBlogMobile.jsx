@@ -3,8 +3,9 @@ import CardBlog from "./CardBlog"
 import blog1 from "../../assets/blog_featured/img_placeholder_and.png"
 import blog2 from "../../assets/blog_featured/image_placeholder_blog2.jpg"
 import blog3 from "../../assets/blog_featured/image_placeholder_blog3.jpg"
-import { useRef, useCallback } from "react"
+import { useRef, useCallback, lazy } from "react"
 import { useNavigate } from "react-router-dom"
+const ScrollVelocity = lazy(() => import("../ReactBits/ScrollVelocity"))
 function MyBlogMobile() {
     const navigate = useNavigate()
     function goToBlogPage() {
@@ -37,10 +38,10 @@ function MyBlogMobile() {
     }, [])
     return (
         <div className={Style.superContainer}>
-            {/* <ScrollVelocity
+            <ScrollVelocity
                 texts={['MY BLOG -']}
                 className="custom-scroll-text"
-            /> */}
+            />
             <div className={Style.container}>
                 <div className={Style.card}>
                     <CardBlog

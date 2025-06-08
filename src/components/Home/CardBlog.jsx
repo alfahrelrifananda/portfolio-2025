@@ -1,6 +1,5 @@
 import Style from "../../style/HomeModule/CardBlog.module.css"
 import { useRef, useCallback } from "react"
-import BlogPlaceholder from "../../assets/img_placeholder_1.jpg"
 import ProfilePlaceholder from "../../assets/profile.jpg"
 function CardBlog(props) {
     function ReadAll() {

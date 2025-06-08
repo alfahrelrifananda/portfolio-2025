@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState, lazy } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
@@ -8,8 +8,8 @@ import img2 from "../../assets/img_placeholder_todo.png"
 import img3 from "../../assets/img_placeholder_bel.png"
 import img4 from "../../assets/img_placeholder_and.png"
 import img5 from "../../assets/img_placeholder_pos.png"
-import ScrollVelocity from "../ReactBits/ScrollVelocity"
 import { useNavigate } from "react-router-dom";
+const ScrollVelocity = lazy(() => import("../ReactBits/ScrollVelocity"))
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const projects = [
     {

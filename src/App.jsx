@@ -1,23 +1,26 @@
-import React, { useState, createContext, useRef } from "react"
+import React, { useState, createContext, useRef, lazy } from "react"
 import Header from "./components/Header"
 import Style from "./style/ComponentsModule/Header.module.css"
-import Home from "./pages/Home"
 import "./style/index.css"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import ScrollSmoother from "gsap/ScrollSmoother"
 import { useGSAP } from "@gsap/react"
-import Footer from "./components/Footer"
-import BlogPage from "./pages/BlogPage"
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import { Chameleon, Todo, BelaTarr, AndroidInfo, PosPsikologi } from "./pages/ProjectPage"
+
+const Home = lazy(() => import("./pages/Home"));
+const Footer = lazy(() => import("./components/Footer"));
+const BlogPage = lazy(() => import("./pages/BlogPage"));
+
+
 // eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext()
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 function App() {
   const main = useRef();
   const smoother = useRef();
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(true)
   const [isLoading, setIsLoading] = useState(true)
   useGSAP(
     () => {

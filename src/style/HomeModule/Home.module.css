@@ -85,9 +85,9 @@
 }
 
 .aboutContentT {
-    font-size: 3em;
+    font-size: 2.5em;
     font-family: "Poppins", sans-serif;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .aboutContentSpan {
@@ -128,7 +128,7 @@
     font-weight: 700;
 }
 
-.contactContentP {
+.contactContent {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
 }

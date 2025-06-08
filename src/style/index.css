@@ -127,3 +127,11 @@ body {
     display: none;
   }
 }
+
+body {
+  min-height: 100vh;
+}
+
+html {
+  min-height: 100vh;
+}

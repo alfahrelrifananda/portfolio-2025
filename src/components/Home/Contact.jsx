@@ -1,6 +1,7 @@
 import Style from "../../style/HomeModule/Home.module.css"
-import { useRef, useCallback } from "react"
-import ScrollVelocity from "../ReactBits/ScrollVelocity"
+import { useRef, useCallback, lazy } from "react"
+
+const ScrollVelocity = lazy(() => import("../ReactBits/ScrollVelocity"))
 
 function Contact() {
 

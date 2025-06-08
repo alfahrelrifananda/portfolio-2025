@@ -1,5 +1,7 @@
+import React, {lazy} from "react"
 import Style from "../../style/HomeModule/Home.module.css"
-import ScrollVelocity from "../ReactBits/ScrollVelocity"
+const ScrollVelocity = lazy(() => import("../ReactBits/ScrollVelocity"))
+
 function About() {
 
     return (

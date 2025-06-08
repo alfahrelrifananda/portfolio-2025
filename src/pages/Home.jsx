@@ -1,14 +1,14 @@
 import React from "react"
-import { useState, useEffect } from "react"
-import Greeting from "../components/Home/Greeting"
-import About from "../components/Home/About"
-import AboutMore from "../components/Home/AboutMore"
-import MyBlog from "../components/Home/MyBlog"
-import MyBlogMobile from "../components/Home/MyBlogMobile"
-import Contact from "../components/Home/Contact"
-import Project from "../components/Home/Project"
-import LoadingPage from "./LoadingPage"
+import { useState, useEffect, lazy } from "react"
 
+const Greeting = lazy(() => import("../components/Home/Greeting"));
+const About = lazy(() => import("../components/Home/About"));
+const AboutMore = lazy(() => import("../components/Home/AboutMore"));
+const MyBlog = lazy(() => import("../components/Home/MyBlog"));
+const MyBlogMobile = lazy(() => import("../components/Home/MyBlogMobile"));
+const Contact = lazy(() => import("../components/Home/Contact"));
+const Project = lazy(() => import("../components/Home/Project"));
+const LoadingPage = lazy(() => import("../pages/LoadingPage"));
 
 function Home() {
     const [loading, setLoading] = useState(true);

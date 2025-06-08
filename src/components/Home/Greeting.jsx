@@ -57,7 +57,7 @@ function Greeting() {
         <>
             <div className={Style.greeting} id="greetingContainer">
 
-                {/* <Particles
+                <Particles
                     particleColors={[theme ? "#F6F4F2" : "#1C0F13", theme ? "#1C0F13" : "#F6F4F2"]}
                     particleCount={150}
                     particleSpread={30}
@@ -66,7 +66,7 @@ function Greeting() {
                     moveParticlesOnHover={true}
                     alphaParticles={false}
                     disableRotation={false}
-                /> */}
+                />
                 <div className={Style.greetingContainer} id="containerGreeting">
                     <div className={Style.bigGreeting} id="bigGreeting">
                         HI, I'M

@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react"
+import { useLayoutEffect, useRef, lazy } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Style from "../../style/HomeModule/MyBlog.module.css"
@@ -9,6 +9,8 @@ import blog3 from "../../assets/blog_featured/image_placeholder_blog3.jpg"
 import blog4 from "../../assets/blog_featured/image_placeholder_blog4.jpg"
 import blog5 from "../../assets/blog_featured/image_pplaceholder_blog5.jpg"
 import { HashLink } from "react-router-hash-link"
+const ScrollVelocity = lazy(() => import("../ReactBits/ScrollVelocity"))
+
 gsap.registerPlugin(ScrollTrigger)
 function MyBlog() {
     const containerRef = useRef(null)
@@ -68,10 +70,10 @@ function MyBlog() {
             <section className={Style.sectionOne}>
             </section>
             <section ref={containerRef} className={Style.sectionTwo}>
-                {/* <ScrollVelocity
+                <ScrollVelocity
                     texts={['MY BLOG -']}
                     className="custom-scroll-text"
-                /> */}
+                />
                 <div ref={cardsRef} className={Style.cardsContainer}>
                     <div className={Style.card}>
                         <CardBlog
