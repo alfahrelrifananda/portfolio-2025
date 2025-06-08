@@ -187,9 +187,16 @@
     .blogCardDate {
         font-size: 44px;
     }
+    .blogCard {
+        height: 500px;
+    }
 }
 
 @media screen and (max-width: 1000px) and (min-width: 400px) {
+
+    .blogCard {
+        height: 650px;
+    }
     .blogCardDate {
         font-size: 52px;
     }
@@ -201,7 +208,7 @@
     .blogCardTitle {
         line-clamp: 3;
         -webkit-line-clamp: 3;
-        height: 70px;
+        height: 60px;
     }
 
     .blogCardDesc {
