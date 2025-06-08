@@ -11,6 +11,7 @@ import img5 from "../../assets/img_placeholder_pos.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import ScrollVelocity from "../ReactBits/ScrollVelocity"
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const projects = [
@@ -51,6 +52,7 @@ function Project() {
     const closingRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const scrollTriggerRef = useRef(null);
+    const navigate = useNavigate();
 
     // const handleMenuHover = (index) => {
     //     if (scrollTriggerRef.current) {
@@ -124,12 +126,11 @@ function Project() {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
     }, []);
+
     function handleClick(i) {
-
-
         switch (i) {
             case 0:
-                window.location = `project/chameleon`
+                navigate("project/chameleon");
                 break;
             case 1:
                 window.location = `project/todo`
