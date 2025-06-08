@@ -51,7 +51,6 @@ function Project() {
     const closingRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const scrollTriggerRef = useRef(null);
-    const baseUrl = "portfolio-2025"
 
     // const handleMenuHover = (index) => {
     //     if (scrollTriggerRef.current) {
@@ -126,17 +125,28 @@ function Project() {
         };
     }, []);
     function handleClick(i) {
-        if (i === 0) {
-            window.location = `${baseUrl}/project/chameleon/`
-        } else if (i === 1) {
-            window.location = `${baseUrl}/project/todo/`
-        } else if (i === 2) {
-            window.location = `${baseUrl}/project/belatarr/`
-        } else if (i === 3) {
-            window.location = `${baseUrl}/project/androidinfo/`
-        } else if (i === 4) {
-            window.location = `${baseUrl}/project/pospsikologi/`
+
+
+        switch (i) {
+            case 0:
+                window.location = `project/chameleon`
+                break;
+            case 1:
+                window.location = `project/todo`
+                break;
+            case 2:
+                window.location = `project/belatarr`
+                break;
+            case 3:
+                window.location = `project/androidinfo`
+                break;
+            case 4:
+                window.location = `project/pospsikologi`
+                break;
+            default:
+                break;
         }
+
     };
 
     return (

@@ -23,7 +23,7 @@ function App() {
 
   const main = useRef();
   const smoother = useRef();
-  const [isDarkMode, setIsDarkMode] = useState(true)
+  const [isDarkMode, setIsDarkMode] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
   useGSAP(
@@ -97,13 +97,11 @@ function App() {
             <Routes>
               <Route index element={<Home />} />
               <Route path='blog' element={<BlogPage />} />
-              <Route path='project' >
-                <Route path='chameleon' element={<Chameleon />} />
-                <Route path='todo' element={<Todo />} />
-                <Route path='belatarr' element={<BelaTarr />} />
-                <Route path='androidinfo' element={<AndroidInfo />} />
-                <Route path='pospsikologi' element={<PosPsikologi />} />
-              </Route>
+              <Route path='project/chameleon' element={<Chameleon />} />
+              <Route path='project/todo' element={<Todo />} />
+              <Route path='project/belatarr' element={<BelaTarr />} />
+              <Route path='project/androidinfo' element={<AndroidInfo />} />
+              <Route path='project/pospsikologi' element={<PosPsikologi />} />
             </Routes>
             {!isLoading ? <Footer /> : ""}
           </div>

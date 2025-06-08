@@ -4,7 +4,7 @@
     font-size: 46px;
     display: grid;
     font-family: "Poppins", sans-serif;
-    font-weight: 900;
+    font-weight: 500;
     place-items: center;
     color: var(--primary-dark);
 }

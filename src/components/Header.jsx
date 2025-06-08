@@ -97,8 +97,10 @@ function Header() {
         const menuContainer = document.getElementById("theMenuContainer")
         const menuHeaderContainer = document.getElementById("headerContainer")
         const menuDateContainer = document.getElementById("dateContainer")
-        menu.style.zIndex = "-88"
-        menu.style.opacity = "0"
+        setTimeout(() => {
+            menu.style.zIndex = "-88"
+            menu.style.opacity = "0"
+        }, 500);
         menuContainer.style.opacity = "0"
         menuToggle.textContent = "(menu)"
         menuToggle.style.color = "var(--primary-dark)"
@@ -107,6 +109,7 @@ function Header() {
         document.documentElement.style.overflowY = "auto"
         document.body.style.overflowY = "auto"
         setIsMenuOpen(false)
+
     }
     function toggleMenu() {
         const menu = document.getElementById("theMenu")
@@ -117,14 +120,17 @@ function Header() {
         if (!isMenuOpen) {
             menu.style.zIndex = "88"
             menu.style.opacity = "1"
-            menuContainer.style.opacity = "1"
-            menuToggle.textContent = "(close)"
-            menuToggle.style.color = "#F6F4F2"
-            menuDateContainer.style.color = "#F6F4F2"
-            menuHeaderContainer.style.borderBottomColor = "#F6F4F2"
-            document.documentElement.style.overflowY = "hidden"
-            document.body.style.overflowY = "hidden"
-            setIsMenuOpen(true)
+            setTimeout(() => {
+                menuContainer.style.opacity = "1"
+                menuToggle.textContent = "(close)"
+                menuToggle.style.color = "#F6F4F2"
+                menuDateContainer.style.color = "#F6F4F2"
+                menuHeaderContainer.style.borderBottomColor = "#F6F4F2"
+                document.documentElement.style.overflowY = "hidden"
+                document.body.style.overflowY = "hidden"
+                setIsMenuOpen(true)
+            }, 500);
+
         } else {
             closeMenu()
         }

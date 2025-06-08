@@ -15,6 +15,7 @@
 
 
 .sectionTwo {
+    will-change: transform;
     height: 100vh;
     overflow: hidden;
     position: relative;

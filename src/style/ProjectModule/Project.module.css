@@ -6,5 +6,7 @@
     font-family: Poppins-Medium-Bold;
     place-items: center;
     color: var(--primary-dark);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
 
 }
