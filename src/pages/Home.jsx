@@ -4,6 +4,7 @@ import Greeting from "../components/Home/Greeting"
 import About from "../components/Home/About"
 import AboutMore from "../components/Home/AboutMore"
 import MyBlog from "../components/Home/MyBlog"
+import MyBlogMobile from "../components/Home/MyBlogMobile"
 import Contact from "../components/Home/Contact"
 import Project from "../components/Home/Project"
 import LoadingPage from "./LoadingPage"
@@ -28,7 +29,11 @@ function Home() {
                         <div id="projectTreshold"></div>
                         <Project />
                         <div id="blogTreshold"></div>
-                        <MyBlog />
+                        {window.innerWidth < 1000 ?
+                            <MyBlogMobile />
+                            :
+                            <MyBlog />
+                        }
                         <div id="contactTreshold"></div>
                         <Contact />
                     </main>

@@ -1,0 +1,60 @@
+.container {
+    padding: 20px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    width: calc(100% - 40px);
+}
+
+.btnPosnawr {
+    color: var(--primary-dark);
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 175px;
+    margin: 0 auto;
+    height: auto;
+    max-width: 175px;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.6;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid var(--primary-dark);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btnPosnawr:hover {
+    color: var(--primary-light);
+}
+
+.hoverEffect {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: var(--primary-dark);
+    transition: width 0.3s ease-out, height 0.3s ease-out;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.btnPosnawr:hover .hoverEffect {
+    width: 400px;
+    height: 400px;
+}
+
+.buttonText {
+    position: relative;
+    z-index: 2;
+    display: block;
+}

@@ -7,6 +7,7 @@
     place-items: center;
     color: var(--primary-dark);
     font-family: "Poppins", sans-serif;
-    font-weight: 500;
+    font-weight: 700;
+    text-align: center;
 
 }

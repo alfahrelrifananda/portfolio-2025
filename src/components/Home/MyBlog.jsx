@@ -6,7 +6,6 @@ import CardBlog from "./CardBlog"
 import ScrollVelocity from "../ReactBits/ScrollVelocity"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
-import { Link } from "react-router-dom"
 import blog1 from "../../assets/blog_featured/img_placeholder_and.png"
 import blog2 from "../../assets/blog_featured/image_placeholder_blog2.jpg"
 import blog3 from "../../assets/blog_featured/image_placeholder_blog3.jpg"
