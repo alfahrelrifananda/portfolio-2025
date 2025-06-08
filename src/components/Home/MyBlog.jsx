@@ -48,6 +48,7 @@ function MyBlog() {
                     end: () => `+=${totalWidth}`,
                     scrub: 1,
                     pin: true,
+                    anticipatePin: 1,
                     invalidateOnRefresh: true,
                 },
             })
@@ -69,6 +70,7 @@ function MyBlog() {
 
         const handleLoad = () => {
             ScrollTrigger.refresh()
+            ScrollTrigger.normalizeScroll(true);
         }
 
         const handleResize = () => {
