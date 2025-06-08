@@ -297,7 +297,7 @@
     }
 
     .contactContainer {
-        height: fit-content;
+        height: 100vh;
         padding: 20px;
         width: calc(100vw - 40px);
         display: flex;

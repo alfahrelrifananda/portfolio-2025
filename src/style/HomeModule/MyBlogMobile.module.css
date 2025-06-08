@@ -73,6 +73,6 @@
     z-index: 33;
     display: flex;
     padding-bottom: 20px;
-    align-items: center;
+    align-items: end;
     justify-content: center;
 }

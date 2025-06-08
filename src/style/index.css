@@ -43,21 +43,6 @@ body {
   height: 100%;
 }
 
-
-/* body::-webkit-scrollbar-track {
-  background-color: transparent !important;
-}
-
-body::-webkit-scrollbar {
-  width: 7px;
-  background-color: var(--primary-light);
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--primary-dark);
-  border-radius: 15px;
-} */
-
 .bg-strip {
   display: flex;
   justify-content: space-between;
