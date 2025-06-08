@@ -56,7 +56,7 @@ function App() {
   } else {
     setTimeout(() => {
       setIsLoading(false)
-    }, 1700);
+    }, 2500);
   }
   return (
     <ThemeContext.Provider value={isDarkMode}>

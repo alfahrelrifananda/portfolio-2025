@@ -5,6 +5,8 @@ import gsap from "gsap"
 import SplitText from "gsap/dist/SplitText"
 import { HashLink } from "react-router-hash-link"
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 function Header() {
     let headerDate = useRef()
     let headerHead = useRef()
@@ -193,6 +195,7 @@ function Header() {
                                         </span>
                                     </h3>
                                     <div>
+                                        <FontAwesomeIcon icon={faArrowUp} />
                                     </div>
                                 </div>
                                 <div className={StyleMenu.lines}>
@@ -212,6 +215,7 @@ function Header() {
                                         </span>
                                     </h3>
                                     <div>
+                                        <FontAwesomeIcon icon={faArrowUp} />
                                     </div>
                                 </div>
                                 <div className={StyleMenu.lines}>
@@ -228,6 +232,7 @@ function Header() {
                                         </span>
                                     </h3>
                                     <div>
+                                        <FontAwesomeIcon icon={faArrowUp} />
                                     </div>
                                 </div>
                                 <div className={StyleMenu.lines}>
@@ -244,6 +249,7 @@ function Header() {
                                         </span>
                                     </h3>
                                     <div>
+                                        <FontAwesomeIcon icon={faArrowUp} />
                                     </div>
                                 </div>
                                 <div className={StyleMenu.lines}>
@@ -260,6 +266,7 @@ function Header() {
                                         </span>
                                     </h3>
                                     <div>
+                                        <FontAwesomeIcon icon={faArrowUp} />
                                     </div>
                                 </div>
                                 <div className={StyleMenu.lines}>

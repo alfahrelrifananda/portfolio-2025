@@ -9,6 +9,8 @@ import blog3 from "../../assets/blog_featured/image_placeholder_blog3.jpg"
 import blog4 from "../../assets/blog_featured/image_placeholder_blog4.jpg"
 import blog5 from "../../assets/blog_featured/image_pplaceholder_blog5.jpg"
 import { HashLink } from "react-router-hash-link"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 const ScrollVelocity = lazy(() => import("../ReactBits/ScrollVelocity"))
 
 gsap.registerPlugin(ScrollTrigger)
@@ -138,6 +140,7 @@ function MyBlog() {
                         <HashLink to="/blog">
                             <div className={Style.moreBlog}>
                                 <span>
+                                    <FontAwesomeIcon icon={faArrowUp} />
                                 </span>
                                 <p>Show more</p>
                             </div>

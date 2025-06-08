@@ -9,6 +9,8 @@ import img3 from "../../assets/img_placeholder_bel.png"
 import img4 from "../../assets/img_placeholder_and.png"
 import img5 from "../../assets/img_placeholder_pos.png"
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 const ScrollVelocity = lazy(() => import("../ReactBits/ScrollVelocity"))
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const projects = [
@@ -159,6 +161,7 @@ function Project() {
                                                         </h2>
                                                         <i>{service.description}</i>
                                                         <div>
+                                                            <FontAwesomeIcon icon={faArrowUp} />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -179,6 +182,7 @@ function Project() {
                                             <img
                                                 src={service.image}
                                                 alt={service.title}
+                                                loading='lazy'
                                             />
                                         </div>
                                     </div>

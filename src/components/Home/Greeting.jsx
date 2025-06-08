@@ -1,10 +1,12 @@
 import Style from "../../style/HomeModule/Home.module.css"
 import { ThemeContext } from "../../App"
-import React, { useContext, useLayoutEffect } from "react"
-import Particles from "../ReactBits/Particles"
-import MagnetLines from "../ReactBits/MagnetLines"
+import React, { useContext, useLayoutEffect, lazy } from "react"
 import gsap from "gsap"
 import SplitText from "gsap/dist/SplitText"
+
+const Particles = lazy(() => import("../ReactBits/Particles"))
+const MagnetLines = lazy(() => import("../ReactBits/MagnetLines"))
+
 
 function Greeting() {
 

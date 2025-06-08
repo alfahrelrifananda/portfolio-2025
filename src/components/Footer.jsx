@@ -1,7 +1,7 @@
 import Style from "../style/ComponentsModule/Footer.module.css"
-import React, { useContext } from "react"
+import React, { useContext, lazy } from "react"
 import { ThemeContext } from "../App"
-import MagnetLines from "./ReactBits/MagnetLines"
+const MagnetLines = lazy(() => import("./ReactBits/MagnetLines"))
 function Footer() {
     const theme = useContext(ThemeContext)
     return (
