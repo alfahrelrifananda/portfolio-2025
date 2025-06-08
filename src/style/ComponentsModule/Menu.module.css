@@ -6,10 +6,9 @@
     transition: all 1s;
     transition-behavior: ease-in;
     opacity: 0.1;
+    display: none;
     background-color: #1c0f13eb;
-
 }
-
 
 .menuContainer {
     padding-top: 100px;
@@ -20,7 +19,6 @@
     /* backdrop-filter: blur(15px); */
 }
 
-
 .menuContent {
     display: grid;
     grid-template-columns: 35% 1fr;
@@ -29,6 +27,7 @@
 .menuList {
     width: 100%;
 }
+
 .menuList .link {
     margin: 20px;
 }

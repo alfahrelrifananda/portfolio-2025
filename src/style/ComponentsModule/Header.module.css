@@ -2,7 +2,7 @@
     position: fixed;
     width: 100%;
     z-index: 98;
-    background-color: #1c0f13eb;
+    background-color: transparent;
 }
 
 .header .headerContainer {
@@ -89,8 +89,8 @@
 
     .header .headerContainer .menuButton {
         overflow: auto;
-        width:75px;
+        width: 75px;
         display: flex;
         justify-content: end;
-        }
+    }
 }

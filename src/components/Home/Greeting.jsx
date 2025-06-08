@@ -84,7 +84,7 @@ function Greeting() {
                             style={{ margin: "0 auto" }}
                         />
                     </div>
-                    <p id="pGreeting">
+                    <p id="pGreeting" className={Style.pGreeting}>
                         As a passionate full-stack developer, I am dedicated to transforming ideas into immersive digital experiences, meticulously crafting seamless and intuitive user journeys from initial concept to a polished, fully functional product.
                     </p>
                 </div>

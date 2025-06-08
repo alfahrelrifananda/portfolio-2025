@@ -5,8 +5,6 @@ import ScrollToTop from "../ScrollToTop"
 // import belImg from "../assets/img_placeholder_bel.png"
 // import andImg from "../assets/img_placeholder_and.png"
 // import posImg from "../assets/img_placeholder_pos.png"
-
-
 export const Chameleon = () => {
     return (
         <>
@@ -39,7 +37,6 @@ export const AndroidInfo = () => {
         </>
     )
 }
-
 export const PosPsikologi = () => {
     return (
         <>

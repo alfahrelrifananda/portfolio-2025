@@ -95,8 +95,8 @@ body {
 
 #loadingPage {
   animation-name: loadingGone;
-  animation-duration: 2s;
-  animation-delay: 2.5s;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
 }
 
 #loadingPage h1 {

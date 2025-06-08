@@ -3,39 +3,26 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Style from "../../style/HomeModule/MyBlog.module.css"
 import CardBlog from "./CardBlog"
-// import ScrollVelocity from "../ReactBits/ScrollVelocity"
 import blog1 from "../../assets/blog_featured/img_placeholder_and.png"
 import blog2 from "../../assets/blog_featured/image_placeholder_blog2.jpg"
 import blog3 from "../../assets/blog_featured/image_placeholder_blog3.jpg"
 import blog4 from "../../assets/blog_featured/image_placeholder_blog4.jpg"
 import blog5 from "../../assets/blog_featured/image_pplaceholder_blog5.jpg"
 import { HashLink } from "react-router-hash-link"
-
-
 gsap.registerPlugin(ScrollTrigger)
-
 function MyBlog() {
     const containerRef = useRef(null)
     const cardsRef = useRef(null)
-
     useLayoutEffect(() => {
-
-
         const container = containerRef.current
         const cards = cardsRef.current
-
         if (!container || !cards) return
-
         const initScrollTrigger = () => {
             let cardWidth = 450
-
             if (window.innerWidth < 1000) {
                 cardWidth = 400
             }
-
             const totalWidth = cardWidth * 6
-
-
             const horizontalScroll = gsap.to(cards, {
                 x: -totalWidth + window.innerWidth,
                 ease: "none",
@@ -49,34 +36,26 @@ function MyBlog() {
                     invalidateOnRefresh: true,
                 },
             })
-
             return horizontalScroll
         }
-
         const timer = setTimeout(() => {
             const animation = initScrollTrigger()
-
             setTimeout(() => {
                 ScrollTrigger.refresh()
             }, 100)
-
             return () => {
                 if (animation) animation.kill()
             }
         }, 100)
-
         const handleLoad = () => {
             ScrollTrigger.refresh()
             ScrollTrigger.normalizeScroll(true);
         }
-
         const handleResize = () => {
             ScrollTrigger.refresh()
         }
-
         window.addEventListener("load", handleLoad)
         window.addEventListener("resize", handleResize)
-
         return () => {
             clearTimeout(timer)
             window.removeEventListener("load", handleLoad)
@@ -84,12 +63,10 @@ function MyBlog() {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
         }
     }, [])
-
     return (
         <div className={Style.pageContainer}>
             <section className={Style.sectionOne}>
             </section>
-
             <section ref={containerRef} className={Style.sectionTwo}>
                 {/* <ScrollVelocity
                     texts={['MY BLOG -']}
@@ -164,15 +141,11 @@ function MyBlog() {
                             </div>
                         </HashLink>
                     </div>
-
                 </div>
             </section>
-
             <section className={Style.sectionThree}>
             </section>
         </div>
     )
 }
-
-
 export default MyBlog

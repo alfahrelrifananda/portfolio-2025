@@ -2,13 +2,11 @@ import { useLayoutEffect } from "react"
 import Style from "../style/HomeModule/Home.module.css"
 import gsap from "gsap"
 import SplitText from "gsap/dist/SplitText"
-
 function LoadingPage() {
     useLayoutEffect(() => {
         gsap.registerPlugin(SplitText);
         document.fonts.ready.then(() => {
             gsap.set("#loadingPage h1", { opacity: 1 });
-
             let split;
             SplitText.create("#loadingPage h1", {
                 type: "words,lines",
@@ -36,5 +34,4 @@ function LoadingPage() {
         </div>
     )
 }
-
 export default LoadingPage

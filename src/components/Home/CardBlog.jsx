@@ -2,38 +2,29 @@ import Style from "../../style/HomeModule/CardBlog.module.css"
 import { useRef, useCallback } from "react"
 import BlogPlaceholder from "../../assets/img_placeholder_1.jpg"
 import ProfilePlaceholder from "../../assets/profile.jpg"
-
 function CardBlog(props) {
-
     function ReadAll() {
         alert("Under Construction")
     }
-
     const buttonRef = useRef(null)
-
     const handleMouseEnter = useCallback((e) => {
         const button = buttonRef.current
         if (!button) return
-
         const parentOffset = button.getBoundingClientRect()
         const relX = e.clientX - parentOffset.left
         const relY = e.clientY - parentOffset.top
-
         const span = button.querySelector(`.${Style.hoverEffect}`)
         if (span) {
             span.style.top = relY + "px"
             span.style.left = relX + "px"
         }
     }, [])
-
     const handleMouseLeave = useCallback((e) => {
         const button = buttonRef.current
         if (!button) return
-
         const parentOffset = button.getBoundingClientRect()
         const relX = e.clientX - parentOffset.left
         const relY = e.clientY - parentOffset.top
-
         const span = button.querySelector(`.${Style.hoverEffect}`)
         if (span) {
             span.style.top = relY + "px"
@@ -93,5 +84,4 @@ function CardBlog(props) {
         </div>
     )
 }
-
 export default CardBlog

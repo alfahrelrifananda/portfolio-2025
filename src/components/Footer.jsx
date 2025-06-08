@@ -2,11 +2,8 @@ import Style from "../style/ComponentsModule/Footer.module.css"
 import React, { useContext } from "react"
 import { ThemeContext } from "../App"
 import MagnetLines from "./ReactBits/MagnetLines"
-
 function Footer() {
-
     const theme = useContext(ThemeContext)
-
     return (
         <>
             <footer className={Style.footer}>
@@ -17,7 +14,6 @@ function Footer() {
                     <a href="#">Instagram</a>
                 </div>
                 <div className={Style.waves}>
-
                     <MagnetLines
                         rows={10}
                         columns={15}
@@ -38,5 +34,4 @@ function Footer() {
         </>
     )
 }
-
 export default Footer

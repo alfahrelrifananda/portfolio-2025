@@ -5,27 +5,19 @@ import gsap from "gsap"
 import SplitText from "gsap/dist/SplitText"
 import { HashLink } from "react-router-hash-link"
 import { useNavigate } from 'react-router-dom';
-
 function Header() {
-
     let headerDate = useRef()
     let headerHead = useRef()
     const navigate = useNavigate()
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-
     useEffect(() => {
-
         const dates = new Date()
         const day = dates.getDay()
         const date = dates.getDate()
         const month = dates.getMonth()
         const year = dates.getFullYear()
-
         let days = null
         let months = null
-
-
         switch (day) {
             case 0:
                 days = "Minggu"
@@ -51,7 +43,6 @@ function Header() {
             default:
                 break;
         }
-
         switch (month) {
             case 0:
                 months = "Januari"
@@ -92,16 +83,9 @@ function Header() {
             default:
                 break;
         }
-
-
         headerHead.current.textContent = `Portfolio ${year}`
         headerDate.current.textContent = `${days}, ${date} ${months}, ${year}`
-
     }, [])
-
-
-
-
     function closeMenu() {
         const menu = document.getElementById("theMenu")
         const menuToggle = document.getElementById("menu-btn")
@@ -111,16 +95,16 @@ function Header() {
         setTimeout(() => {
             menu.style.zIndex = "-88"
             menu.style.opacity = "0"
+            menu.style.display = "none"
         }, 500);
         menuContainer.style.opacity = "0"
         menuToggle.textContent = "(menu)"
         menuToggle.style.color = "var(--primary-dark)"
         menuDateContainer.style.color = "var(--primary-dark)"
         menuHeaderContainer.style.borderBottomColor = "var(--primary-dark)"
-        // document.documentElement.style.overflowY = "auto"
-        // document.body.style.overflowY = "auto"
+        document.documentElement.style.overflowY = "auto"
+        document.body.style.overflowY = "auto"
         setIsMenuOpen(false)
-
     }
     function toggleMenu() {
         const menu = document.getElementById("theMenu")
@@ -129,19 +113,19 @@ function Header() {
         const menuHeaderContainer = document.getElementById("headerContainer")
         const menuDateContainer = document.getElementById("dateContainer")
         if (!isMenuOpen) {
-            menu.style.zIndex = "88"
-            menu.style.opacity = "1"
+            menu.style.display = "block"
             setTimeout(() => {
+                menu.style.zIndex = "88"
+                menu.style.opacity = "1"
                 menuContainer.style.opacity = "1"
                 menuToggle.textContent = "(close)"
                 menuToggle.style.color = "#F6F4F2"
                 menuDateContainer.style.color = "#F6F4F2"
                 menuHeaderContainer.style.borderBottomColor = "#F6F4F2"
-                // document.documentElement.style.overflowY = "hidden"
-                // document.body.style.overflowY = "hidden"
+                document.documentElement.style.overflowY = "hidden"
+                document.body.style.overflowY = "hidden"
                 setIsMenuOpen(true)
             }, 500);
-
         } else {
             closeMenu()
         }
@@ -164,7 +148,7 @@ function Header() {
             autoAlpha: 0,
             stagger: 0.05
         });
-    },)
+    }, [])
     function handleLogoClick() {
         setTimeout(() => {
             window.location.reload()
@@ -173,7 +157,6 @@ function Header() {
             navigate('/', { replace: true })
         }, 99);
     }
-
     return (
         <>
             <header className={Style.header} >
@@ -191,9 +174,9 @@ function Header() {
                     </div>
                     <div className={Style.menuButton}
                         id="menu-btn" onClick={toggleMenu}>
-                        <ul className="menu-btn">
+                        <div className="menu-btn">
                             <p>(menu)</p>
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -202,7 +185,6 @@ function Header() {
                     <div className={StyleMenu.menuContent}>
                         <div className={StyleMenu.menuList}>
                             <HashLink smooth to="/" className={StyleMenu.link} onClick={closeMenu}>
-
                                 <div className={StyleMenu.li}>
                                     <p>01</p>
                                     <h3>
@@ -222,7 +204,6 @@ function Header() {
                                 className={StyleMenu.link}
                                 onClick={closeMenu}
                             >
-
                                 <div className={StyleMenu.li}>
                                     <p>02</p>
                                     <h3>
@@ -239,7 +220,6 @@ function Header() {
                                 </div>
                             </HashLink>
                             <HashLink smooth to="/#projectTreshold" className={StyleMenu.link} onClick={closeMenu}>
-
                                 <div className={StyleMenu.li}>
                                     <p>03</p>
                                     <h3>
@@ -256,7 +236,6 @@ function Header() {
                                 </div>
                             </HashLink>
                             <HashLink smooth to="/#blogTreshold" className={StyleMenu.link} onClick={closeMenu}>
-
                                 <div className={StyleMenu.li}>
                                     <p>04</p>
                                     <h3>
@@ -273,7 +252,6 @@ function Header() {
                                 </div>
                             </HashLink>
                             <HashLink smooth to="/#contactTreshold" className={StyleMenu.link} onClick={closeMenu}>
-
                                 <div className={StyleMenu.li}>
                                     <p>05</p>
                                     <h3>
@@ -304,8 +282,6 @@ function Header() {
                                     <h5>address</h5>
                                     <p>Banyuagung, Kadipiro, Banjarsari, Surakarta</p>
                                 </li>
-
-
                             </ul>
                         </div>
                     </div>
@@ -319,5 +295,4 @@ function Header() {
         </>
     )
 }
-
 export default Header

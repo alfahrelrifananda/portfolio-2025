@@ -1,5 +1,4 @@
 import Style from "../../style/BlogModule/Blog.module.css"
-
 function Jumbotron() {
     return (
         <>
@@ -7,5 +6,4 @@ function Jumbotron() {
         </>
     )
 }
-
 export default Jumbotron

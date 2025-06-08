@@ -50,8 +50,8 @@ function Contact() {
                 <div className={Style.contactImage}>
                 </div>
                 <div className={Style.contactContent}>
-                    <h1>Let's work together !</h1>
-                    <p>Drop me a message, and let's turn your ideas into reality. Excited to collaborate on your next creative project!</p>
+                    <h1 className={Style.contactContentT}>Let's work together !</h1>
+                    <p className={Style.contactContentP}>Drop me a message, and let's turn your ideas into reality. Excited to collaborate on your next creative project!</p>
                     <form action="">
                         <div>
                             <input type="text" placeholder="First Name" />

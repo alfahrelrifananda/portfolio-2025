@@ -10,10 +10,8 @@ import {
     useAnimationFrame,
 } from "framer-motion";
 import "../../style/ReactBits/ScrollVelocity.css";
-
 function useElementWidth(ref) {
     const [width, setWidth] = useState(0);
-
     useLayoutEffect(() => {
         function updateWidth() {
             if (ref.current) {
@@ -24,10 +22,8 @@ function useElementWidth(ref) {
         window.addEventListener("resize", updateWidth);
         return () => window.removeEventListener("resize", updateWidth);
     }, [ref]);
-
     return width;
 }
-
 export const ScrollVelocity = ({
     scrollContainerRef,
     texts = [],
@@ -70,35 +66,28 @@ export const ScrollVelocity = ({
             velocityMapping?.output || [0, 5],
             { clamp: false }
         );
-
         const copyRef = useRef(null);
         const copyWidth = useElementWidth(copyRef);
-
         function wrap(min, max, v) {
             const range = max - min;
             const mod = (((v - min) % range) + range) % range;
             return mod + min;
         }
-
         const x = useTransform(baseX, (v) => {
             if (copyWidth === 0) return "0px";
             return `${wrap(-copyWidth, 0, v)}px`;
         });
-
         const directionFactor = useRef(1);
         useAnimationFrame((t, delta) => {
             let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
-
             if (velocityFactor.get() < 0) {
                 directionFactor.current = -1;
             } else if (velocityFactor.get() > 0) {
                 directionFactor.current = 1;
             }
-
             moveBy += directionFactor.current * moveBy * velocityFactor.get();
             baseX.set(baseX.get() + moveBy);
         });
-
         const spans = [];
         for (let i = 0; i < numCopies; i++) {
             spans.push(
@@ -107,7 +96,6 @@ export const ScrollVelocity = ({
                 </span>
             );
         }
-
         return (
             <div className={parallaxClassName} style={parallaxStyle}>
                 <motion.div
@@ -119,7 +107,6 @@ export const ScrollVelocity = ({
             </div>
         );
     }
-
     return (
         <section>
             {texts.map((text, index) => (
@@ -143,5 +130,4 @@ export const ScrollVelocity = ({
         </section>
     );
 };
-
 export default ScrollVelocity;

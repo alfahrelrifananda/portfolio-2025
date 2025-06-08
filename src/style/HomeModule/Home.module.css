@@ -5,7 +5,7 @@
     place-items: center;
 }
 
-.greeting .greetingContainer {
+.greetingContainer {
     text-align: center;
     position: absolute;
     z-index: 33;
@@ -14,11 +14,11 @@
     justify-content: center;
 }
 
-.greeting .greetingContainer .greetingShape {
+.greetingShape {
     display: none;
 }
 
-.greeting .greetingContainer p {
+.pGreeting {
     width: 30vw;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
@@ -26,7 +26,7 @@
     opacity: 0.1;
 }
 
-.greeting .greetingContainer .bigGreeting {
+.bigGreeting {
     font-size: 120px;
     line-height: 120px;
     font-family: "Poppins", sans-serif;
@@ -36,7 +36,7 @@
     opacity: 0.1;
 }
 
-.greeting .greetingContainer .bigGreeting * {
+.bigGreeting * {
     will-change: transform;
 }
 
@@ -56,7 +56,7 @@
 }
 
 
-.aboutContainer .aboutImage {
+.aboutImage {
     background-image: url(../../assets/img_placeholder_1.jpg);
     background-size: cover;
     background-position: center;
@@ -65,13 +65,13 @@
 }
 
 
-.aboutContainer .aboutContent {
+.aboutContent {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.aboutContainer .aboutContent div {
+.aboutContent div {
     display: flex;
     flex-wrap: wrap;
     font-family: "Poppins", sans-serif;
@@ -79,36 +79,26 @@
     gap: 10px;
 }
 
-.aboutContainer .aboutContent p {
+.aboutContentp {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
 }
 
-.aboutContainer .aboutContent .title {
+.aboutContentT {
     font-size: 3em;
     font-family: "Poppins", sans-serif;
     font-weight: 900;
 }
 
-.aboutContainer .aboutContent div span {
+.aboutContentSpan {
     padding: 10px;
     border: 1px solid var(--primary-dark);
     border-radius: 5px;
     opacity: 0.1;
 }
-
-
 .arrow {
     transform: rotate(45deg);
 }
-
-
-
-
-
-
-
-
 
 .contactContainer {
     height: 85vh;
@@ -133,12 +123,12 @@
     justify-content: center;
 }
 
-.contactContent h1 {
+.contactContentT {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
 }
 
-.contactContent p {
+.contactContentP {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
 }

@@ -11,19 +11,14 @@ import Footer from "./components/Footer"
 import BlogPage from "./pages/BlogPage"
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import { Chameleon, Todo, BelaTarr, AndroidInfo, PosPsikologi } from "./pages/ProjectPage"
-
 // eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext()
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
-
 function App() {
-
-
   const main = useRef();
   const smoother = useRef();
-  const [isDarkMode, setIsDarkMode] = useState(true)
+  const [isDarkMode, setIsDarkMode] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
-
   useGSAP(
     () => {
       smoother.current = ScrollSmoother.create({
@@ -40,7 +35,6 @@ function App() {
     document.documentElement.style.setProperty('--primary-dark', '#1C0F13')
     document.documentElement.style.setProperty('--primary-light', '#F6F4F2')
   }
-
   function toggleTheme() {
     if (isDarkMode) {
       setIsDarkMode(false)
@@ -52,8 +46,6 @@ function App() {
       document.documentElement.style.setProperty('--primary-light', '#1C0F13')
     }
   }
-
-
   if (document.URL.indexOf('portfolio-2025/project') >= 0) {
     setTimeout(() => {
       setIsLoading(false)
@@ -61,24 +53,14 @@ function App() {
   } else {
     setTimeout(() => {
       setIsLoading(false)
-    }, 3300);
+    }, 1700);
   }
-
-
-
-
-  // if (location.pathname === "portfolio-2025") {
-  //   console.log("dasjkhd")
-  // }
-
-
-
-
   return (
     <ThemeContext.Provider value={isDarkMode}>
       <BrowserRouter basename="/portfolio-2025">
-
-        {!isLoading ? <Header /> : ""}
+        {!isLoading ?
+          <Header />
+          : ""}
         <div className="bg-strip">
           <span></span>
           <span></span>
@@ -105,7 +87,6 @@ function App() {
             </Routes>
             {!isLoading ? <Footer /> : ""}
           </div>
-
         </div >
         <div className={Style.BottomHeaderContainer}>
           {!isLoading ?
@@ -116,8 +97,6 @@ function App() {
         </div>
       </BrowserRouter>
     </ThemeContext.Provider>
-
   )
 }
-
 export default App
