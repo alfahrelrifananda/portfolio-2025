@@ -133,16 +133,16 @@ function Project() {
                 navigate("project/chameleon");
                 break;
             case 1:
-                window.location = `project/todo`
+                navigate("project/todo");
                 break;
             case 2:
-                window.location = `project/belatarr`
+                navigate("project/belatarr");
                 break;
             case 3:
-                window.location = `project/androidinfo`
+                navigate("project/androidinfo");
                 break;
             case 4:
-                window.location = `project/pospsikologi`
+                navigate("project/pospsikologi");
                 break;
             default:
                 break;

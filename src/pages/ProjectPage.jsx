@@ -1,4 +1,5 @@
 import Style from "../style/ProjectModule/Project.module.css"
+import ScrollToTop from "../ScrollToTop"
 // import chaImg from "../assets/img_placeholder_cha.png"
 // import todoImg from "../assets/img_placeholder_todo.png"
 // import belImg from "../assets/img_placeholder_bel.png"
@@ -9,6 +10,7 @@ import Style from "../style/ProjectModule/Project.module.css"
 export const Chameleon = () => {
     return (
         <>
+            <ScrollToTop />
             <h1 className={Style.title}>CHAMELEON</h1>
         </>
     )
@@ -16,6 +18,7 @@ export const Chameleon = () => {
 export const Todo = () => {
     return (
         <>
+            <ScrollToTop />
             <h1 className={Style.title}>TODO</h1>
         </>
     )
@@ -23,6 +26,7 @@ export const Todo = () => {
 export const BelaTarr = () => {
     return (
         <>
+            <ScrollToTop />
             <h1 className={Style.title}>BELATARR</h1>
         </>
     )
@@ -30,6 +34,7 @@ export const BelaTarr = () => {
 export const AndroidInfo = () => {
     return (
         <>
+            <ScrollToTop />
             <h1 className={Style.title}>ANDROIDINFO</h1>
         </>
     )
@@ -38,6 +43,7 @@ export const AndroidInfo = () => {
 export const PosPsikologi = () => {
     return (
         <>
+            <ScrollToTop />
             <h1 className={Style.title}>POSPSIKOLOGI</h1>
         </>
     )

@@ -157,7 +157,7 @@ function MyBlog() {
 
                     </div>
                     <div className={Style.card}>
-                        <HashLink to="/blog#jumbo_blog">
+                        <HashLink to="/blog">
                             <div className={Style.moreBlog}>
                                 <span>
                                     <FontAwesomeIcon icon={faArrowUp} className={Style.arrow} />

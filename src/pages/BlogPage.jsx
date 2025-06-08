@@ -1,10 +1,12 @@
 import React from "react"
 import Jumbotron from "../components/Blog/Jumbotron"
+import ScrollToTop from "../ScrollToTop"
+
 
 function BlogPage() {
     return (
         <>
-            <div id="jumbo_blog"></div>
+            <ScrollToTop />
             <Jumbotron />
         </>
     )
