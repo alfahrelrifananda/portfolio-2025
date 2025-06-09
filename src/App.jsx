@@ -9,7 +9,6 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import { Chameleon, Todo, BelaTarr, AndroidInfo, PosPsikologi } from "./pages/ProjectPage"
 
 const Home = lazy(() => import("./pages/Home"));
-
 const BlogPage = lazy(() => import("./pages/BlogPage"));
 
 
@@ -19,7 +18,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 function App() {
   const main = useRef();
   const smoother = useRef();
-  const [isDarkMode, setIsDarkMode] = useState(true)
+  const [isDarkMode, setIsDarkMode] = useState(false)
   useGSAP(
     () => {
       smoother.current = ScrollSmoother.create({
