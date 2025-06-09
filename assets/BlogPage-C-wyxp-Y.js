@@ -1,1 +1,0 @@
-import{j as o,S as n}from"./index-DzMB-9jB.js";const r="_jumbotron_gdfm9_1",t={jumbotron:r};function s(){return o.jsx(o.Fragment,{children:o.jsx("h1",{className:t.jumbotron,children:"THIS IS BLOG PAGE!"})})}function m(){return o.jsxs(o.Fragment,{children:[o.jsx(n,{}),o.jsx(s,{})]})}export{m as default};
