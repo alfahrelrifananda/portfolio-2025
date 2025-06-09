@@ -56,11 +56,12 @@
     background-color: var(--primary-light);
     border: 1px solid var(--primary-dark);
     display: grid;
-    rotate: 90deg;
+    rotate: 45deg;
     font-size: 2em;
     place-items: center;
     height: 200px;
 }
+
 
 @media (max-width: 1000px) {
     .card {

@@ -5,6 +5,8 @@ import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import ScrollSmoother from "gsap/ScrollSmoother"
 import { useGSAP } from "@gsap/react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons"
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import { Chameleon, Todo, BelaTarr, AndroidInfo, PosPsikologi } from "./pages/ProjectPage"
 
@@ -19,7 +21,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 function App() {
   const main = useRef();
   const smoother = useRef();
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(true)
   const [isLoading, setIsLoading] = useState(true)
   useGSAP(
     () => {
@@ -49,9 +51,7 @@ function App() {
     }
   }
   if (document.URL.indexOf('portfolio-2025/project') >= 0) {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 0);
+    setIsLoading(false)
   } else {
     setTimeout(() => {
       setIsLoading(false)
@@ -92,7 +92,11 @@ function App() {
         <div className={Style.BottomHeaderContainer}>
           {!isLoading ?
             <button onClick={toggleTheme}>
-              D
+              {isDarkMode ?
+                <FontAwesomeIcon icon={faSun} />
+                :
+                <FontAwesomeIcon icon={faMoon} />
+              }
             </button>
             : ""}
         </div>

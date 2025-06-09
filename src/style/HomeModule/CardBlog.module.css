@@ -124,6 +124,7 @@
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     -webkit-line-clamp: 4;
+    margin-bottom: 20px;
     line-clamp: 4;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -187,10 +188,6 @@
     .blogCardDate {
         text-align: center;
         font-size: 12vw;
-    }
-
-    .blogCardDesc {
-        margin-bottom: 20px;
     }
 
     .blogCard {

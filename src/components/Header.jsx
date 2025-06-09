@@ -180,6 +180,7 @@ function Header() {
                             <p>(menu)</p>
                         </div>
                     </div>
+
                 </div>
             </header>
             <div className={StyleMenu.menu} id="theMenu">
@@ -194,7 +195,7 @@ function Header() {
                                             HOME
                                         </span>
                                     </h3>
-                                    <div>
+                                    <div className={StyleMenu.arrow}>
                                         <FontAwesomeIcon icon={faArrowUp} />
                                     </div>
                                 </div>
@@ -214,7 +215,7 @@ function Header() {
                                             ABOUT
                                         </span>
                                     </h3>
-                                    <div>
+                                    <div className={StyleMenu.arrow}>
                                         <FontAwesomeIcon icon={faArrowUp} />
                                     </div>
                                 </div>
@@ -231,7 +232,7 @@ function Header() {
                                             PROJECT
                                         </span>
                                     </h3>
-                                    <div>
+                                    <div className={StyleMenu.arrow}>
                                         <FontAwesomeIcon icon={faArrowUp} />
                                     </div>
                                 </div>
@@ -248,7 +249,7 @@ function Header() {
                                             BLOG
                                         </span>
                                     </h3>
-                                    <div>
+                                    <div className={StyleMenu.arrow}>
                                         <FontAwesomeIcon icon={faArrowUp} />
                                     </div>
                                 </div>
@@ -265,7 +266,7 @@ function Header() {
                                             CONTACT
                                         </span>
                                     </h3>
-                                    <div>
+                                    <div className={StyleMenu.arrow}>
                                         <FontAwesomeIcon icon={faArrowUp} />
                                     </div>
                                 </div>

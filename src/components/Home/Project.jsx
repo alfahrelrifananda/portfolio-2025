@@ -162,7 +162,7 @@ function Project() {
                                                             </span>
                                                         </h2>
                                                         <i>{service.description}</i>
-                                                        <div>
+                                                        <div className={styles.arrow}>
                                                             <FontAwesomeIcon icon={faArrowUp} />
                                                         </div>
                                                     </div>

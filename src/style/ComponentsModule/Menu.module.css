@@ -143,6 +143,10 @@
     font-weight: 900;
 }
 
+.arrow {
+    transform: rotate(45deg);
+}
+
 @media screen and (max-width: 900px) {
     .menuContainer {
         padding-top: 10vh;
