@@ -1,5 +1,4 @@
 .pinnedSection {
-    height: 110vh;
     width: 100vw;
     overflow: hidden;
     padding: 0 !important;
@@ -10,7 +9,6 @@
     max-width: 100%;
     margin: 0 auto;
     height: 100%;
-
     padding-left: 20px;
     padding-right: 20px;
 
@@ -181,12 +179,11 @@
     transform: rotate(45deg);
 }
 
-
 @media (max-width: 1000px) {
 
-    /* .container {
+    .container {
         height: 80vh;
-    } */
+    }
 
     .grid {
         grid-template-columns: 1fr;
@@ -200,6 +197,7 @@
     .imageColumn {
         order: 2;
         height: 300px;
+
     }
 
     .imageContainer {
@@ -253,5 +251,9 @@
 
     .menuItem {
         padding: 12px;
+    }
+
+    .pinnedSection {
+        height: 95vh !important;
     }
 }
