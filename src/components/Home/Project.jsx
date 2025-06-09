@@ -12,6 +12,12 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 const ScrollVelocity = lazy(() => import("../ReactBits/ScrollVelocity"))
+
+const MyBlog = lazy(() => import("./MyBlog"));
+const MyBlogMobile = lazy(() => import("./MyBlogMobile"));
+const Contact = lazy(() => import("./Contact"));
+const Footer = lazy(() => import("../Footer"));
+
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const projects = [
     {
@@ -193,6 +199,15 @@ function Project() {
                 </div>
             </section >
             <section ref={closingRef} className={styles.closingSection} >
+                <div id="blogTreshold"></div>
+                {window.innerWidth < 1000 ?
+                    <MyBlogMobile />
+                    :
+                    <MyBlog />
+                }
+                <div id="contactTreshold"></div>
+                <Contact />
+                <Footer />
             </section >
         </div >
     );

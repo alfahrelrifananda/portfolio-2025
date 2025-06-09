@@ -10,7 +10,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import { Chameleon, Todo, BelaTarr, AndroidInfo, PosPsikologi } from "./pages/ProjectPage"
 
 const Home = lazy(() => import("./pages/Home"));
-const Footer = lazy(() => import("./components/Footer"));
+// const Footer = lazy(() => import("./components/Footer"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
 
 
@@ -88,7 +88,7 @@ function App() {
                 <Route path='pospsikologi' element={<PosPsikologi />} />
               </Route>
             </Routes>
-            {!isLoading ? <Footer /> : ""}
+            {/* {!isLoading ? <Footer /> : ""} */}
           </div>
         </div >
         <div className={Style.BottomHeaderContainer}>
