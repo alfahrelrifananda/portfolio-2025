@@ -109,19 +109,19 @@ function Project() {
     function handleClick(i) {
         switch (i) {
             case 0:
-                navigate("project/chameleon");
+                navigate("project/chameleon", { replace: true });
                 break;
             case 1:
-                navigate("project/todo");
+                navigate("project/todo", { replace: true });
                 break;
             case 2:
-                navigate("project/belatarr");
+                navigate("project/belatarr", { replace: true });
                 break;
             case 3:
-                navigate("project/androidinfo");
+                navigate("project/androidinfo", { replace: true });
                 break;
             case 4:
-                navigate("project/pospsikologi");
+                navigate("project/pospsikologi", { replace: true });
                 break;
             default:
                 break;

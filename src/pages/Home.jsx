@@ -30,7 +30,10 @@ function Home() {
                         <AboutMore />
                         <div id="projectTreshold"></div>
                         <Project />
-                        <div id="blogTreshold"></div>
+                        <div id="blogTreshold" className="tresholdContainer">
+                            <div className="tresholdLine"></div>
+                            <div className="tresholdBox"></div>
+                        </div>
                         {window.innerWidth < 1000 ?
                             <MyBlogMobile />
                             :
@@ -38,6 +41,10 @@ function Home() {
                         }
                         <div id="contactTreshold"></div>
                         <Contact />
+                        <div id="footerTreshold" className="tresholdContainer">
+                            <div className="tresholdBox"></div>
+                            <div className="tresholdLine"></div>
+                        </div>
                         <Footer />
                     </main>
                 )

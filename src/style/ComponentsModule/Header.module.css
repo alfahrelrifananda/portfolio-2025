@@ -11,7 +11,7 @@
     padding: 10px;
     font-size: 14px;
     line-height: 20px;
-    /* backdrop-filter: blur(30px); */
+    backdrop-filter: blur(15px);
     align-items: center;
     color: var(--primary-dark);
     border-bottom: 1px solid var(--primary-dark);
