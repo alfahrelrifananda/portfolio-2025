@@ -182,7 +182,7 @@
 }
 
 .closingSection {
-    height: 0vh;
+    height: fit-content;
 }
 
 @media (max-width: 1000px) {
