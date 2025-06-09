@@ -28,14 +28,14 @@ function Home() {
                         <AboutMore />
                         <div id="projectTreshold"></div>
                         <Project />
-                        {/* <div id="blogTreshold"></div>
+                        <div id="blogTreshold"></div>
                         {window.innerWidth < 1000 ?
                             <MyBlogMobile />
                             :
                             <MyBlog />
                         }
                         <div id="contactTreshold"></div>
-                        <Contact /> */}
+                        <Contact />
                     </main>
                 )
             }
