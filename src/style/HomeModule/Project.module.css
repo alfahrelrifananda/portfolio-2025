@@ -181,9 +181,6 @@
     transform: rotate(45deg);
 }
 
-.closingSection {
-    height: fit-content;
-}
 
 @media (max-width: 1000px) {
 

@@ -1,5 +1,4 @@
 import React, { useState, createContext, useRef, lazy } from "react"
-import Header from "./components/Header"
 import Style from "./style/ComponentsModule/Header.module.css"
 import "./style/index.css"
 import gsap from "gsap"
@@ -10,7 +9,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import { Chameleon, Todo, BelaTarr, AndroidInfo, PosPsikologi } from "./pages/ProjectPage"
 
 const Home = lazy(() => import("./pages/Home"));
-// const Footer = lazy(() => import("./components/Footer"));
+
 const BlogPage = lazy(() => import("./pages/BlogPage"));
 
 
@@ -21,7 +20,6 @@ function App() {
   const main = useRef();
   const smoother = useRef();
   const [isDarkMode, setIsDarkMode] = useState(true)
-  const [isLoading, setIsLoading] = useState(true)
   useGSAP(
     () => {
       smoother.current = ScrollSmoother.create({
@@ -49,21 +47,9 @@ function App() {
       document.documentElement.style.setProperty('--primary-light', '#1C0F13')
     }
   }
-  if (document.URL.indexOf('portfolio-2025/project') >= 0) {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 0);
-  } else {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 2500);
-  }
   return (
     <ThemeContext.Provider value={isDarkMode}>
       <BrowserRouter basename="/portfolio-2025">
-        {!isLoading ?
-          <Header />
-          : ""}
         <div className="bg-strip">
           <span></span>
           <span></span>
@@ -88,15 +74,12 @@ function App() {
                 <Route path='pospsikologi' element={<PosPsikologi />} />
               </Route>
             </Routes>
-            {/* {!isLoading ? <Footer /> : ""} */}
           </div>
         </div >
         <div className={Style.BottomHeaderContainer}>
-          {!isLoading ?
-            <button onClick={toggleTheme}>
-              D
-            </button>
-            : ""}
+          <button onClick={toggleTheme}>
+            D
+          </button>
         </div>
       </BrowserRouter>
     </ThemeContext.Provider>
