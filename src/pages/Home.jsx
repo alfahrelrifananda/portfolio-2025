@@ -24,7 +24,7 @@ function Home() {
             {loading ? (<LoadingPage />) :
                 (
                     <main>
-                        <Header />
+                        {/* <Header /> */}
                         <Greeting />
                         <div id="aboutTreshold"></div>
                         <About />
