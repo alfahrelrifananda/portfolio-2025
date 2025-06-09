@@ -88,7 +88,7 @@ function App() {
                 <Route path='pospsikologi' element={<PosPsikologi />} />
               </Route>
             </Routes>
-            {/* {!isLoading ? <Footer /> : ""} */}
+            {!isLoading ? <Footer /> : ""}
           </div>
         </div >
         <div className={Style.BottomHeaderContainer}>
