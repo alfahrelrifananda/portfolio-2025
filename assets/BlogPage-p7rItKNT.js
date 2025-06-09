@@ -1,0 +1,1 @@
+import{j as n}from"./index-D6gnVMT-.js";const o="_jumbotron_gdfm9_1",t={jumbotron:o};function r(){return n.jsx(n.Fragment,{children:n.jsx("h1",{className:t.jumbotron,children:"THIS IS BLOG PAGE IS STILL UNDER CONSTRUCTION"})})}function m(){return n.jsx(n.Fragment,{children:n.jsx(r,{})})}export{m as default};
