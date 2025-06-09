@@ -69,7 +69,8 @@ function Project() {
         const scrollTrigger = ScrollTrigger.create({
             trigger: pinnedRef.current,
             start: "top top",
-            end: "+=1500",
+            end: "+=400%",
+            markers: true,
             pin: true,
             anticipatePin: 1,
             invalidateOnRefresh: true,
