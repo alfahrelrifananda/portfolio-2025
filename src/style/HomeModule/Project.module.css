@@ -184,9 +184,9 @@
 
 @media (max-width: 1000px) {
 
-    .container {
+    /* .container {
         height: 80vh;
-    }
+    } */
 
     .grid {
         grid-template-columns: 1fr;
@@ -200,7 +200,6 @@
     .imageColumn {
         order: 2;
         height: 300px;
-
     }
 
     .imageContainer {
@@ -254,9 +253,5 @@
 
     .menuItem {
         padding: 12px;
-    }
-
-    .pinnedSection {
-        height: 95vh !important;
     }
 }

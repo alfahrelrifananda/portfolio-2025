@@ -24,11 +24,13 @@ function Home() {
             {loading ? (<LoadingPage />) :
                 (
                     <main>
-                        <Header/>
+                        <Header />
                         <Greeting />
                         <div id="aboutTreshold"></div>
                         <About />
                         <AboutMore />
+                        <div id="projectTreshold"></div>
+                        <Project />
                         <div id="blogTreshold"></div>
                         {window.innerWidth < 1000 ?
                             <MyBlogMobile />
@@ -37,9 +39,7 @@ function Home() {
                         }
                         <div id="contactTreshold"></div>
                         <Contact />
-                        <div id="projectTreshold"></div>
-                        {/* <Project /> */}
-                        <Footer/>
+                        <Footer />
                     </main>
                 )
             }
