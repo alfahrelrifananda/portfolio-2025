@@ -1,7 +1,6 @@
 import React from "react"
 import { useState, useEffect, lazy } from "react"
 
-const Header = lazy(() => import("../components/Header"));
 const Footer = lazy(() => import("../components/Footer"));
 const Greeting = lazy(() => import("../components/Home/Greeting"));
 const About = lazy(() => import("../components/Home/About"));
