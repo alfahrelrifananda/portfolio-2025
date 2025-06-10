@@ -17,6 +17,7 @@ function Home() {
         setTimeout(() => {
             setLoading(false)
         }, 2300);
+
     }, []);
     return (
         <>

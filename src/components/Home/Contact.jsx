@@ -7,16 +7,25 @@ const TEMPLATE_ID = "template_6r3xst7"
 const PUBLIC_KEY = "3jy8yLViJz0kcyZEt"
 function Contact() {
     const handleOnSubmit = (e) => {
-        e.preventDefault();
-        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
-            .then((result) => {
-                console.log(result.text);
-                alert('Message Sent Successfully')
-            }, (error) => {
-                console.log(error.text);
-                alert('Something went wrong!')
-            });
-        e.target.reset()
+        const inputForm = document.querySelectorAll("form input")
+
+        for (const iF of inputForm) {
+            if (iF.value === "") {
+                alert('All input must be not empty')
+            } else {
+                e.preventDefault();
+                emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
+                    .then((result) => {
+                        console.log(result.text);
+                        alert('Message Sent Successfully')
+                    }, (error) => {
+                        console.log(error.text);
+                        alert('Something went wrong!')
+                    });
+                e.target.reset()
+            }
+        }
+
     };
     const buttonRef = useRef(null)
     const handleMouseEnter = useCallback((e) => {

@@ -4,14 +4,17 @@ import StyleMenu from "../style/ComponentsModule/Menu.module.css"
 import gsap from "gsap"
 import SplitText from "gsap/dist/SplitText"
 import { HashLink } from "react-router-hash-link"
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 function Header() {
     let headerDate = useRef()
     let headerHead = useRef()
     const navigate = useNavigate()
+    const history = useLocation();
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isHomeScreen, setIsHomeScreen] = useState(null)
+
     useEffect(() => {
         const dates = new Date()
         const day = dates.getDay()
@@ -87,7 +90,34 @@ function Header() {
         }
         headerHead.current.textContent = `Portfolio ${year}`
         headerDate.current.textContent = `${days}, ${date} ${months}, ${year}`
-    }, [])
+        if (history.pathname !== "/") {
+            setIsHomeScreen(false)
+        } else {
+            setIsHomeScreen(true)
+        }
+
+    }, [history, isHomeScreen])
+
+    function openMenu() {
+        const menu = document.getElementById("theMenu")
+        const menuToggle = document.getElementById("menu-btn")
+        const menuContainer = document.getElementById("theMenuContainer")
+        const menuHeaderContainer = document.getElementById("headerContainer")
+        const menuDateContainer = document.getElementById("dateContainer")
+        menu.style.display = "block"
+        setTimeout(() => {
+            menu.style.zIndex = "88"
+            menu.style.opacity = "1"
+            menuContainer.style.opacity = "1"
+            menuToggle.textContent = "(close)"
+            menuToggle.style.color = "#F6F4F2"
+            menuDateContainer.style.color = "#F6F4F2"
+            menuHeaderContainer.style.borderBottomColor = "#F6F4F2"
+            document.documentElement.style.overflowY = "hidden"
+            document.body.style.overflowY = "hidden"
+            setIsMenuOpen(true)
+        }, 500);
+    }
     function closeMenu() {
         const menu = document.getElementById("theMenu")
         const menuToggle = document.getElementById("menu-btn")
@@ -109,47 +139,40 @@ function Header() {
         setIsMenuOpen(false)
     }
     function toggleMenu() {
-        const menu = document.getElementById("theMenu")
-        const menuToggle = document.getElementById("menu-btn")
-        const menuContainer = document.getElementById("theMenuContainer")
-        const menuHeaderContainer = document.getElementById("headerContainer")
-        const menuDateContainer = document.getElementById("dateContainer")
         if (!isMenuOpen) {
-            menu.style.display = "block"
-            setTimeout(() => {
-                menu.style.zIndex = "88"
-                menu.style.opacity = "1"
-                menuContainer.style.opacity = "1"
-                menuToggle.textContent = "(close)"
-                menuToggle.style.color = "#F6F4F2"
-                menuDateContainer.style.color = "#F6F4F2"
-                menuHeaderContainer.style.borderBottomColor = "#F6F4F2"
-                document.documentElement.style.overflowY = "hidden"
-                document.body.style.overflowY = "hidden"
-                setIsMenuOpen(true)
-            }, 500);
+            openMenu()
         } else {
             closeMenu()
         }
+    }
+    function toggleGoBack() {
+        setTimeout(() => {
+            window.location.reload()
+        }, 100);
+        setTimeout(() => {
+            navigate('/', { replace: true })
+        }, 99);
     }
     useLayoutEffect(() => {
         gsap.registerPlugin(SplitText);
         gsap.set("span", { opacity: 1 });
         gsap.set("h1", { opacity: 1 });
-        let split = [
-            SplitText.create(".menu-list-label", { type: "chars" }),
-            SplitText.create(".menu-big-label", { type: "chars" })
-        ]
-        gsap.from(split[0].chars, {
-            y: 20,
-            autoAlpha: 0,
-            stagger: 0.05
-        });
-        gsap.from(split[1].chars, {
-            y: 20,
-            autoAlpha: 0,
-            stagger: 0.05
-        });
+        setTimeout(() => {
+            let split = [
+                SplitText.create(".menu-list-label", { type: "chars" }),
+                SplitText.create(".menu-big-label", { type: "chars" })
+            ]
+            gsap.from(split[0].chars, {
+                y: 20,
+                autoAlpha: 0,
+                stagger: 0.05
+            });
+            gsap.from(split[1].chars, {
+                y: 20,
+                autoAlpha: 0,
+                stagger: 0.05
+            });
+        }, 2500);
     }, [])
     function handleLogoClick() {
         setTimeout(() => {
@@ -174,12 +197,22 @@ function Header() {
                         <p ref={headerHead}></p>
                         <p ref={headerDate}></p>
                     </div>
-                    <div className={Style.menuButton}
-                        id="menu-btn" onClick={toggleMenu}>
-                        <div className="menu-btn">
-                            <p>(menu)</p>
+                    {isHomeScreen ?
+                        <div className={Style.menuButton}
+                            id="menu-btn" onClick={toggleMenu}>
+                            <div className="menu-btn">
+                                <p>(menu)</p>
+                            </div>
                         </div>
-                    </div>
+                        :
+                        <div className={Style.menuButton}
+                            id="goback-btn" onClick={toggleGoBack}>
+                            <div className="goback-btn">
+                                <p>(back)</p>
+                            </div>
+                        </div>
+                    }
+
 
                 </div>
             </header>
