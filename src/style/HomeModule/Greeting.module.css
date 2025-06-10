@@ -19,7 +19,7 @@
 }
 
 .pGreeting {
-    width: 30vw;
+    width: 500px;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     margin: 0 auto;
@@ -31,7 +31,7 @@
     line-height: 120px;
     font-family: "Poppins", sans-serif;
     font-weight: 900;
-    width: 30vw;
+    width: 500px;
     will-change: transform;
     opacity: 0;
 }
