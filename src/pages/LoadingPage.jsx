@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "react"
-import Style from "../style/HomeModule/Home.module.css"
+import Style from "../style/HomeModule/Loading.module.css"
 import gsap from "gsap"
 import SplitText from "gsap/dist/SplitText"
 function LoadingPage() {

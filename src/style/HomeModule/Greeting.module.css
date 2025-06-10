@@ -1,0 +1,91 @@
+.greeting {
+    height: 100vh;
+    display: grid;
+    color: var(--primary-dark);
+    place-items: center;
+}
+
+.greetingContainer {
+    text-align: center;
+    position: absolute;
+    z-index: 33;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.greetingShape {
+    display: none;
+}
+
+.pGreeting {
+    width: 30vw;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    margin: 0 auto;
+    opacity: 0;
+}
+
+.bigGreeting {
+    font-size: 120px;
+    line-height: 120px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    width: 30vw;
+    will-change: transform;
+    opacity: 0;
+}
+
+.bigGreeting * {
+    will-change: transform;
+}
+
+@media screen and (max-width: 900px) {
+    .greeting {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
+        width: calc(100vw - 40px);
+    }
+
+    .greetingContainer {
+        padding-top: 10vh;
+        justify-content: baseline;
+        height: fit-content;
+        width: calc(100vw - 40px);
+    }
+
+    .greeting .greetingContainer .bigGreeting {
+        font-size: 45px;
+        line-height: 56px;
+        text-align: justify;
+        width: 100%;
+        width: calc(100vw - 40px);
+    }
+
+    .greeting .greetingContainer .greetingShape {
+        height: 35vh;
+        width: 100%;
+        padding-top: 10px;
+        display: block;
+        animation-name: greetingShapeAnimation;
+        animation-duration: 3s;
+        padding-bottom: 10px;
+    }
+
+    @keyframes greetingShapeAnimation {
+        0% {
+            opacity: 0.1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .greeting .greetingContainer p {
+        width: 100%;
+        text-align: justify;
+    }
+}

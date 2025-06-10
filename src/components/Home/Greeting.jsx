@@ -1,6 +1,6 @@
-import Style from "../../style/HomeModule/Home.module.css"
+import Style from "../../style/HomeModule/Greeting.module.css"
 import { ThemeContext } from "../../App"
-import React, { useContext, useLayoutEffect, lazy } from "react"
+import React, { useContext, useEffect, lazy } from "react"
 import gsap from "gsap"
 import SplitText from "gsap/dist/SplitText"
 
@@ -12,7 +12,7 @@ function Greeting() {
 
     const theme = useContext(ThemeContext)
 
-    useLayoutEffect(() => {
+    useEffect(() => {
 
         gsap.registerPlugin(SplitText);
         document.fonts.ready.then(() => {

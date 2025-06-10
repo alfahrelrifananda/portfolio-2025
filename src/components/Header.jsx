@@ -22,65 +22,65 @@ function Header() {
         let months = null
         switch (day) {
             case 0:
-                days = "Minggu"
+                days = "Sunday"
                 break;
             case 1:
-                days = "Senin"
+                days = "Monday"
                 break;
             case 2:
-                days = "Selasa"
+                days = "Tuesday"
                 break;
             case 3:
-                days = "Rabu"
+                days = "Wednesday"
                 break;
             case 4:
-                days = "Kamis"
+                days = "Thursday"
                 break;
             case 5:
-                days = "Jum'at"
+                days = "Friday"
                 break;
             case 6:
-                days = "Sabtu"
+                days = "Saturday"
                 break;
             default:
                 break;
         }
         switch (month) {
             case 0:
-                months = "Januari"
+                months = "January"
                 break;
             case 1:
-                months = "Februari"
+                months = "February"
                 break;
             case 2:
-                months = "Maret"
+                months = "March"
                 break;
             case 3:
                 months = "April"
                 break;
             case 4:
-                months = "Mei"
+                months = "May"
                 break;
             case 5:
-                months = "Juni"
+                months = "June"
                 break;
             case 6:
-                months = "Juli"
+                months = "July"
                 break;
             case 7:
-                months = "Agustus"
+                months = "August"
                 break;
             case 8:
                 months = "September"
                 break;
             case 9:
-                months = "Oktober"
+                months = "October"
                 break;
             case 10:
-                months = "Novmber"
+                months = "November"
                 break;
             case 11:
-                months = "Desember"
+                months = "December"
                 break;
             default:
                 break;

@@ -1,5 +1,4 @@
 import Style from "../style/ProjectModule/Project.module.css"
-import ScrollToTop from "../ScrollToTop"
 // import chaImg from "../assets/img_placeholder_cha.png"
 // import todoImg from "../assets/img_placeholder_todo.png"
 // import belImg from "../assets/img_placeholder_bel.png"

@@ -1,0 +1,141 @@
+.contactContainer {
+    height: 85vh;
+    padding: 20px;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contactImage {
+    background-image: url(../../assets/img_placeholder_1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contactContent {
+    display: flex;
+    color: var(--primary-dark);
+    flex-direction: column;
+    padding: 5%;
+    justify-content: center;
+}
+
+.contactContentT {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+.contactContent {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+.contactContent form {
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.contactContent form div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.contactContent form div input {
+    border: none;
+    padding: 10px;
+    width: calc(100% - 10px);
+    outline: none;
+    border-bottom: 1px solid var(--primary-dark);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    padding-left: 0;
+    background-color: transparent;
+    color: var(--primary-dark);
+}
+
+.contactContent form textarea {
+    border: none;
+    padding: 30px;
+    outline: none;
+    border-bottom: 1px solid var(--primary-dark);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    padding-left: 0;
+    background-color: transparent;
+    color: var(--primary-dark);
+}
+
+.btnPosnawr {
+    color: var(--primary-dark);
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 175px;
+    height: auto;
+    max-width: 175px;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.6;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid var(--primary-dark);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btnPosnawr:hover {
+    color: var(--primary-light);
+}
+
+.hoverEffect {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: var(--primary-dark);
+    transition: width 0.3s ease-out, height 0.3s ease-out;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.btnPosnawr:hover .hoverEffect {
+    width: 400px;
+    height: 400px;
+}
+
+.buttonText {
+    position: relative;
+    z-index: 2;
+    display: block;
+}
+
+@media screen and (max-width: 900px) {
+    .contactContainer {
+        height: 100vh;
+        padding: 20px;
+        width: calc(100vw - 40px);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contactImage {
+        height: 30vh;
+    }
+
+    .contactContent form div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contactContent {
+        padding: 0;
+    }
+}

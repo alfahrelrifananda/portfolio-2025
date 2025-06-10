@@ -21,12 +21,12 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 function App() {
   const main = useRef();
   const smoother = useRef();
-  const [isDarkMode, setIsDarkMode] = useState(true)
+  const [isDarkMode, setIsDarkMode] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   useGSAP(
     () => {
       smoother.current = ScrollSmoother.create({
-        smooth: 0.5,
+        smooth: 1.5,
         smoothTouch: 0.1,
       });
     },
@@ -50,13 +50,11 @@ function App() {
       document.documentElement.style.setProperty('--primary-light', '#1C0F13')
     }
   }
-  if (document.URL.indexOf('portfolio-2025/project') >= 0) {
+
+  setTimeout(() => {
     setIsLoading(false)
-  } else {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 2500);
-  }
+  }, 2500);
+
   return (
     <ThemeContext.Provider value={isDarkMode}>
       <BrowserRouter basename="/portfolio-2025">

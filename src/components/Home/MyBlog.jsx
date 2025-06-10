@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react"
+import { useLayoutEffect, useRef, useCallback } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Style from "../../style/HomeModule/MyBlog.module.css"
@@ -12,13 +12,42 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 
+
 gsap.registerPlugin(ScrollTrigger)
 function MyBlog() {
     const containerRef = useRef(null)
     const cardsRef = useRef(null)
+    const buttonRef = useRef(null)
+
+
+    const handleMouseEnter = useCallback((e) => {
+        const button = buttonRef.current
+        if (!button) return
+        const parentOffset = button.getBoundingClientRect()
+        const relX = e.clientX - parentOffset.left
+        const relY = e.clientY - parentOffset.top
+        const span = button.querySelector(`.${Style.hoverEffect}`)
+        if (span) {
+            span.style.top = relY + "px"
+            span.style.left = relX + "px"
+        }
+    }, [])
+    const handleMouseLeave = useCallback((e) => {
+        const button = buttonRef.current
+        if (!button) return
+        const parentOffset = button.getBoundingClientRect()
+        const relX = e.clientX - parentOffset.left
+        const relY = e.clientY - parentOffset.top
+        const span = button.querySelector(`.${Style.hoverEffect}`)
+        if (span) {
+            span.style.top = relY + "px"
+            span.style.left = relX + "px"
+        }
+    }, [])
     useLayoutEffect(() => {
         const container = containerRef.current
         const cards = cardsRef.current
+
         if (!container || !cards) return
         const initScrollTrigger = () => {
             let cardWidth = 450
@@ -131,11 +160,22 @@ function MyBlog() {
                             desc="Perdebatan tentang mana yang 'lebih unggul' seringkali muncul. Antara React.js dan Laravel, perbandingan ini menjadi menarik karena keduanya sebenarnya melayani tujuan yang berbeda namun sering digunakan bersama. Laravel adalah framework PHP sisi server untuk membangun aplikasi web lengkap, sementara React.js adalah pustaka JavaScript untuk membangun antarmuka pengguna (UI) sisi klien. Namun, ada beberapa skenario dan tren modern yang membuat React.js memiliki keunggulan tertentu." />
 
                     </div>
-                    <div className={Style.card}>
+                    <div className={Style.card} >
                         <Link to="/blog" replace>
                             <div className={Style.moreBlog}>
                                 <span>
-                                    <FontAwesomeIcon icon={faArrowUp} />
+                                    <button
+                                        type="submit"
+                                        ref={buttonRef}
+                                        className={Style.btnPosnawr}
+                                        onMouseEnter={handleMouseEnter}
+                                        onMouseLeave={handleMouseLeave}
+                                    >
+                                        <span className={Style.hoverEffect}></span>
+                                        <span className={Style.buttonText}>
+                                            <FontAwesomeIcon icon={faArrowUp} />
+                                        </span>
+                                    </button>
                                 </span>
                                 <p>Show more</p>
                             </div>

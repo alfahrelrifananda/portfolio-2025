@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef, useState, lazy } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
-import styles from '../../style/HomeModule/Project.module.css';
+import Style from '../../style/HomeModule/Project.module.css';
 import img1 from "../../assets/img_placeholder_cha.png"
 import img2 from "../../assets/img_placeholder_todo.png"
 import img3 from "../../assets/img_placeholder_bel.png"
@@ -129,40 +129,40 @@ function Project() {
     };
     return (
         <div>
-            <section ref={heroRef} className={styles.heroSection} id="projectContainer" >
+            <section ref={heroRef} className={Style.heroSection} id="projectContainer" >
             </section >
-            <section ref={pinnedRef} className={styles.pinnedSection} >
+            <section ref={pinnedRef} className={Style.pinnedSection} >
                 <ScrollVelocity
                     texts={['', 'RECENT PROJECT -']}
                     className="custom-scroll-text"
                 />
-                <div className={styles.container}>
-                    <div className={styles.grid}>
-                        <div className={styles.menuColumn}>
-                            <div className={styles.menuItems}>
+                <div className={Style.container}>
+                    <div className={Style.grid}>
+                        <div className={Style.menuColumn}>
+                            <div className={Style.menuItems}>
                                 {projects.map((service, index) => (
                                     <div
                                         key={index}
-                                        className={`${styles.menuItem} ${activeIndex === index ? styles.menuItemActive : ''}`}
+                                        className={`${Style.menuItem} ${activeIndex === index ? Style.menuItemActive : ''}`}
                                         onClick={() => handleClick(index)}
                                     >
-                                        <div className={`${styles.menuIndicator} ${activeIndex === index ? styles.menuIndicatorActive : ''}`}></div>
-                                        <div className={`${styles.menuContent} ${activeIndex === index ? styles.menuContentActive : ''}`}>
-                                            <div className={`${styles.projectLi} ${activeIndex === index ? styles.projectLiActive : ''}`}>
-                                                <div className={styles.lines}>
-                                                    <div className={`${styles.line} ${activeIndex === index ? styles.lineActive : ''}`}></div>
-                                                    <div className={styles.lineChild}></div>
+                                        <div className={`${Style.menuIndicator} ${activeIndex === index ? Style.menuIndicatorActive : ''}`}></div>
+                                        <div className={`${Style.menuContent} ${activeIndex === index ? Style.menuContentActive : ''}`}>
+                                            <div className={`${Style.projectLi} ${activeIndex === index ? Style.projectLiActive : ''}`}>
+                                                <div className={Style.lines}>
+                                                    <div className={`${Style.line} ${activeIndex === index ? Style.lineActive : ''}`}></div>
+                                                    <div className={Style.lineChild}></div>
                                                 </div>
-                                                <div className={styles.li}>
+                                                <div className={Style.li}>
                                                     <p>{service.number}</p>
-                                                    <div className={styles.liT}>
+                                                    <div className={Style.liT}>
                                                         <h2>
                                                             <span>
                                                                 {service.title}
                                                             </span>
                                                         </h2>
                                                         <i>{service.description}</i>
-                                                        <div className={styles.arrow}>
+                                                        <div className={Style.arrow}>
                                                             <FontAwesomeIcon icon={faArrowUp} />
                                                         </div>
                                                     </div>
@@ -173,14 +173,14 @@ function Project() {
                                 ))}
                             </div>
                         </div>
-                        <div className={styles.imageColumn}>
-                            <div className={styles.imageContainer}>
+                        <div className={Style.imageColumn}>
+                            <div className={Style.imageContainer}>
                                 {projects.map((service, index) => (
                                     <div
                                         key={index}
-                                        className={`${styles.serviceImage} ${activeIndex === index ? styles.serviceImageActive : ''}`}
+                                        className={`${Style.serviceImage} ${activeIndex === index ? Style.serviceImageActive : ''}`}
                                     >
-                                        <div className={styles.rippleContainer}>
+                                        <div className={Style.rippleContainer}>
                                             <img
                                                 src={service.image}
                                                 alt={service.title}
@@ -194,7 +194,7 @@ function Project() {
                     </div>
                 </div>
             </section >
-            <section ref={closingRef} className={styles.closingSection} >
+            <section ref={closingRef} className={Style.closingSection} >
             </section >
         </div >
     );

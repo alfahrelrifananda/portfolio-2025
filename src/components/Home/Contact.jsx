@@ -1,4 +1,4 @@
-import Style from "../../style/HomeModule/Home.module.css"
+import Style from "../../style/HomeModule/Contact.module.css"
 import { useRef, useCallback, lazy } from "react"
 import emailjs from "emailjs-com"
 const ScrollVelocity = lazy(() => import("../ReactBits/ScrollVelocity"))
@@ -57,7 +57,7 @@ function Contact() {
                     <p className={Style.contactContentP}>Drop me a message, and let's turn your ideas into reality. Excited to collaborate on your next creative project!</p>
                     <form action="" onSubmit={handleOnSubmit}>
                         <div>
-                            <input type="text" placeholder="First Name" name="from_first_name"/>
+                            <input type="text" placeholder="First Name" name="from_first_name" />
                             <input type="text" placeholder="Last Name" name="from_last_name" />
                         </div>
                         <div>

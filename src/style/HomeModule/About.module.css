@@ -1,0 +1,77 @@
+.aboutReferences {
+    height: 5vh;
+    width: 100vw;
+}
+
+.aboutContainer {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 5vh;
+    padding-top: 20px;
+    padding-left: 25vw;
+    padding-right: 25vw;
+    color: var(--primary-dark);
+
+}
+
+
+.aboutImage {
+    background-image: url(../../assets/img_placeholder_1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid var(--primary-dark);
+}
+
+
+.aboutContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.aboutContent div {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    gap: 10px;
+}
+
+.aboutContentp {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+.aboutContentT {
+    font-size: 2.3em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+.aboutContentSpan {
+    padding: 10px;
+    border: 1px solid var(--primary-dark);
+    border-radius: 5px;
+    opacity: 0.1;
+}
+
+@media screen and (max-width: 900px) {
+    .aboutContainer {
+        display: flex;
+        width: calc(100vw - 40px);
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+    .aboutContainer .aboutImage {
+        height: 30vh;
+    }
+
+    .aboutContainer .aboutContent .title {
+        font-size: 36px;
+        line-height: 40px;
+    }
+}
