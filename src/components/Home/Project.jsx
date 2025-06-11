@@ -8,9 +8,9 @@ import img2 from "../../assets/img_placeholder_todo.png"
 import img3 from "../../assets/img_placeholder_bel.png"
 import img4 from "../../assets/img_placeholder_and.png"
 import img5 from "../../assets/img_placeholder_pos.png"
-import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
+import { Link } from 'react-router-dom';
 const ScrollVelocity = lazy(() => import("../ReactBits/ScrollVelocity"))
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const projects = [
@@ -51,7 +51,6 @@ function Project() {
     const closingRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const scrollTriggerRef = useRef(null);
-    const navigate = useNavigate();
     useLayoutEffect(() => {
         let currentIndex = 0;
         const heroElements = heroRef.current.querySelectorAll('[data-animation="fadeInUp"]');
@@ -106,27 +105,6 @@ function Project() {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
     }, []);
-    function handleClick(i) {
-        switch (i) {
-            case 0:
-                navigate("project/chameleon", { replace: true });
-                break;
-            case 1:
-                navigate("project/todo", { replace: true });
-                break;
-            case 2:
-                navigate("project/belatarr", { replace: true });
-                break;
-            case 3:
-                navigate("project/androidinfo", { replace: true });
-                break;
-            case 4:
-                navigate("project/pospsikologi", { replace: true });
-                break;
-            default:
-                break;
-        }
-    };
     return (
         <div>
             <section ref={heroRef} className={Style.heroSection} id="projectContainer" >
@@ -141,10 +119,19 @@ function Project() {
                         <div className={Style.menuColumn}>
                             <div className={Style.menuItems}>
                                 {projects.map((service, index) => (
-                                    <div
+                                    <Link
+                                        replace
+                                        reloadDocument
+                                        to={
+                                            index === 0 ? "project/chameleon" :
+                                                (index === 1 ? "/project/todo" :
+                                                    (index === 2 ? "project/belatarr" :
+                                                        (index === 3 ? "project/todo" :
+                                                            (index === 4 ? "project/pospsikologi" : ""))))
+                                        }
                                         key={index}
                                         className={`${Style.menuItem} ${activeIndex === index ? Style.menuItemActive : ''}`}
-                                        onClick={() => handleClick(index)}
+                                    // onClick={() => handleClick(index)}
                                     >
                                         <div className={`${Style.menuIndicator} ${activeIndex === index ? Style.menuIndicatorActive : ''}`}></div>
                                         <div className={`${Style.menuContent} ${activeIndex === index ? Style.menuContentActive : ''}`}>
@@ -169,7 +156,7 @@ function Project() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 ))}
                             </div>
                         </div>

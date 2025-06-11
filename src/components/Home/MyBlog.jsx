@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 
-
 gsap.registerPlugin(ScrollTrigger)
 function MyBlog() {
     const containerRef = useRef(null)
@@ -161,7 +160,7 @@ function MyBlog() {
 
                     </div>
                     <div className={Style.card} >
-                        <Link to="/blog" replace>
+                        <Link to="/blog" replace reloadDocument>
                             <div className={Style.moreBlog}>
                                 <span>
                                     <button

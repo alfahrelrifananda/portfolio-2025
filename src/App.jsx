@@ -7,7 +7,7 @@ import ScrollSmoother from "gsap/ScrollSmoother"
 import { useGSAP } from "@gsap/react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons"
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import { Chameleon, Todo, BelaTarr, AndroidInfo, PosPsikologi } from "./pages/ProjectPage"
 import { useEffect } from "react"
 
@@ -15,20 +15,20 @@ const Home = lazy(() => import("./pages/Home"));
 const Header = lazy(() => import("./components/Header"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
 
-
 // eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext()
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 function App() {
   const main = useRef();
   const smoother = useRef();
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const history = useLocation();
+  const [isDarkMode, setIsDarkMode] = useState(true)
   const [isLoading, setIsLoading] = useState(true)
 
   useGSAP(
     () => {
       smoother.current = ScrollSmoother.create({
-        smooth: .5,
+        smooth: 3,
         smoothTouch: 0.1,
       });
     },
@@ -53,10 +53,14 @@ function App() {
     }
   }
   useEffect(() => {
-    setTimeout(() => {
+    if (history.pathname === "/") {
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 2500);
+    } else {
       setIsLoading(false)
-    }, 2500);
-  })
+    }
+  }, [history])
   return (
     <ThemeContext.Provider value={isDarkMode}>
       {!isLoading ?

@@ -76,12 +76,13 @@
 }
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .header .headerContainer .date {
         visibility: hidden;
     }
 
     .header .headerContainer {
+        padding: 5px;
         padding-left: 20px;
         padding-right: 20px;
         width: calc(100vw - 40px);
