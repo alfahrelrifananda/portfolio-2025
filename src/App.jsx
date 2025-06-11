@@ -22,7 +22,7 @@ function App() {
   const main = useRef();
   const smoother = useRef();
   const history = useLocation();
-  const [isDarkMode, setIsDarkMode] = useState(true)
+  const [isDarkMode, setIsDarkMode] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
   useGSAP(
