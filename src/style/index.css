@@ -39,7 +39,7 @@ body {
 html,
 body {
   margin: 0;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   height: 100%;
 }
 

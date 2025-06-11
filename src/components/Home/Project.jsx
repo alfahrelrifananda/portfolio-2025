@@ -124,8 +124,8 @@ function Project() {
                                         reloadDocument
                                         to={
                                             index === 0 ? "project/chameleon" :
-                                                (index === 1 ? "/project/todo" :
-                                                    (index === 2 ? "project/belatarr" :
+                                                (index === 1 ? "project/todo" :
+                                                    (index === 2 ? "blog" :
                                                         (index === 3 ? "project/todo" :
                                                             (index === 4 ? "project/pospsikologi" : ""))))
                                         }
