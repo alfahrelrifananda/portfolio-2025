@@ -160,7 +160,7 @@ function MyBlog() {
 
                     </div>
                     <div className={Style.card} >
-                        <Link to="/blog" replace reloadDocument>
+                        <Link to="blog" replace reloadDocument>
                             <div className={Style.moreBlog}>
                                 <span>
                                     <button
