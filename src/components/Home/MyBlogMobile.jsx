@@ -4,12 +4,8 @@ import blog1 from "../../assets/blog_featured/img_placeholder_and.png"
 import blog2 from "../../assets/blog_featured/image_placeholder_blog2.jpg"
 import blog3 from "../../assets/blog_featured/image_placeholder_blog3.jpg"
 import { useRef, useCallback } from "react"
-import { useNavigate } from "react-router-dom"
+import Link from "../../Utils/CustomLinkR"
 function MyBlogMobile() {
-    const navigate = useNavigate()
-    function goToBlogPage() {
-        navigate("/blog", { replace: true })
-    }
     const buttonRef = useRef(null)
     const handleMouseEnter = useCallback((e) => {
         const button = buttonRef.current
@@ -74,16 +70,18 @@ function MyBlogMobile() {
                 </div>
             </div>
             <div className={Style.btncontainer}>
-                <button
-                    type="submit" onClick={() => goToBlogPage()}
-                    ref={buttonRef}
-                    className={Style.btnPosnawr}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    <span className={Style.hoverEffect}></span>
-                    <span className={Style.buttonText}>Show More</span>
-                </button>
+                <Link to="blog" reloadDocument replace>
+                    <button
+                        ref={buttonRef}
+                        className={Style.btnPosnawr}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                    >
+                        <span className={Style.hoverEffect}></span>
+                        <span className={Style.buttonText}>Show More</span>
+                    </button>
+                </Link>
+
             </div>
         </div>
     )

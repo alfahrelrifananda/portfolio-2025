@@ -1,5 +1,5 @@
 import React, { lazy } from "react";
-import { Link } from "react-router-dom";
+import Link from "../Utils/CustomLinkR";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 import Style from "../style/ProjectModule/Project.module.css"

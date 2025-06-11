@@ -10,7 +10,8 @@ import img4 from "../../assets/img_placeholder_and.png"
 import img5 from "../../assets/img_placeholder_pos.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import Link from '../../Utils/CustomLinkR';
 const ScrollVelocity = lazy(() => import("../ReactBits/ScrollVelocity"))
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const projects = [
@@ -120,15 +121,15 @@ function Project() {
                             <div className={Style.menuItems}>
                                 {projects.map((service, index) => (
                                     <Link
-                                        replace
-                                        reloadDocument
                                         to={
                                             index === 0 ? "project/chameleon" :
-                                                (index === 1 ? "project/todo" :
+                                                (index === 1 ? "/project/todo" :
                                                     (index === 2 ? "project/belatarr" :
                                                         (index === 3 ? "project/todo" :
                                                             (index === 4 ? "project/pospsikologi" : ""))))
                                         }
+                                        replace
+                                        reloadDocument
                                         key={index}
                                         className={`${Style.menuItem} ${activeIndex === index ? Style.menuItemActive : ''}`}
                                     // onClick={() => handleClick(index)}
