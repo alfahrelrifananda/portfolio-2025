@@ -14,9 +14,20 @@ import chaImg5 from "../assets/project_image/cha/img_5_plc.png"
 import todoImg1 from "../assets/project_image/todo/img_1_plc.png"
 import todoImg2 from "../assets/project_image/todo/img_2_plc.png"
 
-// import belImg from "../assets/img_placeholder_bel.png"
-// import andImg from "../assets/img_placeholder_and.png"
-// import posImg from "../assets/img_placeholder_pos.png"
+import belaImg1 from "../assets/project_image/bel/img_1_plc.png"
+import belaImg2 from "../assets/project_image/bel/img_2_plc.png"
+import belaImg3 from "../assets/project_image/bel/img_3_plc.png"
+import belaImg4 from "../assets/project_image/bel/img_4_plc.png"
+
+import andImg1 from "../assets/project_image/and/img_1_plc.png"
+import andImg2 from "../assets/project_image/and/img_2_plc.png"
+
+import posImg1 from "../assets/project_image/pos/img_1_plc.png"
+import posImg2 from "../assets/project_image/pos/img_2_plc.png"
+import posImg3 from "../assets/project_image/pos/img_3_plc.png"
+import posImg4 from "../assets/project_image/pos/img_4_plc.png"
+import posImg5 from "../assets/project_image/pos/img_5_plc.png"
+
 export const Chameleon = () => {
     return (
         <>
@@ -112,7 +123,7 @@ export const Todo = () => {
             </div>
             <div className={Style.projectTextCenter}>
                 <p>
-                    For Todo, I developed the application using the Flutter framework, focusing on a streamlined approach for a simple to-do list. The core functionality, including task management, categorization, and basic navigation, was implemented using Flutter's native capabilities. This allowed for efficient development and ensured a consistent user experience, adhering to the principles of Material 3 for a clean and modern interface.
+                    I developed the application using the Flutter framework, focusing on a streamlined approach for a simple to-do list. The core functionality, including task management, categorization, and basic navigation, was implemented using Flutter's native capabilities. This allowed for efficient development and ensured a consistent user experience, adhering to the principles of Material 3 for a clean and modern interface.
                 </p>
             </div>
             <div className={Style.projectImage}>
@@ -126,7 +137,7 @@ export const Todo = () => {
                     <FontAwesomeIcon icon={faArrowUp} className={Style.arrowL} />
                     <p>Prev</p>
                 </Link>
-                <Link to="/project/todo" reloadDocument className={Style.link}>
+                <Link to="/project/belatarr" reloadDocument className={Style.link}>
                     <p>Next</p>
                     <FontAwesomeIcon icon={faArrowUp} className={Style.arrow} />
                 </Link>
@@ -142,23 +153,188 @@ export const Todo = () => {
 export const BelaTarr = () => {
     return (
         <>
-            <h1 className={Style.title}>BELATARR</h1>
-
+            <div className={Style.introduction}>
+                <div className={Style.introductionTitle}>
+                    <h1>Bela Tarr</h1>
+                    <p>I developed Bela Tarr, a static website, as an English assignment during my time at SMK. The project aimed to create a simple, minimalist biography of the director and producer Bela Tarr. Built using HTML, CSS, and JavaScript, the website features a dark and clean design, focusing on presenting information clearly and effectively.
+                    </p>
+                </div>
+                <div className={Style.introductionStatus}>
+                    <div className={Style.introductionClient}>
+                        <p>Client</p>
+                        <i>English School Assignment</i>
+                    </div>
+                    <div className={Style.introductionName}>
+                        <p>Project</p>
+                        <i>Bela Tarr</i>
+                    </div>
+                    <div className={Style.introductionCurrent}>
+                        <p>Status</p>
+                        <i>Finished</i>
+                    </div>
+                </div>
+            </div>
+            <div className={Style.projectImage}>
+                <img src={belaImg1} alt="" style={{ width: "100%", height: "100%" }} loading="lazy" />
+            </div>
+            <div className={Style.projectText}>
+                <p>
+                    For this website, I developed the entire front-end using HTML, CSS, and JavaScript. The project focused on a straightforward static structure, with custom CSS for its dark and minimalist aesthetic and JavaScript for any interactive elements. This approach allowed for complete control over the site's presentation and ensured a lightweight, focused experience tailored to its biographical content.
+                </p>
+            </div>
+            <div className={Style.projectImageFlex}>
+                <img src={belaImg3} alt="" loading="lazy" />
+                <img src={belaImg4} alt="" loading="lazy" />
+            </div>
+            <div className={Style.projectTextCenter}>
+                <p>
+                    This website's visual design centered on a dark and minimalist aesthetic, achieved entirely through custom CSS. This approach ensured a clean and uncluttered presentation, allowing the content to take precedence. While focusing on simplicity, subtle CSS techniques were employed to create a visually cohesive and elegant user experience, aligning with the project's biographical nature.
+                </p>
+            </div >
+            <div className={Style.projectImage}>
+                <img src={belaImg2} alt="" style={{ width: "100%", height: "100%" }} loading="lazy" />
+            </div>
+            <div className={Style.projectTextCenterSc}>
+                <a href="https://github.com/alfahrelrifananda/Bela-Tarr">Source Code</a>
+            </div>
+            <div className={Style.projectPrevAndNext}>
+                <Link to="/project/todo" reloadDocument className={Style.link}>
+                    <FontAwesomeIcon icon={faArrowUp} className={Style.arrowL} />
+                    <p>Prev</p>
+                </Link>
+                <Link to="/project/androidinfo" reloadDocument className={Style.link}>
+                    <p>Next</p>
+                    <FontAwesomeIcon icon={faArrowUp} className={Style.arrow} />
+                </Link>
+            </div>
+            <div className="tresholdContainer">
+                <div className="tresholdBox"></div>
+                <div className="tresholdLine"></div>
+            </div >
+            <Footer />
         </>
     )
 }
 export const AndroidInfo = () => {
     return (
         <>
-            <h1 className={Style.title}>ANDROIDINFO</h1>
-
+            <div className={Style.introduction}>
+                <div className={Style.introductionTitle}>
+                    <h1>Android Info</h1>
+                    <p>I developed Android Info, a Flutter application, out of personal interest to display simple Android system information. This project aimed to create a clean and informative user experience by leveraging Material 3 design principles and dynamic color capabilities. The app provides quick access to details like battery status and system specifications, offering a straightforward yet visually engaging way to monitor device information.
+                    </p>
+                </div>
+                <div className={Style.introductionStatus}>
+                    <div className={Style.introductionClient}>
+                        <p>Client</p>
+                        <i>Personal Project</i>
+                    </div>
+                    <div className={Style.introductionName}>
+                        <p>Project</p>
+                        <i>Android Info</i>
+                    </div>
+                    <div className={Style.introductionCurrent}>
+                        <p>Status</p>
+                        <i>Released</i>
+                    </div>
+                </div>
+            </div>
+            <div className={Style.projectImage}>
+                <img src={andImg1} alt="" style={{ width: "100%", height: "100%" }} loading="lazy" />
+            </div>
+            <div className={Style.projectTextCenter}>
+                <p>
+                    I built the application using the Flutter framework, focusing on directly accessing and displaying Android system information. The app leverages Flutter's built-in capabilities for UI rendering and state management to present details like battery status and system specifications. This approach allowed for a streamlined development process while fully utilizing Material 3 dynamic color for a modern and adaptive user interface.
+                </p>
+            </div>
+            <div className={Style.projectImage}>
+                <img src={andImg2} alt="" style={{ width: "100%", height: "100%" }} loading="lazy" />
+            </div>
+            <div className={Style.projectTextCenterSc}>
+                <a href="https://github.com/alfahrelrifananda/Android-Info">Source Code</a>
+            </div>
+            <div className={Style.projectPrevAndNext}>
+                <Link to="/project/belatarr" reloadDocument className={Style.link}>
+                    <FontAwesomeIcon icon={faArrowUp} className={Style.arrowL} />
+                    <p>Prev</p>
+                </Link>
+                <Link to="/project/pospsikologi" reloadDocument className={Style.link}>
+                    <p>Next</p>
+                    <FontAwesomeIcon icon={faArrowUp} className={Style.arrow} />
+                </Link>
+            </div>
+            <div className="tresholdContainer">
+                <div className="tresholdBox"></div>
+                <div className="tresholdLine"></div>
+            </div >
+            <Footer />
         </>
     )
 }
 export const PosPsikologi = () => {
     return (
         <>
-            <h1 className={Style.title}>POSPSIKOLOGI</h1>
+            <div className={Style.introduction}>
+                <div className={Style.introductionTitle}>
+                    <h1>Pos Psikologi</h1>
+                    <p>I developed Pos Psikologi, a dynamic website, for my aunt to serve as a minimalist platform for mental health consultations. The project aimed to provide a clean and intuitive user experience for those seeking psychological support. Built with HTML, CSS, and JavaScript, and powered by Firebase for dynamic content, the website features a vibrant yet minimalist design, utilizing a palette of orange, dark blue, green, and yellow to create a welcoming and calming atmosphere.
+                    </p>
+                </div>
+                <div className={Style.introductionStatus}>
+                    <div className={Style.introductionClient}>
+                        <p>Client</p>
+                        <i>Errisa Dwi Siswandani</i>
+                    </div>
+                    <div className={Style.introductionName}>
+                        <p>Project</p>
+                        <i>Pos Psikologi</i>
+                    </div>
+                    <div className={Style.introductionCurrent}>
+                        <p>Status</p>
+                        <i>Released</i>
+                    </div>
+                </div>
+            </div>
+            <div className={Style.projectImage}>
+                <img src={posImg1} alt="" style={{ width: "100%", height: "100%" }} loading="lazy" />
+            </div>
+            <div className={Style.projectText}>
+                <p>
+                    I developed the dynamic front-end using HTML, CSS, and JavaScript, integrating with Firebase for backend functionality. The project focused on a minimalist design with specific color accents, ensuring a clean user experience. While leveraging established web technologies, the component structure and interaction flows were tailored to the consultation platform's unique needs, giving control over its behavior and responsiveness.
+                </p>
+            </div>
+            <div className={Style.projectImage}>
+                <img src={posImg2} alt="" style={{ width: "100%", height: "100%" }} loading="lazy" />
+            </div>
+            <div className={Style.projectImageFlex}>
+                <img src={posImg4} alt="" loading="lazy" />
+                <img src={posImg5} alt="" loading="lazy" />
+            </div>
+            <div className={Style.projectTextCenter}>
+                <p>
+                    The visual design for Pos Psikologi focused on creating a minimalist yet inviting atmosphere through its use of HTML and CSS. A specific color palette of orange, dark blue, green, and yellow was carefully chosen to balance vibrancy with a calming effect. These colors were strategically applied to maintain a clean and uncluttered interface, ensuring the website's aesthetic supports its function as a welcoming space for mental health consultations.
+                </p>
+            </div >
+            <div className={Style.projectImage}>
+                <img src={posImg3} alt="" style={{ width: "100%", height: "100%" }} loading="lazy" />
+            </div>
+            <div className={Style.projectTextCenterSc}>
+                <a href="https://github.com/alfahrelrifananda/pos-psikologi">Source Code</a>
+            </div>
+            <div className={Style.projectPrevAndNext}>
+                <Link to="/project/androidinfo" reloadDocument className={Style.link}>
+                    <FontAwesomeIcon icon={faArrowUp} className={Style.arrowL} />
+                    <p>Prev</p>
+                </Link>
+                <Link to="#" reloadDocument className={Style.link}>
+
+                </Link>
+            </div>
+            <div className="tresholdContainer">
+                <div className="tresholdBox"></div>
+                <div className="tresholdLine"></div>
+            </div >
+            <Footer />
         </>
     )
 }
