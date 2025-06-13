@@ -24,7 +24,7 @@ function App() {
   const history = useLocation();
   const [userTheme, setUserTheme] = useState(() => {
     const savedTheme = localStorage.getItem('userTheme')
-    return savedTheme
+    return savedTheme !== null ? savedTheme : 'light'
   })
   const [isLoading, setIsLoading] = useState(true)
 
