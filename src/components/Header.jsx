@@ -7,6 +7,7 @@ import { HashLink } from "react-router-hash-link"
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
+import Link from "../Utils/CustomLinkR"
 function Header() {
     let headerDate = useRef()
     let headerHead = useRef()
@@ -145,14 +146,6 @@ function Header() {
             closeMenu()
         }
     }
-    function toggleGoBack() {
-        setTimeout(() => {
-            window.location.reload()
-        }, 2);
-        setTimeout(() => {
-            navigate('/', { replace: true })
-        }, 1);
-    }
     useLayoutEffect(() => {
         gsap.registerPlugin(SplitText);
         gsap.set("span", { opacity: 1 });
@@ -186,13 +179,18 @@ function Header() {
         <>
             <header className={Style.header} >
                 <div className={Style.headerContainer} id="headerContainer">
-                    <div className={Style.logo} onClick={handleLogoClick}>
-                        <div className={Style.logoContainer} id="logoContainer">
-                            <p className="logoname">
-                                FAHREL
-                            </p>
+                    {isHomeScreen ?
+                        <div className={Style.logo} onClick={handleLogoClick}>
+                            <div className={Style.logoContainer} id="logoContainer">
+                                <p className="logoname">
+                                    FAHREL
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                        :
+                        ""
+                    }
+
                     <div className={Style.date} id="dateContainer">
                         <p ref={headerHead}></p>
                         <p ref={headerDate}></p>
@@ -205,12 +203,7 @@ function Header() {
                             </div>
                         </div>
                         :
-                        <div className={Style.menuButton}
-                            id="goback-btn" onClick={toggleGoBack}>
-                            <div className="goback-btn">
-                                <p>(back)</p>
-                            </div>
-                        </div>
+                        <Link className={Style.backButton} to="/" replace reloadDocument>(back)</Link>
                     }
                 </div>
             </header>
