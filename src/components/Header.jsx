@@ -148,10 +148,10 @@ function Header() {
     function toggleGoBack() {
         setTimeout(() => {
             window.location.reload()
-        }, 100);
+        }, 2);
         setTimeout(() => {
             navigate('/', { replace: true })
-        }, 99);
+        }, 1);
     }
     useLayoutEffect(() => {
         gsap.registerPlugin(SplitText);
@@ -177,10 +177,10 @@ function Header() {
     function handleLogoClick() {
         setTimeout(() => {
             window.location.reload()
-        }, 100);
+        }, 2);
         setTimeout(() => {
             navigate('/', { replace: true })
-        }, 99);
+        }, 1);
     }
     return (
         <>
