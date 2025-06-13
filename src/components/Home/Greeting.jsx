@@ -13,7 +13,6 @@ function Greeting() {
     const theme = useContext(ThemeContext)
 
     useEffect(() => {
-
         gsap.registerPlugin(SplitText);
         document.fonts.ready.then(() => {
             gsap.set("#bigGreeting", { opacity: 1 });
@@ -60,7 +59,7 @@ function Greeting() {
             <div className={Style.greeting} id="greetingContainer">
 
                 <Particles
-                    particleColors={[theme ? "#F6F4F2" : "#1C0F13", theme ? "#1C0F13" : "#F6F4F2"]}
+                    particleColors={[theme === 'dark' ? "#F6F4F2" : "#1C0F13", theme === 'dark' ? "#1C0F13" : "#F6F4F2"]}
                     particleCount={150}
                     particleSpread={30}
                     speed={0.3}
@@ -79,7 +78,7 @@ function Greeting() {
                             rows={10}
                             columns={15}
                             containerSize="100%"
-                            lineColor={theme ? "#F6F4F2" : "#1C0F13"}
+                            lineColor={theme === 'dark' ? "#F6F4F2" : "#1C0F13"}
                             lineWidth="0.4vmin"
                             lineHeight="5vmin"
                             baseAngle={0}

@@ -22,7 +22,10 @@ function App() {
   const main = useRef();
   const smoother = useRef();
   const history = useLocation();
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [userTheme, setUserTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('userTheme')
+    return savedTheme
+  })
   const [isLoading, setIsLoading] = useState(true)
 
   useGSAP(
@@ -34,7 +37,7 @@ function App() {
     },
     { scope: main }
   );
-  if (isDarkMode) {
+  if (userTheme === 'dark') {
     document.documentElement.style.setProperty('--primary-dark', '#F6F4F2')
     document.documentElement.style.setProperty('--primary-light', '#1C0F13')
   } else {
@@ -42,17 +45,30 @@ function App() {
     document.documentElement.style.setProperty('--primary-light', '#F6F4F2')
   }
   function toggleTheme() {
-    if (isDarkMode) {
-      setIsDarkMode(false)
-      document.documentElement.style.setProperty('--primary-dark', '#1C0F13')
-      document.documentElement.style.setProperty('--primary-light', '#F6F4F2')
-    } else {
-      setIsDarkMode(true)
+    if (userTheme === 'light') {
+      setUserTheme('dark')
+      document.documentElement.style.setProperty('--primary-dark', '#F6F4F2')
+      document.documentElement.style.setProperty('--primary-light', '#1C0F13')
+    }
+    if (userTheme === 'dark') {
+      setUserTheme('light')
       document.documentElement.style.setProperty('--primary-dark', '#F6F4F2')
       document.documentElement.style.setProperty('--primary-light', '#1C0F13')
     }
   }
   useEffect(() => {
+    const hours = new Date().getHours()
+    if (hours > 18 || hours < 6) {
+      if (userTheme === 'dark') {
+        setUserTheme('dark')
+      }
+    } else {
+      setUserTheme('light')
+    }
+  }, [userTheme])
+  useEffect(() => {
+    localStorage.setItem('userTheme', userTheme)
+    console.log('userTheme', userTheme)
     if (history.pathname === "/") {
       setTimeout(() => {
         setIsLoading(false)
@@ -60,9 +76,9 @@ function App() {
     } else {
       setIsLoading(false)
     }
-  }, [history])
+  }, [history, userTheme])
   return (
-    <ThemeContext.Provider value={isDarkMode}>
+    <ThemeContext.Provider value={userTheme}>
       {!isLoading ?
         <Header />
         : ""}
@@ -95,7 +111,7 @@ function App() {
       <div className={Style.BottomHeaderContainer}>
         {!isLoading ?
           <button onClick={toggleTheme}>
-            {isDarkMode ?
+            {userTheme === 'dark' ?
               <FontAwesomeIcon icon={faSun} />
               :
               <FontAwesomeIcon icon={faMoon} />

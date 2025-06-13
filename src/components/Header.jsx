@@ -157,23 +157,21 @@ function Header() {
         gsap.registerPlugin(SplitText);
         gsap.set("span", { opacity: 1 });
         gsap.set("h1", { opacity: 1 });
-        setTimeout(() => {
-            let split = [
-                SplitText.create(".menu-list-label", { type: "chars" }),
-                SplitText.create(".menu-big-label", { type: "chars" })
-            ]
-            gsap.from(split[0].chars, {
-                y: 20,
-                autoAlpha: 0,
-                stagger: 0.05
-            });
-            gsap.from(split[1].chars, {
-                y: 20,
-                autoAlpha: 0,
-                stagger: 0.05
-            });
-        }, 2500);
-    }, [])
+        let split = [
+            SplitText.create(".menu-list-label", { type: "chars" }),
+            SplitText.create(".menu-big-label", { type: "chars" })
+        ]
+        gsap.from(split[0].chars, {
+            y: 20,
+            autoAlpha: 0,
+            stagger: 0.05
+        });
+        gsap.from(split[1].chars, {
+            y: 20,
+            autoAlpha: 0,
+            stagger: 0.05
+        });
+    })
     function handleLogoClick() {
         setTimeout(() => {
             window.location.reload()
@@ -212,8 +210,6 @@ function Header() {
                             </div>
                         </div>
                     }
-
-
                 </div>
             </header>
             <div className={StyleMenu.menu} id="theMenu">
