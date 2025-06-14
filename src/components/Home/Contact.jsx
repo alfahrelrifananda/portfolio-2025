@@ -6,15 +6,21 @@ const SERVICE_ID = "service_3utxlwh"
 const TEMPLATE_ID = "template_6r3xst7"
 const PUBLIC_KEY = "3jy8yLViJz0kcyZEt"
 function Contact() {
+
+    const errMsg = useRef()
+    const succMsg = useRef()
+
     const handleOnSubmit = (e) => {
         e.preventDefault();
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
             .then((result) => {
                 console.log(result.text);
-                alert('Message Sent Successfully')
+                succMsg.current.style.visibility = "visible"
+                errMsg.current.style.visibility = "hidden"
             }, (error) => {
-                console.log(error.text);
-                alert('Something went wrong!')
+                console.error(error.text);
+                succMsg.current.style.visibility = "hidden"
+                errMsg.current.style.visibility = "visible"
             });
         e.target.reset()
     };
@@ -57,14 +63,14 @@ function Contact() {
                     <p className={Style.contactContentP}>Drop me a message, and let's turn your ideas into reality. Excited to collaborate on your next creative project!</p>
                     <form action="" onSubmit={handleOnSubmit}>
                         <div>
-                            <input type="text" placeholder="First Name" name="from_first_name" />
-                            <input type="text" placeholder="Last Name" name="from_last_name" />
+                            <input type="text" placeholder="First Name" name="from_first_name" required />
+                            <input type="text" placeholder="Last Name" name="from_last_name" required />
                         </div>
                         <div>
-                            <input type="email" placeholder="Email" name="from_email" />
-                            <input type="number" placeholder="Phone" name="from_phone" />
+                            <input type="email" placeholder="Email" name="from_email" required />
+                            <input type="number" placeholder="Phone" name="from_phone" required />
                         </div>
-                        <textarea name="message" placeholder="Message" ></textarea>
+                        <textarea name="message" placeholder="Message" required></textarea>
                         <div className={Style.btncontainer}>
                             <button
                                 type="submit"
@@ -78,6 +84,8 @@ function Contact() {
                             </button>
                         </div>
                     </form>
+                    <p className={Style.errMsg} ref={errMsg}>Something went wrong!</p>
+                    <p className={Style.succMsg} ref={succMsg}>Message Sent Successfully!</p>
                 </div>
             </div >
         </>

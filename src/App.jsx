@@ -56,16 +56,16 @@ function App() {
       document.documentElement.style.setProperty('--primary-light', '#1C0F13')
     }
   }
-  useEffect(() => {
-    const hours = new Date().getHours()
-    if (hours > 18 || hours < 6) {
-      if (userTheme === 'dark') {
-        setUserTheme('dark')
-      }
-    } else {
-      setUserTheme('light')
-    }
-  }, [userTheme])
+  // useEffect(() => {
+  //   const hours = new Date().getHours()
+  //   if (hours > 18 || hours < 6) {
+  //     if (userTheme === 'dark') {
+  //       setUserTheme('dark')
+  //     }
+  //   } else {
+  //     setUserTheme('light')
+  //   }
+  // }, [userTheme])
   useEffect(() => {
     localStorage.setItem('userTheme', userTheme)
     console.log('userTheme', userTheme)

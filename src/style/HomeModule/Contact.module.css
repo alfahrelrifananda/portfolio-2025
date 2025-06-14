@@ -117,6 +117,16 @@
     display: block;
 }
 
+.succMsg {
+    color: greenyellow;
+    visibility: hidden;
+}
+
+.errMsg {
+    color: red;
+    visibility: hidden;
+}
+
 @media screen and (max-width: 900px) {
     .contactContainer {
         height: 100vh;

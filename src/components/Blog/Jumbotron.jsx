@@ -1,58 +1,37 @@
-import React, { useRef, useCallback } from "react"
-import Style from "../../style/BlogModule/Blog.module.css"
-import { useNavigate } from 'react-router-dom';
+import Style from "../../style/BlogModule/Jumbotron.module.css"
 
 function Jumbotron() {
-    const buttonRef = useRef()
-    const navigate = useNavigate()
-
-    function handleGoback() {
-        setTimeout(() => {
-            window.location.reload()
-        }, 100);
-        setTimeout(() => {
-            navigate('/', { replace: true })
-        }, 99);
-    }
-    const handleMouseEnter = useCallback((e) => {
-        const button = buttonRef.current
-        if (!button) return
-        const parentOffset = button.getBoundingClientRect()
-        const relX = e.clientX - parentOffset.left
-        const relY = e.clientY - parentOffset.top
-        const span = button.querySelector(`.${Style.hoverEffect}`)
-        if (span) {
-            span.style.top = relY + "px"
-            span.style.left = relX + "px"
-        }
-    }, [])
-    const handleMouseLeave = useCallback((e) => {
-        const button = buttonRef.current
-        if (!button) return
-        const parentOffset = button.getBoundingClientRect()
-        const relX = e.clientX - parentOffset.left
-        const relY = e.clientY - parentOffset.top
-        const span = button.querySelector(`.${Style.hoverEffect}`)
-        if (span) {
-            span.style.top = relY + "px"
-            span.style.left = relX + "px"
-        }
-    }, [])
     return (
         <>
             <div className={Style.jumbotron}>
-                <h1>THIS PAGE IS STILL UNDER CONSTRUCTION : )</h1>
-                <button
-                    type="submit"
-                    ref={buttonRef}
-                    className={Style.btnPosnawr}
-                    onClick={handleGoback}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    <span className={Style.hoverEffect}></span>
-                    <span className={Style.buttonText}>Go Back</span>
-                </button>
+                <div className={Style.introduction}>
+                    <div className={Style.introductionTitle}>
+                        <h1>Blogs</h1>
+                        <p>Hey there! This is my personal blog where I share all sorts of things that capture my interest and imagination. You'll find a mix of everything here, from the apps and websites I've been building and my adventures in the world of tech to my thoughts on movies, books, and even daily life observations. Think of it as a creative space where I put all my passions on display. Take a look around and enjoy exploring!
+                        </p>
+                    </div>
+                    <div className={Style.introductionCategory}>
+                        <div className={Style.introductionCat}>
+                            <p>Category</p>
+                            <i>
+                                <a href="">all</a> |
+                                <a href="">backend</a> |
+                                <a href="">frontend</a> |
+                                <a href="">books</a> |
+                                <a href="">tech</a> |
+                                <a href="">politics</a> |
+                                <a href="">social</a> |
+                                <a href="">philosophy</a> |
+                                <a href="">movies</a> |
+                                <a href="">update</a>
+                            </i>
+                        </div>
+                    </div>
+                </div>
+                <div className="tresholdContainer">
+                    <div className="tresholdLine"></div>
+                    <div className="tresholdBox"></div>
+                </div >
             </div>
         </>
     )
