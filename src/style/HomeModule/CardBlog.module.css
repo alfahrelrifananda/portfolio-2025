@@ -4,7 +4,7 @@
     width: 100%;
     padding: 20px;
     border-radius: 15px;
-    border: 1px solid var(--primary-dark);
+    /* border: 1px solid var(--primary-dark); */
     background-color: var(--primary-light);
 }
 

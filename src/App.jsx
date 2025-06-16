@@ -10,6 +10,7 @@ import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons"
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { Chameleon, Todo, BelaTarr, AndroidInfo, PosPsikologi } from "./pages/ProjectPage"
 import { useEffect } from "react"
+import Dashboard from "./auth/Dashboard"
 
 const Home = lazy(() => import("./pages/Home"));
 const Header = lazy(() => import("./components/Header"));
@@ -27,6 +28,7 @@ function App() {
     return savedTheme !== null ? savedTheme : 'light'
   })
   const [isLoading, setIsLoading] = useState(true)
+  const dashboardUrl = import.meta.env.VITE_DASHBOARD_URL
 
   useGSAP(
     () => {
@@ -56,19 +58,7 @@ function App() {
       document.documentElement.style.setProperty('--primary-light', '#1C0F13')
     }
   }
-  // useEffect(() => {
-  //   const hours = new Date().getHours()
-  //   if (hours > 18 || hours < 6) {
-  //     if (userTheme === 'dark') {
-  //       setUserTheme('dark')
-  //     }
-  //   } else {
-  //     setUserTheme('light')
-  //   }
-  // }, [userTheme])
   useEffect(() => {
-    localStorage.setItem('userTheme', userTheme)
-    console.log('userTheme', userTheme)
     if (history.pathname === "/") {
       setTimeout(() => {
         setIsLoading(false)
@@ -98,6 +88,7 @@ function App() {
           <Routes>
             <Route index element={<Home />} />
             <Route path='blog' element={<BlogPage />} />
+            <Route path={dashboardUrl} element={<Dashboard />} />
             <Route path='project' >
               <Route path='chameleon' element={<Chameleon />} />
               <Route path='todo' element={<Todo />} />

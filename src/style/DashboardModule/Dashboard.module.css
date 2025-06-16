@@ -1,0 +1,28 @@
+.addUserForm, .listUserContainer {
+    height: fit-content;
+    padding-top: 10vh;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+}
+.listUserContainer {
+    display: block;
+}
+
+.addUserForm input {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--primary-dark);
+}
+.addUserForm button {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    border: none;
+}

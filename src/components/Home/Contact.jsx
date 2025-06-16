@@ -2,15 +2,16 @@ import Style from "../../style/HomeModule/Contact.module.css"
 import { useRef, useCallback, lazy } from "react"
 import emailjs from "emailjs-com"
 const ScrollVelocity = lazy(() => import("../ReactBits/ScrollVelocity"))
-const SERVICE_ID = "service_3utxlwh"
-const TEMPLATE_ID = "template_6r3xst7"
-const PUBLIC_KEY = "3jy8yLViJz0kcyZEt"
+
 function Contact() {
+
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
     const errMsg = useRef()
     const succMsg = useRef()
-
-    const handleOnSubmit = (e) => {
+    function handleOnSubmit(e) {
         e.preventDefault();
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
             .then((result) => {
@@ -23,7 +24,7 @@ function Contact() {
                 errMsg.current.style.visibility = "visible"
             });
         e.target.reset()
-    };
+    }
     const buttonRef = useRef(null)
     const handleMouseEnter = useCallback((e) => {
         const button = buttonRef.current
