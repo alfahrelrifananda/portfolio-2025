@@ -11,6 +11,8 @@ function Contact() {
 
     const errMsg = useRef()
     const succMsg = useRef()
+    const buttonRef = useRef(null)
+
     function handleOnSubmit(e) {
         e.preventDefault();
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
@@ -25,7 +27,6 @@ function Contact() {
             });
         e.target.reset()
     }
-    const buttonRef = useRef(null)
     const handleMouseEnter = useCallback((e) => {
         const button = buttonRef.current
         if (!button) return

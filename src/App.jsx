@@ -11,6 +11,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import { Chameleon, Todo, BelaTarr, AndroidInfo, PosPsikologi } from "./pages/ProjectPage"
 import { useEffect } from "react"
 import Dashboard from "./auth/Dashboard"
+import Login from "./auth/Login"
 
 const Home = lazy(() => import("./pages/Home"));
 const Header = lazy(() => import("./components/Header"));
@@ -29,6 +30,7 @@ function App() {
   })
   const [isLoading, setIsLoading] = useState(true)
   const dashboardUrl = import.meta.env.VITE_DASHBOARD_URL
+  const loginUrl = import.meta.env.VITE_LOGIN_URL
 
   useGSAP(
     () => {
@@ -89,6 +91,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path='blog' element={<BlogPage />} />
             <Route path={dashboardUrl} element={<Dashboard />} />
+            <Route path={loginUrl} element={<Login />} />
             <Route path='project' >
               <Route path='chameleon' element={<Chameleon />} />
               <Route path='todo' element={<Todo />} />
