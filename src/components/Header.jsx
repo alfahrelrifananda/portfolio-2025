@@ -117,7 +117,7 @@ function Header() {
             document.documentElement.style.overflowY = "hidden"
             document.body.style.overflowY = "hidden"
             setIsMenuOpen(true)
-        }, 500);
+        }, 300);
     }
     function closeMenu() {
         const menu = document.getElementById("theMenu")
@@ -129,7 +129,7 @@ function Header() {
             menu.style.zIndex = "-88"
             menu.style.opacity = "0"
             menu.style.display = "none"
-        }, 500);
+        },300);
         menuContainer.style.opacity = "0"
         menuToggle.textContent = "(menu)"
         menuToggle.style.color = "var(--primary-dark)"

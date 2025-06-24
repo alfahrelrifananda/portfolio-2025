@@ -26,7 +26,11 @@ function App() {
   const history = useLocation();
   const [userTheme, setUserTheme] = useState(() => {
     const savedTheme = localStorage.getItem('userTheme')
-    return savedTheme !== null ? savedTheme : 'light'
+    if (savedTheme === null) {
+      return 'light'
+    } else {
+      return savedTheme
+    }
   })
   const [isLoading, setIsLoading] = useState(true)
   const dashboardUrl = import.meta.env.VITE_DASHBOARD_URL
@@ -61,6 +65,7 @@ function App() {
     }
   }
   useEffect(() => {
+    localStorage.setItem('userTheme', userTheme)
     if (history.pathname === "/") {
       setTimeout(() => {
         setIsLoading(false)
