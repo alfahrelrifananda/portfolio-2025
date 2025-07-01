@@ -129,7 +129,7 @@ function Header() {
             menu.style.zIndex = "-88"
             menu.style.opacity = "0"
             menu.style.display = "none"
-        },300);
+        }, 300);
         menuContainer.style.opacity = "0"
         menuToggle.textContent = "(menu)"
         menuToggle.style.color = "var(--primary-dark)"
@@ -265,7 +265,7 @@ function Header() {
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
                             </HashLink>
-                            <HashLink smooth to="/#blogTreshold" className={StyleMenu.link} onClick={closeMenu}>
+                            {/*<HashLink smooth to="/#blogTreshold" className={StyleMenu.link} onClick={closeMenu}>
                                 <div className={StyleMenu.li}>
                                     <p>04</p>
                                     <h3>
@@ -281,7 +281,7 @@ function Header() {
                                     <div className={StyleMenu.line}></div>
                                     <div className={StyleMenu.lineChild}></div>
                                 </div>
-                            </HashLink>
+                            </HashLink> */}
                             <HashLink smooth to="/#contactTreshold" className={StyleMenu.link} onClick={closeMenu}>
                                 <div className={StyleMenu.li}>
                                     <p>05</p>

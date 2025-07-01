@@ -31,7 +31,7 @@ function Home() {
                         <AboutMore />
                         <div id="projectTreshold"></div>
                         <Project />
-                        <div id="blogTreshold" className="tresholdContainer">
+                        {/* <div id="blogTreshold" className="tresholdContainer">
                             <div className="tresholdLine"></div>
                             <div className="tresholdBox"></div>
                         </div>
@@ -39,7 +39,7 @@ function Home() {
                             <MyBlogMobile />
                             :
                             <MyBlog />
-                        }
+                        } */}
                         <div id="contactTreshold"></div>
                         <Contact />
                         <div id="footerTreshold" className="tresholdContainer">
